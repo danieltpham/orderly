@@ -1,0 +1,114 @@
+{
+  "product_skus": [
+    {
+      "sku_id": "SKU001",
+      "brand": "TechFlow",
+      "product_name": "Wireless Keyboard",
+      "variant": "Compact Black",
+      "category": "Keyboards",
+      "unit": "each",
+      "size": "Full Size"
+    },
+    {
+      "sku_id": "SKU002",
+      "brand": "ViewMaster",
+      "product_name": "LED Monitor",
+      "variant": "24-inch 1920x1080",
+      "category": "Monitors",
+      "unit": "each",
+      "size": "24 inch"
+    },
+    {
+      "sku_id": "SKU003",
+      "brand": "ConnectPro",
+      "product_name": "USB-C Cable",
+      "variant": "6 feet",
+      "category": "Cables",
+      "unit": "each",
+      "size": "6 ft"
+    }
+  ],
+  "line_items": [
+    {
+      "sku_id": "SKU001",
+      "item_description": "TechFlow Wireless Keyboard - Compact Black (Full Size)",
+      "brand": "TechFlow",
+      "quantity": 2,
+      "unit": "each",
+      "size": "Full Size",
+      "data_quality_flag": "clean"
+    },
+    {
+      "sku_id": "SKU001",
+      "item_description": "techflow wireless kb compact blk",
+      "brand": "techflow",
+      "quantity": 5,
+      "unit": "each",
+      "size": null,
+      "data_quality_flag": "fuzzy"
+    },
+    {
+      "sku_id": "SKU001",
+      "item_description": "TF wireless keyboard black",
+      "brand": "TF",
+      "quantity": 1,
+      "unit": null,
+      "size": null,
+      "data_quality_flag": "fuzzy"
+    },
+    {
+      "sku_id": "SKU002",
+      "item_description": "ViewMaster LED Monitor 24-inch 1920x1080",
+      "brand": "ViewMaster",
+      "quantity": 3,
+      "unit": "each",
+      "size": "24 inch",
+      "data_quality_flag": "clean"
+    },
+    {
+      "sku_id": "SKU002",
+      "item_description": "viewmaster 24in monitor led",
+      "brand": "viewmaster",
+      "quantity": 2,
+      "unit": "each",
+      "size": "24in",
+      "data_quality_flag": "fuzzy"
+    },
+    {
+      "sku_id": "SKU002",
+      "item_description": "Monitor 24&quot; LED &lt;br&gt; ViewMaster",
+      "brand": "ViewMaster",
+      "quantity": 1,
+      "unit": "each",
+      "size": "24\"",
+      "data_quality_flag": "html"
+    },
+    {
+      "sku_id": "SKU003",
+      "item_description": "ConnectPro USB-C Cable 6 feet",
+      "brand": "ConnectPro",
+      "quantity": 10,
+      "unit": "each",
+      "size": "6 ft",
+      "data_quality_flag": "clean"
+    },
+    {
+      "sku_id": "SKU003",
+      "item_description": "usbc cable 6ft connectpro",
+      "brand": "connectpro",
+      "quantity": 8,
+      "unit": "pack",
+      "size": "6ft",
+      "data_quality_flag": "fuzzy"
+    },
+    {
+      "sku_id": null,
+      "item_description": "Shipping fee - express overnight",
+      "brand": null,
+      "quantity": 1,
+      "unit": null,
+      "size": null,
+      "data_quality_flag": "non_product"
+    }
+  ]
+}

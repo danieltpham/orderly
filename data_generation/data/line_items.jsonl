@@ -1,0 +1,499 @@
+{"sku_id": "SKU101", "item_description": "TechFlow Wireless Keyboard black", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "ViewMaster LED Monitor 24&quot;", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24inch", "data_quality_flag": "html"}
+{"sku_id": "SKU103", "item_description": "HDMI Cable 6 feet ConnectPro", "brand": "ConnectPro", "quantity": 5, "unit": "each", "size": "6 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "USB-C Adapter TechFlow to HDMI", "brand": "DataVault", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU105", "item_description": "Techflow WEBCAM HD 1080p", "brand": "TechFlow", "quantity": 6, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "Wireless gaming Headset ProConnect", "brand": "ProConnect", "quantity": 8, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "Mechanical Keyboard TechFlow", "brand": "TechFlow", "quantity": 10, "unit": "each", "size": "Full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU108", "item_description": "VIEWMASTER LCD Monitor 27IN", "brand": "ViewMaster", "quantity": 7, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU109", "item_description": "DisplyPort Cable 10 FT Connectpro", "brand": "ConnectPro", "quantity": 12, "unit": "each", "size": "10ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "32GB USB Drive DV", "brand": "DataVault", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU111", "item_description": "OfficeLink Wireless Earbuds", "brand": "OfficeLink", "quantity": 11, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU112", "item_description": "ProConnect Ethernet Cable Cat 6 15ft", "brand": "ProConnect", "quantity": 13, "unit": "each", "size": "15 ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU113", "item_description": "techflow compact keyboard", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU114", "item_description": "4K LED monitor 32&quot;&lt;br&gt; ViewMaster", "brand": "ViewMaster", "quantity": 4, "unit": "each", "size": "32 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU115", "item_description": "USB-C 3 foot Cable Connectpro", "brand": "ConnectPro", "quantity": 3, "unit": "each", "size": "3ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU116", "item_description": "1TB External HDD DataVault", "brand": "DataVault", "quantity": 2, "unit": "each", "size": "1 TB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU117", "item_description": "Webcam 4K OfficeLink", "brand": "OfficeLink", "quantity": 5, "unit": "each", "size": "High-Res", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU118", "item_description": "ProConnect Wired Headset office", "brand": "ProConnect", "quantity": 8, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU119", "item_description": "TechFlow RGB Mechanical Keybord", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU120", "item_description": "ViewMaster LCD mon 22in", "brand": "ViewMaster", "quantity": 6, "unit": "each", "size": "22 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "TF Black Wireless Keyboard", "brand": "TF", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "TechFlow Led Monitr 24'", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "HDMI cabl 6'' ConnectPro", "brand": "ConnectPro", "quantity": 5, "unit": "each", "size": "6 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "USB-C HDMI Adapter by DV", "brand": "DataVault", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "1080p HD Webcam Techflo", "brand": "TechFlow", "quantity": 6, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "gaming Wireless headset", "brand": "ProConnect", "quantity": 8, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "TechFlow Mech Keyboard", "brand": "TechFlow", "quantity": 10, "unit": "each", "size": "Full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "Compact ViewMaster LCD Monitor", "brand": "ViewMaster", "quantity": 7, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU109", "item_description": "DisplayPort ConnectPro cable 10ft", "brand": "ConnectPro", "quantity": 12, "unit": "each", "size": "10ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU110", "item_description": "32gb USB DataVault Drive ", "brand": "DataVault", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU111", "item_description": "Wireless Earbuds OfficeLink", "brand": "OfficeLink", "quantity": 11, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU112", "item_description": "ProConnect Ethernet Cable Cat6 15 ft", "brand": "ProConnect", "quantity": 13, "unit": "each", "size": "15 ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU113", "item_description": "TechFlow Kb compact", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU114", "item_description": "ViewMaster 4K Monitor 32\"", "brand": "ViewMaster", "quantity": 4, "unit": "each", "size": "32 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU115", "item_description": "USB-C Cable ConnectPro 3 ft", "brand": "ConnectPro", "quantity": 3, "unit": "each", "size": "3ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU116", "item_description": "External Drive 1TB DataVault", "brand": "DataVault", "quantity": 2, "unit": "each", "size": "1 TB", "data_quality_flag": "clean"}
+{"sku_id": "SKU117", "item_description": "OfficeLink Webcam 4K Resolution", "brand": "OfficeLink", "quantity": 5, "unit": "each", "size": "High-Res", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU118", "item_description": "ProConnect Headset Wired", "brand": "ProConnect", "quantity": 8, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU119", "item_description": "RGB TechFlow Keyboard Mechanical", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU120", "item_description": "VIEWmaster 22\" LCD monitor", "brand": "ViewMaster", "quantity": 6, "unit": "each", "size": "22 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Express delivery fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax calculation error", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Installation service fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing charge", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "Wireless Keyboard by TechFlow", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "ViewMaster 24in LED Monitor", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU103", "item_description": "ConnectPro HDMI Cable 6ft", "brand": "ConnectPro", "quantity": 5, "unit": "each", "size": "6 ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU104", "item_description": "TechFlow HDMI USB-C Adapter", "brand": "DataVault", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU105", "item_description": "HD 1080 webcam officeLink", "brand": "OfficeLink", "quantity": 6, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "ProConnect Headset gaming Wireless", "brand": "ProConnect", "quantity": 8, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU107", "item_description": "TechFlow Keyboard Mechanical", "brand": "TechFlow", "quantity": 10, "unit": "each", "size": "Full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU108", "item_description": "ViewMaster LCD Monitor 27inch", "brand": "ViewMaster", "quantity": 7, "unit": "each", "size": "27 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU109", "item_description": "20ft ConnectPro Cable DisplayPort", "brand": "ConnectPro", "quantity": 12, "unit": "each", "size": "10ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "DataVault USB Drive 32GB", "brand": "DataVault", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU101", "item_description": "TechFlow Wireless Keyboard Black", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "Full Size", "data_quality_flag": "clean"}
+{"sku_id": "SKU104", "item_description": "DataVault HD Webcam 1080p", "brand": "DataVault", "quantity": 2, "unit": "each", "size": "1080p resolution", "data_quality_flag": "clean"}
+{"sku_id": "SKU120", "item_description": "ViewMaster Portable Storage Drive 500GB", "brand": "ViewMaster", "quantity": 4, "unit": "each", "size": "500GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "ConnectPro 24\" LED Monitor", "brand": "ConnectPro", "quantity": 3, "unit": "each", "size": "24 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU113", "item_description": "ProConnect Wireless Earbuds White", "brand": "ProConnect", "quantity": 6, "unit": "pack", "size": "Compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU109", "item_description": "ConnectPro Gaming Headset Red", "brand": "ConnectPro", "quantity": 1, "unit": "each", "size": "On-ear", "data_quality_flag": "clean"}
+{"sku_id": "SKU115", "item_description": "Wired Optical Mouse - OfficeLink", "brand": "OfficeLink", "quantity": 7, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU116", "item_description": "DataVault USB Drive 64GB", "brand": "DataVault", "quantity": 9, "unit": "each", "size": "64GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU114", "item_description": "ViewMaster 22 inch LCD Monitor", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "22 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU111", "item_description": "DataVault 27\" 4K Monitor", "brand": "DataVault", "quantity": 1, "unit": "each", "size": "27 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU101", "item_description": "TF Wireless Keyboard", "brand": null, "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "DataVault HD WebKami 1080p", "brand": "DataVault", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU120", "item_description": "Portable Storage Drive by VM", "brand": "VM", "quantity": 4, "unit": null, "size": "500GB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "ConnectPro 24 in LED MONITR", "brand": "ConnectPro", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU113", "item_description": "ProConnect Wireless ear-buds", "brand": "ProConnect", "quantity": 6, "unit": "pack", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU109", "item_description": "gaming headset connectpro", "brand": null, "quantity": 1, "unit": null, "size": "Red On-ear", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU115", "item_description": "Wired Mouse OfficeLink Optical", "brand": "OfficeLink", "quantity": 5, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU116", "item_description": "DataVault USB Drive - 64GB", "brand": "DataVault", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU114", "item_description": "22 inch viewmaster lcd mon", "brand": null, "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU111", "item_description": "DatVault 4K 27 inch Monitor", "brand": null, "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU101", "item_description": "Wireless &amp; Keyboard Black - TF", "brand": null, "quantity": 7, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU104", "item_description": "HD Webcam 1080p &lt;br&gt; DataVault", "brand": null, "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU120", "item_description": "Portable Storage Drive 500GB &quot;ViewMaster&quot;", "brand": "ViewMaster", "quantity": 2, "unit": null, "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU102", "item_description": "ConnectPro LED&lt;sup&gt;24&quot;&lt;/sup&gt; Monitor", "brand": "ConnectPro", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU113", "item_description": "Wireless earbuds &amp; white &gt; ProConnect", "brand": null, "quantity": 6, "unit": "pack", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU109", "item_description": "Gaming Headset &lt;/b&gt; ConnectPro", "brand": null, "quantity": 1, "unit": null, "size": "Red On-ear", "data_quality_flag": "html"}
+{"sku_id": "SKU115", "item_description": "Wired Mouse &lt;optical&gt; OfficeLink", "brand": null, "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU116", "item_description": "&lt;i&gt;DataVault USB Drive 64GB&lt;/i&gt;", "brand": null, "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU114", "item_description": "ViewMaster 22&quot; LCD &lt;Monitor&gt;", "brand": null, "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU111", "item_description": "27&quot; 4K &lt;Monitor DataVault&gt;", "brand": null, "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Handling charge", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Gift wrapping service", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Extended warranty", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Priority customer support", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Express return service", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Recycling contribution", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "Wireless Keyboard Black", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU101", "item_description": "TF BLACK WIRELESS kb", "brand": "TF", "quantity": 2, "unit": null, "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU101", "item_description": "brand new wireless black keyboard", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU101", "item_description": "Wireless keybord Blck", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "LED Monitor 24 inch", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "ViewMstr MONITOR 24in", "brand": "ViewMstr", "quantity": 4, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "Monitor 24&quot; LED &lt;br&gt; ViewMaster", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "24\"", "data_quality_flag": "html"}
+{"sku_id": "SKU102", "item_description": "24\" LED monitor - viewmaster", "brand": "viewmaster", "quantity": 1, "unit": null, "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU103", "item_description": "USB-C Cable 6ft", "brand": "DataVault", "quantity": 10, "unit": "pack", "size": "6 feet", "data_quality_flag": "clean"}
+{"sku_id": "SKU103", "item_description": "USB-C cable &#x2013; 6ft", "brand": "DataVault", "quantity": 5, "unit": null, "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU103", "item_description": "Dvlt 6FT CABLE Pack", "brand": "Dvlt", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "Usb-C 6feet cabl", "brand": "DataVault", "quantity": 1, "unit": "pack", "size": "6ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "HD Webcam 1080p", "brand": "OfficeLink", "quantity": 8, "unit": "each", "size": "compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU104", "item_description": "1080p WEB camera officelink", "brand": "officelink", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "HD Webcam &lt;compact&gt;", "brand": "OfficeLink", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU105", "item_description": "Gaming Headset Wireless", "brand": "ProConnect", "quantity": 6, "unit": "each", "size": "Adjustable", "data_quality_flag": "clean"}
+{"sku_id": "SKU105", "item_description": "ProConnect GAMING headset wireles", "brand": "ProConnect", "quantity": 3, "unit": "each", "size": "adjustable", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "USB-C to HDMI Adapter 4K", "brand": "ConnectPro", "quantity": 7, "unit": "each", "size": "small", "data_quality_flag": "clean"}
+{"sku_id": "SKU106", "item_description": "ConnectPRO USB-C ADAPTR to HDMI 4K", "brand": "ConnectPRO", "quantity": 2, "unit": "each", "size": "small", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "USB-C to HDMI Adptr &#x2013; ConnectPro", "brand": "ConnectPro", "quantity": 1, "unit": null, "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU107", "item_description": "External Drive 1TB", "brand": "DataVault", "quantity": 4, "unit": "each", "size": "portable", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "Datavult EXT Drive 1tb", "brand": "Datavult", "quantity": 2, "unit": "each", "size": "portable", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "Mechanical Keyboard RGB", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU108", "item_description": "TF RGB Mech kb", "brand": "TF", "quantity": 5, "unit": null, "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "Mechanical keybord RBG &lt;standard&gt;", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU109", "item_description": "LCD Monitor 27 inch", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "27 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU109", "item_description": "viewmaster LCD 27in", "brand": "viewmaster", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "4K Webcam Wide Angle", "brand": "OfficeLink", "quantity": 2, "unit": "each", "size": "wide", "data_quality_flag": "clean"}
+{"sku_id": "SKU110", "item_description": "4K Webcam Wide-Angle office lnk", "brand": "office lnk", "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "Wireless Keyboard Black", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "TF 24in LED Monitor", "brand": "TF", "quantity": 1, "unit": "each", "size": "24in", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "USB-C cable \u00e2\u20ac\u201c 6ft", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "6ft", "data_quality_flag": "html"}
+{"sku_id": "SKU104", "item_description": "HD Webcam 1080p techflow", "brand": "techflow", "quantity": 5, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "Wireless Gaming Headset", "brand": "OfficeLink", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU106", "item_description": "USB-C to HDMI Adapter - 4K", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "External USB Drive, 1TB - DataVault", "brand": "DataVault", "quantity": 7, "unit": "each", "size": "1TB", "data_quality_flag": "clean"}
+{"sku_id": "SKU108", "item_description": "Wired Mechanical Keyboard", "brand": "ConnectPro", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU109", "item_description": "LCD Monitor 27\" ViewMaster", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "27\"", "data_quality_flag": "clean"}
+{"sku_id": "SKU110", "item_description": "Ethernet Cable - 10ft", "brand": "DataVault", "quantity": 6, "unit": "each", "size": "10ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU111", "item_description": "4K Webcam (Ultra HD) &lt;br&gt; OfficeLink", "brand": "OfficeLink", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "html"}
+{"sku_id": "SKU112", "item_description": "Bluetooth Headset for office", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU113", "item_description": "USB-C Hub - 7 ports, ProConnect", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU114", "item_description": "Portable SSD 512GB", "brand": "ConnectPro", "quantity": 5, "unit": "each", "size": "512GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU115", "item_description": "Ergonomic Wireless Mouse &amp; keyboard", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "html"}
+{"sku_id": "SKU116", "item_description": "HDMI Cable 15 ft", "brand": "DataVault", "quantity": 8, "unit": "each", "size": "15 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU117", "item_description": "Wide Angle Conference Webcam", "brand": "OfficeLink", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU118", "item_description": "5.1 Surround Gaming Headset", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU119", "item_description": "Power Adapter 65 Watt", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU120", "item_description": "Thunderbolt Cable 3ft", "brand": "ConnectPro", "quantity": 3, "unit": "each", "size": "3ft", "data_quality_flag": "clean"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "wirless kyeboard black", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU101", "item_description": "TechFlow: brand new wireless keyboard black", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "Monitor 24&quot; LED &lt;br&gt; ViewMaster", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "24\"", "data_quality_flag": "html"}
+{"sku_id": "SKU102", "item_description": "LED mon 24in, ConnectPro", "brand": "ConnectPro", "quantity": 2, "unit": "each", "size": "24in", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "24 inch LCD Monitr", "brand": "ConnectPro", "quantity": 1, "unit": "each", "size": "24 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "USB-C 6ft cable - ViewMaster", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "6ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU103", "item_description": "USB-C cale, 6f", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "6f", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "Usb-c cable &amp; lamp", "brand": "ViewMaster", "quantity": 4, "unit": "each", "size": "6ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "HD web camera 1080p", "brand": "DataVault", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU104", "item_description": "DataVault HD Webcam", "brand": "DataVault", "quantity": 5, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU105", "item_description": "Wireless Headset (Gaming) &amp; speakers", "brand": "OfficeLink", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "html"}
+{"sku_id": "SKU105", "item_description": "OfficeLink Gaming Headset, wireless", "brand": "OfficeLink", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU106", "item_description": "USB-C to HDMI 4K Adapter - ProConnect", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU106", "item_description": "usb-C hdmi adapter 4K", "brand": "ProConnect", "quantity": 5, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU107", "item_description": "1TB Ext. USB Drive", "brand": "TechFlow", "quantity": 7, "unit": "each", "size": "1TB", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "TechFlow 1tb ext drive", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "1tb", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "Mech keyboard wired ConnectPro", "brand": "ConnectPro", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU108", "item_description": "Mechanical Keyboard Compact", "brand": "ConnectPro", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU109", "item_description": "27\" LCD Monitr", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "27\"", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Setup configuration charge", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU110", "item_description": "10ft Ethernet Cable, DataVault", "brand": "DataVault", "quantity": 2, "unit": "each", "size": "10ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU110", "item_description": "DataVault Ethernet Cable 10 ft", "brand": "DataVault", "quantity": 1, "unit": "each", "size": "10 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU111", "item_description": "Ultra HD 4K Webcam &lt;br&gt; OfficeLink", "brand": "OfficeLink", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "html"}
+{"sku_id": "SKU112", "item_description": "Office Bluetooth headset", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU113", "item_description": "ProConnect USB-C Hub, 7 port", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU114", "item_description": "512 GB Portable SSD", "brand": "ConnectPro", "quantity": 5, "unit": "each", "size": "512 GB", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Late fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU115", "item_description": "Ergonomic wirless Mouse &amp; Keybord", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU116", "item_description": "DataVault HDMI 15 ft cable", "brand": "DataVault", "quantity": 8, "unit": "each", "size": "15 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU117", "item_description": "OfficeLink Wide Angle Webcam", "brand": "OfficeLink", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU118", "item_description": "Pro Connect Gaming Headset 5.1 Suround", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU119", "item_description": "65W Power Adapter", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU120", "item_description": "Thunder bolt Cable 3 feet", "brand": "ConnectPro", "quantity": 3, "unit": "each", "size": "3 feet", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Handling charge", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "TF Wireless Keyboard Black", "brand": "TF", "quantity": 5, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "ViewMaster LED Monitor 24&quot;", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU103", "item_description": "ConnectPro USB-C Cable &#x2013; 6ft", "brand": "ConnectPro", "quantity": 3, "unit": "each", "size": "6ft", "data_quality_flag": "html"}
+{"sku_id": "SKU104", "item_description": "DataVault 4K Webcam", "brand": "DataVault", "quantity": 1, "unit": "each", "size": "HD", "data_quality_flag": "clean"}
+{"sku_id": "SKU105", "item_description": "officeLink Gaming Headset Wireless", "brand": "officeLink", "quantity": 4, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "ProConnect USB-C to HDMI", "brand": "ProConnect", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "TechFlow External SSD - 1TB", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "1TB", "data_quality_flag": "clean"}
+{"sku_id": null, "item_description": "Shipping fee for expedited delivery", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU108", "item_description": "ViewMaster LCD Monitr 27 inch", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU109", "item_description": "Proconnect Ethernet Cable 10ft", "brand": "Proconnect", "quantity": 10, "unit": "pack", "size": "10ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "DataVault 64GB USB Flash Drive", "brand": "DataVault", "quantity": 5, "unit": "each", "size": "64GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU111", "item_description": "Officelink Wired Headset", "brand": "Officelink", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU112", "item_description": "CONNECTPRO DP Cable 3FT", "brand": "CONNECTPRO", "quantity": 7, "unit": "each", "size": "3ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU113", "item_description": "TechFlow RGB Mechnical Keybord", "brand": "TechFlow", "quantity": 4, "unit": "each", "size": "Full Size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU114", "item_description": "ViewMaster HD Webcam &amp; 720p", "brand": "ViewMaster", "quantity": 10, "unit": "each", "size": "720p", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU115", "item_description": "HDMI Cable 9ft ConnectPro", "brand": "ConnectPro", "quantity": 8, "unit": "each", "size": "9ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU116", "item_description": "DataVault External HDD 2TB", "brand": "DataVault", "quantity": 12, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": null, "item_description": "Installation service setup fee", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU117", "item_description": "OfficeLink Wired Office Headset", "brand": "OfficeLink", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU118", "item_description": "ProConnect USB-C Charger 45W", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "45W", "data_quality_flag": "clean"}
+{"sku_id": "SKU119", "item_description": "TechFlow Compact Keyboard White", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "Compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU120", "item_description": "View Master Curved MONITOR 32\"", "brand": "View Master", "quantity": 3, "unit": "each", "size": "32 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": "fee", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Express delivery charge", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service charge", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Sales tax", "brand": null, "quantity": 1, "unit": "tax", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "Wireless Keyboard TechFlow Black", "brand": "TechFlow", "quantity": 6, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "VIEWMASTER 24\" LED Monitor", "brand": "VIEWMASTER", "quantity": 4, "unit": "each", "size": "24 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "USB C Cable 6FT ConnectPro", "brand": "ConnectPro", "quantity": 7, "unit": "each", "size": "6FT", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "4K Webcam w/ HD data vault", "brand": "data vault", "quantity": 2, "unit": "each", "size": "HD", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "OL Gaming Headset Wireless", "brand": "OL", "quantity": 8, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "USB-C to HDMI Adapter ProConnect", "brand": "ProConnect", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU107", "item_description": "External SSD TechFlow 1TB", "brand": "TechFlow", "quantity": 10, "unit": "each", "size": "1TB", "data_quality_flag": "clean"}
+{"sku_id": null, "item_description": "Extended warranty fee.", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU108", "item_description": "LCD VIEWMASTER Monitor 27&quot;", "brand": "VIEWMASTER", "quantity": 5, "unit": "each", "size": "27 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU109", "item_description": "TF ENet Cable Packet 10Ft", "brand": "TF", "quantity": 6, "unit": "pack", "size": "10Ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "64GB USB Flash Drive DATA VAULT", "brand": "DATA VAULT", "quantity": 7, "unit": "each", "size": "64GB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU111", "item_description": "Wire Headset OfficeLink", "brand": "OfficeLink", "quantity": 8, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU112", "item_description": "Cable DisplayPort 3f ProConnect", "brand": "ProConnect", "quantity": 9, "unit": "each", "size": "3f", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU113", "item_description": "TechFlow RGB Mechanical Keyboard", "brand": "TechFlow", "quantity": 10, "unit": "each", "size": "Full Size", "data_quality_flag": "clean"}
+{"sku_id": "SKU114", "item_description": "ViewMaster 720P HD Webcam", "brand": "ViewMaster", "quantity": 15, "unit": "each", "size": "720P", "data_quality_flag": "clean"}
+{"sku_id": "SKU115", "item_description": "HDMI Cable 9ft ConnectPrO", "brand": "ConnectPrO", "quantity": 5, "unit": "each", "size": "9ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU116", "item_description": "DataVault 2TB EXT HDD", "brand": "DataVault", "quantity": 6, "unit": "each", "size": "2TB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU001", "item_description": "TechFlow Wireless Keyboard Black", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU001", "item_description": "TF Wireless Keybord BLACK", "brand": "TF", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "Mechanical Keyboard - RGB Backlit", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU002", "item_description": "Tech flow mechanical kbd RGB", "brand": "Tech flow", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "24&quot; LED Monitor &lt;br&gt; ViewMaster", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "24 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU003", "item_description": "VIEWMASTER LED MONITOR 24IN", "brand": "VIEWMASTER", "quantity": 1, "unit": "each", "size": "24 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU004", "item_description": "27-inch LED Monitor", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU005", "item_description": "USB-C Cable 6 Feet Long", "brand": "ConnectPro", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU005", "item_description": "ConnectPro usb c cable 6ft", "brand": null, "quantity": 4, "unit": null, "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU006", "item_description": "10ft HDMI Cable - ConnectPro", "brand": "ConnectPro", "quantity": 7, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU007", "item_description": "4K Webcam - Brand New", "brand": "ProConnect", "quantity": 10, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU007", "item_description": "Pro Connect webcam 4K resolution", "brand": "Pro Connect", "quantity": 5, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU008", "item_description": "Office Headset Wired", "brand": "ProConnect", "quantity": 8, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "256GB USB DRIVE - DATAVAULT", "brand": "DATAVAULT", "quantity": 11, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU009", "item_description": "Flash drive 256 gigabytes Data Vault", "brand": "Data Vault", "quantity": 2, "unit": null, "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "1TB External Hard Drive", "brand": "DataVault", "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU011", "item_description": "Compact Keyboard, Wireless", "brand": "OfficeLink", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU011", "item_description": "OfficeLink Compact kbd Wireless", "brand": "OfficeLink", "quantity": 5, "unit": null, "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU012", "item_description": "LCD Monitor 22 inch", "brand": "TechFlow", "quantity": 14, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU013", "item_description": "15ft Ethernet Cable", "brand": "ConnectPro", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU014", "item_description": "Gaming Headset, Wireless", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU014", "item_description": "PROConnect Gaming Headset WIFI", "brand": "PROconnect", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU015", "item_description": "32 inch LCD Monitor View Master", "brand": "View Master", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU016", "item_description": "USB-C to HDMI Adapter - 4K", "brand": "OfficeLink", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU017", "item_description": "TechFlow Mechanical Keyboard Blue Switch", "brand": "TechFlow", "quantity": 8, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU017", "item_description": "TechFlow mechanical kbd Blue Swtch", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU018", "item_description": "OfficeLink Wired Headset", "brand": "OfficeLink", "quantity": 10, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU019", "item_description": "512GB External SSD Data Vault", "brand": "Data Vault", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU020", "item_description": "4K Monitor 27&quot;", "brand": "ViewMaster", "quantity": 5, "unit": "each", "size": "27 inch", "data_quality_flag": "html"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Installation service fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "IT support service", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Warranty extension service", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "Wireless Keyboard Black", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "VIEWMASTER LED monitr 24in", "brand": "VIEWMASTER", "quantity": 3, "unit": "each", "size": "24 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU103", "item_description": "USB-C cable &#x2013; 6ft", "brand": "ConnectPro", "quantity": 5, "unit": "pack", "size": "6 ft", "data_quality_flag": "html"}
+{"sku_id": "SKU104", "item_description": "4K Webcam HD 1080p", "brand": "DataVault", "quantity": 1, "unit": "each", "size": "Compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU105", "item_description": "Wireless Headset Over-ear", "brand": "OfficeLink", "quantity": 4, "unit": "each", "size": "Adjustable", "data_quality_flag": "clean"}
+{"sku_id": "SKU106", "item_description": "usb-c to hdmi adapter", "brand": "proconnect", "quantity": 3, "unit": "each", "size": "Compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU107", "item_description": "techflow mehanical keyboard rgb", "brand": "techflow", "quantity": 1, "unit": "each", "size": "Full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "LCD Monitor 27 inch", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "27 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU109", "item_description": "ETHERNET Cable 10 FT", "brand": "CONNECTPRO", "quantity": 6, "unit": "pack", "size": "10 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU110", "item_description": "External Hard Drive 1TB", "brand": "DataVault", "quantity": 1, "unit": "each", "size": "portable", "data_quality_flag": "clean"}
+{"sku_id": "SKU101", "item_description": "Wireless keyboard &amp; mouse set", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "html"}
+{"sku_id": "SKU102", "item_description": "24&quot; LED Monitor", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "24 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU103", "item_description": "USB-C Cable 6 ft Pack", "brand": "ConnectPro", "quantity": 10, "unit": "pack", "size": "6 ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU104", "item_description": "4K webcam hd1080p datavault", "brand": "datavault", "quantity": 2, "unit": "each", "size": "Compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "OfficeLink Wirless Hdset", "brand": "OfficeLink", "quantity": 1, "unit": "each", "size": "adjustable", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "HDMI Adapter USB-C to HDMI", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "Compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "RGB Mechanical Keyboard Full Size", "brand": "TechFlow", "quantity": 4, "unit": "each", "size": "Full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU108", "item_description": "LCD monitor &#x2013; 27 inch", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "27 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU109", "item_description": "ethernet cabl 10ft", "brand": "connectpro", "quantity": 7, "unit": "pack", "size": "10 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "1TB External Hard Drive Portable", "brand": "DataVault", "quantity": 3, "unit": "each", "size": "Portable", "data_quality_flag": "clean"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "Techflow Wireless Kb Black", "brand": "Techflow", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "VIEWMASTER LCD MONITER 24 INCH", "brand": "VIEWMASTER", "quantity": 5, "unit": "each", "size": "24 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "USB-C Cable 6\"", "brand": "Connect Pro", "quantity": 8, "unit": "pack", "size": "6 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "4k webcam hd", "brand": "DataVault", "quantity": 3, "unit": "each", "size": "Compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "OFFICELINK WIRELESS HEADSET", "brand": "OFFICELINK", "quantity": 4, "unit": "each", "size": "Adjustable", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "usb-c to hdmi ADAPTER", "brand": "ProConnect", "quantity": 5, "unit": "each", "size": "Compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU107", "item_description": "TechFlow Mech. Keyboard RGB", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "27 inch lcd viewmast monitor", "brand": "viewmast", "quantity": 3, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU109", "item_description": "connectpro ethernetcable 10ft", "brand": "connectpro", "quantity": 2, "unit": "pack", "size": "10 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "DATA Vault EXTERNAL HARD DRIVE", "brand": "DATA Vault", "quantity": 3, "unit": "each", "size": "Portable", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "Wireless KBRD Blck", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU102", "item_description": "LED Monitor 24&quot; ViewMaster", "brand": "ViewMaster", "quantity": 4, "unit": "each", "size": "24 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU103", "item_description": "USB-C Cable, 6FT PACK", "brand": "ConnectPro", "quantity": 7, "unit": "pack", "size": "6 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU104", "item_description": "WEBCAM 4K HD", "brand": "DATAVAULT", "quantity": 1, "unit": "each", "size": "Compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "headset offceLink wirless", "brand": "offceLink", "quantity": 2, "unit": "each", "size": "Adjustable", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "HDMI Adapter, USB-C", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": "Compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "RGB mechanical KB Full-Size", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "Full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU108", "item_description": "LCD monitor - 27\"", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU109", "item_description": "Ethernet cabk 10ft", "brand": "ConnectPro", "quantity": 2, "unit": "pack", "size": "10 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "DataVault 1TB EXT Hard Drrv", "brand": "DataVault", "quantity": 4, "unit": "each", "size": "Portable", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Setup Service install", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Sales Tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU101", "item_description": "wireless keyboard techflow", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "24 Inch LED monitor VIEWMASTER", "brand": "ViewMaster", "quantity": 7, "unit": "each", "size": "24 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU103", "item_description": "6 ft USB-C cable CONNECTPRO", "brand": "ConnectPro", "quantity": 9, "unit": "pack", "size": "6 ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU104", "item_description": "datavault 4k cam", "brand": "datavault", "quantity": 2, "unit": "each", "size": "Compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "Office Link headset", "brand": "OfficeLink", "quantity": 6, "unit": "each", "size": "Adjustable", "data_quality_flag": "clean"}
+{"sku_id": "SKU106", "item_description": "usb-c to hdmi adapter proconnect", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "Compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU107", "item_description": "mech. keyboard rgb", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "Full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "27\" LCD MONITOR - VIEWMASTER", "brand": "ViewMaster", "quantity": 8, "unit": "each", "size": "27 inch", "data_quality_flag": "clean"}
+{"sku_id": "SKU109", "item_description": "connectpro eth cable 10'", "brand": "ConnectPro", "quantity": 3, "unit": "pack", "size": "10 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU110", "item_description": "1TB EXTERN HardDrive", "brand": "DataVault", "quantity": 5, "unit": "each", "size": "Portable", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Express delivery fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU001", "item_description": "Wireless Keyboard Black", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU002", "item_description": "Wired Mechanical Keyboard - blue switches", "brand": "Tech", "quantity": 3, "unit": "each", "size": "Full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "LED Monitor 24 inch, Black", "brand": "CPro", "quantity": 4, "unit": "each", "size": "24\\\"", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU004", "item_description": "LCD27 inch monitr", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "27 in", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "USB-C cable - 6ft", "brand": "DataVault", "quantity": 10, "unit": "each", "size": "6ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "hd Webcam 1080p", "brand": "OfficeLink", "quantity": 7, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "Wireless Headset (Gaming)", "brand": "PFConnect", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU008", "item_description": "USB 64GB Drive", "brand": "Tf", "quantity": 15, "unit": "each", "size": "64g", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU009", "item_description": "HDMI Adapter - 4K", "brand": "ConnectPro", "quantity": 8, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU010", "item_description": "Lcd Monitor 32inch", "brand": "viewMaster", "quantity": 2, "unit": "each", "size": "32in.", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU001", "item_description": "techflow Keybord wireles Black", "brand": "TF", "quantity": 4, "unit": "each", "size": "std", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "Wired Mechanical KeyBoard", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "Full", "data_quality_flag": "clean"}
+{"sku_id": "SKU003", "item_description": "24&quot; LED Monitor", "brand": "ConnectPro", "quantity": 4, "unit": "each", "size": "24 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU004", "item_description": "LCD Monitor 27&quot; ViewMaster", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "27\"", "data_quality_flag": "html"}
+{"sku_id": "SKU005", "item_description": "Usb-c Cable", "brand": "DataVault", "quantity": 9, "unit": "pk", "size": "6 ft", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU006", "item_description": "OfficeLink HD WEBCAM", "brand": "OffLnk", "quantity": 8, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "Wireless gaming headseat", "brand": "ProConnect", "quantity": 5, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU008", "item_description": "USB Drive, 64GB", "brand": "TechFlow", "quantity": 12, "unit": "each", "size": "64 G", "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "Adapter HDMI 4K", "brand": "ConnPro", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "Monitor LCD 32&quot;", "brand": "ViewMaster", "quantity": 1, "unit": "each", "size": "32\"", "data_quality_flag": "html"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Handling charge", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Warranty extension", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU001", "item_description": "Brand new wireless keyboard black", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "keyboard mechanical wired Techflow", "brand": "TFlow", "quantity": 7, "unit": "each", "size": "full", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "Connectpro 24 LED Monitor black", "brand": "CnctPro", "quantity": 3, "unit": "each", "size": "24 in", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU004", "item_description": "LCD27 inch monitr with stand", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "Usb-c 6ft cable black", "brand": "Data Vault", "quantity": 10, "unit": "each", "size": "6 ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "webcam hd officelink", "brand": "Office Link", "quantity": 8, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "Gaming Wireless headset ProConnect", "brand": "Pro-Connect", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU008", "item_description": "64gb USB - TechFlow", "brand": "TechFlow", "quantity": 16, "unit": "each", "size": "64GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "Adapter 4K HDMI", "brand": "CnctPro", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "32 inch lcd monitor viewmaster", "brand": "viewmst", "quantity": 3, "unit": "each", "size": "32 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU001", "item_description": "Wireless KB, Black (TF)", "brand": "Tf", "quantity": 6, "unit": "each", "size": "std", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "Mechanical Keyboard Wired", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "Full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU003", "item_description": "24 inch LED Monitor", "brand": "ConnectPro", "quantity": 10, "unit": "each", "size": "24", "data_quality_flag": "clean"}
+{"sku_id": "SKU004", "item_description": "LCD Monitor 27 inches", "brand": "view mst", "quantity": 2, "unit": "each", "size": "27 inches", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "USB-C Cable 6ft", "brand": "DatVlt", "quantity": 12, "unit": "each", "size": "6", "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "HD Webcam by OffLK", "brand": "OffLink", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "Wireless Gaming Headset", "brand": "ProConnect", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU008", "item_description": "64GB USB Drive", "brand": "TechFlow", "quantity": 14, "unit": "each", "size": "64GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "4K HDMI Adapter", "brand": "ConnectPro", "quantity": 9, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU010", "item_description": "32\" LCD Monitor", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "32\"", "data_quality_flag": "clean"}
+{"sku_id": "SKU001", "item_description": "techflow Keybord wireles Black", "brand": "TF", "quantity": 7, "unit": "each", "size": "std", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "Wired Keyboard of Mechanical", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Full", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "24 LED inch Monitor", "brand": "Connect Pro", "quantity": 5, "unit": "each", "size": "24 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU004", "item_description": "monitor LCD 27 inch view", "brand": "ViewMaster", "quantity": 6, "unit": "each", "size": "27 inches", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "DataVault Usb-c cable 6 ft", "brand": "DatVault", "quantity": 10, "unit": "each", "size": "6 foot", "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "WEBCAM HD, 1080p", "brand": "OffcLink", "quantity": 5, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "Wireless Headset-Gaming", "brand": "ProConnect", "quantity": 6, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU008", "item_description": "USB Drive: 64GB", "brand": "TechFlow", "quantity": 13, "unit": "each", "size": "64GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "Adapter HDMI capable of 4K", "brand": "ConPro", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "32 INCH MONITOR - ViewMaster", "brand": "viewmaster", "quantity": 5, "unit": "each", "size": "32 in", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Express delivery service charge", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Hardware setup assistance", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Sales tax charge", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return handling fee", "brand": null, "quantity": 1, "unit": "service", "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU001", "item_description": "Wireless Keyboard Black", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "104 keys", "data_quality_flag": "clean"}
+{"sku_id": "SKU001", "item_description": "TF Wireless kb Black", "brand": "TF", "quantity": 3, "unit": "each", "size": "104 keys", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "LED Monitr 24&quot;", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24\"", "data_quality_flag": "html"}
+{"sku_id": "SKU003", "item_description": "1m USB-C cable", "brand": "ConnectPro", "quantity": 4, "unit": "each", "size": "1m", "data_quality_flag": "clean"}
+{"sku_id": "SKU004", "item_description": "HD Webcam 4k", "brand": "OfficeLink", "quantity": 6, "unit": "each", "size": "4K resolution", "data_quality_flag": "clean"}
+{"sku_id": "SKU005", "item_description": "External Hard Drive - 1TB", "brand": "DataVault", "quantity": 2, "unit": "each", "size": "1TB", "data_quality_flag": "clean"}
+{"sku_id": "SKU005", "item_description": " DataVault Harddrive 1TB ", "brand": "DataVault", "quantity": 3, "unit": "each", "size": "1TB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU006", "item_description": "Wireless Gaming Headset ProConnect", "brand": "ProConnect", "quantity": 7, "unit": "each", "size": "Over-Ear", "data_quality_flag": "clean"}
+{"sku_id": "SKU007", "item_description": "Mechanical RGB Keyboard ", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "104 keys", "data_quality_flag": "clean"}
+{"sku_id": "SKU008", "item_description": "4K Monitor 27in - ViewMaster", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU009", "item_description": "2m HDMI cable - ConnectPro", "brand": "ConnectPro", "quantity": 4, "unit": "each", "size": "2m", "data_quality_flag": "clean"}
+{"sku_id": "SKU010", "item_description": "Office Headset Noise Cancelling", "brand": "OfficeLink", "quantity": 5, "unit": "each", "size": "On-Ear", "data_quality_flag": "clean"}
+{"sku_id": "SKU010", "item_description": "OFFICELINK NC Headset", "brand": "OFFICELINK", "quantity": 3, "unit": "each", "size": "On-Ear", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU001", "item_description": "wordpress wireless kayboard", "brand": "TechFlow", "quantity": 3, "unit": "pack", "size": "104 keys", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "LED Monitor &lt;br&gt; 24inch", "brand": "VIEWMASTER", "quantity": 1, "unit": "each", "size": "24 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU003", "item_description": "ConnectPro USB-C Cable &#x2013; 1m", "brand": "CONNECTPRO", "quantity": 4, "unit": "each", "size": "1m", "data_quality_flag": "html"}
+{"sku_id": "SKU004", "item_description": "4k cam", "brand": "OfficeLInk", "quantity": 2, "unit": "each", "size": "4K resolution", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "exteranl hard drive 1TB", "brand": "DataVault", "quantity": 1, "unit": "each", "size": "1TB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU006", "item_description": "ProConnect Gaming Headset Wireless", "brand": "ProConnect", "quantity": 3, "unit": "each", "size": "Over-Ear", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "rgb mechnical keybord", "brand": "techflow", "quantity": 6, "unit": "each", "size": "104 keys", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU008", "item_description": "viemaster 27 inch monitor", "brand": "VIEWMASTER", "quantity": 2, "unit": "each", "size": "27 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU001", "item_description": "Wireless keyboard black TechFlow", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU001", "item_description": "wireless keybord Black tf", "brand": "tf", "quantity": 3, "unit": "each", "size": "Standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU001", "item_description": "Wireless Keyboard - Black", "brand": "TF", "quantity": 1, "unit": "each", "size": "standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU002", "item_description": "LED Monitor 24in - ViewMaster", "brand": "ViewMaster", "quantity": 4, "unit": "each", "size": "24\"", "data_quality_flag": "clean"}
+{"sku_id": "SKU002", "item_description": "24&quot; LED Monitor ViewMaster", "brand": "ViewMaster", "quantity": 5, "unit": "each", "size": "24\"", "data_quality_flag": "html"}
+{"sku_id": "SKU002", "item_description": "led monitr 24in tech VlMaster", "brand": "VlMaster", "quantity": 2, "unit": "each", "size": "24in", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "USB-C Cable 6ft ConnectPro", "brand": "ConnectPro", "quantity": 1, "unit": "each", "size": "6ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU003", "item_description": "usb c cable - 6 FT connPRO", "brand": "connPRO", "quantity": 2, "unit": null, "size": "6 FT", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "USB-C Cable &#x2013; 6ft", "brand": null, "quantity": 3, "unit": null, "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU004", "item_description": "DataVault External USB Drive 1TB", "brand": "DataVault", "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU004", "item_description": "external usb drive datavault 1tb", "brand": "datavault", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "Webcam 1080p HD OfficeLink", "brand": "OfficeLink", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU005", "item_description": "WEB CAM 1080HD OffcLnk", "brand": "OffcLnk", "quantity": 1, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "Webcam &lt;br&gt; 1080p HD", "brand": null, "quantity": 5, "unit": null, "size": null, "data_quality_flag": "html"}
+{"sku_id": "SKU006", "item_description": "ProConnect Gaming Headset Wireless", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "gaming headset Wireless proconnct", "brand": "proconnct", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "Mechanical Keyboard TechFlow blue switches", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "Full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU007", "item_description": "mechanical keyboard blue swthes tf", "brand": "tf", "quantity": 1, "unit": "each", "size": "Full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU008", "item_description": "LCD Monitor 27inch ViewMaster", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "27\"", "data_quality_flag": "clean"}
+{"sku_id": "SKU008", "item_description": "lcd 27 inch monitor V-Master", "brand": "V-Master", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU009", "item_description": "HDMI Cable 10ft pack ConnectPro", "brand": "ConnectPro", "quantity": 1, "unit": "pack", "size": "10ft", "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "hdmi cable - 10ft pk connpr", "brand": "connpr", "quantity": 2, "unit": "pack", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "DataVault SSD Drive 512GB", "brand": "DataVault", "quantity": 2, "unit": "each", "size": null, "data_quality_flag": "clean"}
+{"sku_id": "SKU010", "item_description": "external ssd drive 512gb dvault", "brand": "dvault", "quantity": 3, "unit": "each", "size": null, "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU001", "item_description": "Wireless Keyboard", "brand": "TechFlow", "quantity": 5, "unit": "each", "size": "full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU001", "item_description": "wireless keybord black", "brand": "techflow", "quantity": 3, "unit": "each", "size": "full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU001", "item_description": "Brand New wireless keyboard black", "brand": "TechFlow", "quantity": 2, "unit": "pack", "size": "full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "24&quot; LED Monitor ViewMaster", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24\"", "data_quality_flag": "html"}
+{"sku_id": "SKU002", "item_description": "24 inch Led mon", "brand": "VM", "quantity": 4, "unit": "each", "size": "24 inch", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "USB-C cable \u00e2\u20ac\u201c 6ft", "brand": "ConnectPro", "quantity": 7, "unit": "each", "size": "6ft", "data_quality_flag": "html"}
+{"sku_id": "SKU003", "item_description": "usb-c cable pack", "brand": "connect pro", "quantity": 3, "unit": "pack", "size": "6 feet", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU004", "item_description": "4K webcam", "brand": "ViewMaster", "quantity": 5, "unit": "each", "size": "1080p resolution", "data_quality_flag": "clean"}
+{"sku_id": "SKU004", "item_description": "web cam 4k", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "1080p resolution", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "wreless Gaming Headset", "brand": "TF", "quantity": 6, "unit": "each", "size": "adjustable", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "Wireless gaming headset", "brand": "TechFlow", "quantity": 1, "unit": "each", "size": "adjustable", "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "1TB External Drive DataVault", "brand": "DataVault", "quantity": 5, "unit": "each", "size": "1TB", "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "external driv", "brand": "DV", "quantity": 9, "unit": "each", "size": "1TB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU007", "item_description": "HDMI Adapter", "brand": "OfficeLink", "quantity": 1, "unit": "each", "size": "standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU007", "item_description": "hdmi adaptior", "brand": "OL", "quantity": 2, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU008", "item_description": "Mechanical Keyboard compact", "brand": "ConnectPro", "quantity": 5, "unit": "each", "size": "compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU008", "item_description": "mech keybrd", "brand": null, "quantity": 3, "unit": "each", "size": "compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU009", "item_description": "Office Headset wired", "brand": "ProConnect", "quantity": 4, "unit": "each", "size": "standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "office hedset wired", "brand": "ProConnect", "quantity": 2, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "32GB USB Drive", "brand": "DataVault", "quantity": 8, "unit": "each", "size": "32 gigabytes", "data_quality_flag": "clean"}
+{"sku_id": "SKU010", "item_description": "32gb usb drv", "brand": "DV", "quantity": 2, "unit": "each", "size": "32 gigabytes", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Shipping fee express delivery", "brand": null, "quantity": 3, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Setup service installation", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Tax - sales tax", "brand": null, "quantity": 5, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Return processing fee", "brand": null, "quantity": 2, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU001", "item_description": "wireless kb black", "brand": "TF", "quantity": 4, "unit": "each", "size": "full-size", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "WIRLESS GAMING HEADSET", "brand": "TECH Flow", "quantity": 10, "unit": "each", "size": "adjustable", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU002", "item_description": "Monitor 24&quot; LED &#x2013; ViewMaster", "brand": "ViewMaster", "quantity": 3, "unit": "each", "size": "24 inch", "data_quality_flag": "html"}
+{"sku_id": "SKU003", "item_description": "USB-C cabel \u00e2\u20ac\u201c 2m", "brand": "ConnectPro", "quantity": 4, "unit": "pack", "size": "6 feet", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU004", "item_description": "webcam ViewMaster 4k", "brand": "viewmaster", "quantity": 2, "unit": "each", "size": "HD", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU006", "item_description": "1 TB External Drive", "brand": "DataVault", "quantity": 1, "unit": "each", "size": "1TB", "data_quality_flag": "clean"}
+{"sku_id": "SKU007", "item_description": "hdmi adapter", "brand": "officelink", "quantity": 5, "unit": "each", "size": "standard", "data_quality_flag": "clean"}
+{"sku_id": "SKU008", "item_description": "MECHANICAL KEYBOARD-COMPACT", "brand": "CONNECTPRO", "quantity": 7, "unit": "each", "size": "compact", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU009", "item_description": "office headxet wired", "brand": "ProConect", "quantity": 8, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "USB Drive 32 gigabyte", "brand": "DataVault", "quantity": 9, "unit": "each", "size": "32GB", "data_quality_flag": "clean"}
+{"sku_id": "SKU003", "item_description": "usb c cable \u00e2\u20ac\u201c 200cm", "brand": "CPro", "quantity": 3, "unit": "pack", "size": "6 feet", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU004", "item_description": "4K WEBCAM VIEWMASTER", "brand": "VM", "quantity": 1, "unit": "each", "size": "1080p", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Monthly subscription fee", "brand": null, "quantity": 12, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Consultation fee for setup", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU001", "item_description": "TechFlow wireless keyboard", "brand": "TechFlow", "quantity": 3, "unit": "each", "size": "full-size", "data_quality_flag": "clean"}
+{"sku_id": "SKU002", "item_description": "24 inch LED MONITOR", "brand": "ViewMaster", "quantity": 2, "unit": "each", "size": "24 inches", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU005", "item_description": "TechFlow Gaming Headset", "brand": "TechFlow", "quantity": 7, "unit": "each", "size": "adjustable", "data_quality_flag": "clean"}
+{"sku_id": "SKU010", "item_description": "usb drv 32gb", "brand": "DV", "quantity": 5, "unit": "each", "size": "32gb", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU003", "item_description": "USB-C CABLE CONNECTPRO 6FT", "brand": "ConnectPro", "quantity": 5, "unit": "pack", "size": "6 feet", "data_quality_flag": "clean"}
+{"sku_id": "SKU004", "item_description": "Webcam 4k HD", "brand": "ViewMaster", "quantity": 4, "unit": "each", "size": "high-definition", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU006", "item_description": "DataVault 1TB External Drive", "brand": "DataVault", "quantity": 6, "unit": "each", "size": "1 terabyte", "data_quality_flag": "clean"}
+{"sku_id": "SKU006", "item_description": "external 1tb drive", "brand": null, "quantity": 10, "unit": "each", "size": "1TB", "data_quality_flag": "fuzzy"}
+{"sku_id": null, "item_description": "Handling charges", "brand": null, "quantity": 2, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": null, "item_description": "Warranty extension", "brand": null, "quantity": 1, "unit": null, "size": null, "data_quality_flag": "non_product"}
+{"sku_id": "SKU007", "item_description": "Adapter HDMI", "brand": "OL", "quantity": 3, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU008", "item_description": "ConnectPro Mech Keyboard Compact", "brand": "ConnectPro", "quantity": 1, "unit": "each", "size": "compact", "data_quality_flag": "clean"}
+{"sku_id": "SKU009", "item_description": "Office Head Set Wired", "brand": "PC", "quantity": 3, "unit": "each", "size": "standard", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU010", "item_description": "USB DRIVE 32GB", "brand": "DV", "quantity": 7, "unit": "each", "size": "32 gigabytes", "data_quality_flag": "clean"}
+{"sku_id": "SKU101", "item_description": "TechFlow Wireless Mechanical Keyboard Black", "brand": "TechFlow", "quantity": 2, "unit": "each", "size": "Full Size", "data_quality_flag": "clean"}
+{"sku_id": "SKU102", "item_description": "VIEWMASTER LED Monitor 24IN", "brand": "VIEWMASTER", "quantity": 1, "unit": "each", "size": "24in", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU103", "item_description": "USB-C cable \u00e2\u20ac\u201c 6ft", "brand": "DataVault", "quantity": 5, "unit": "each", "size": "6 ft", "data_quality_flag": "html"}
+{"sku_id": "SKU104", "item_description": "Officelnk HD Webcam Full HD 1080p", "brand": "Officelnk", "quantity": 3, "unit": "each", "size": "1080p", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU105", "item_description": "ProCnect Wired Gaming Headset", "brand": "ProCnect", "quantity": 2, "unit": "each", "size": "Over-ear", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU106", "item_description": "TechFlow USB-C to HDMI Adapter &lt;br&gt; Compact", "brand": "TechFlow", "quantity": 4, "unit": "each", "size": "Compact", "data_quality_flag": "html"}
+{"sku_id": "SKU107", "item_description": "Tech Flow External Hard Drive 1 T B", "brand": "Tech Flow", "quantity": 1, "unit": "each", "size": "1TB", "data_quality_flag": "fuzzy"}
+{"sku_id": "SKU108", "item_description": "Ethernet Cable 10 ft pack", "brand": "ConnectPro", "quantity": 3, "unit": "pack", "size": "10ft", "data_quality_flag": "clean"}

@@ -1,0 +1,89 @@
+(dev) > python data_generation/generate_data.py
+🤖 Generating procurement dataset using Pydantic AI...
+
+🔄 Generation iteration 1
+   Current: 0 SKUs, 0 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 20 SKUs, 58 line items
+
+🔄 Generation iteration 2
+   Current: 20 SKUs, 58 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 40 line items
+
+🔄 Generation iteration 3
+   Current: 20 SKUs, 98 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 33 line items
+
+🔄 Generation iteration 4
+   Current: 20 SKUs, 131 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 58 line items
+
+🔄 Generation iteration 5
+   Current: 20 SKUs, 189 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 43 line items
+
+🔄 Generation iteration 6
+   Current: 20 SKUs, 232 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 20 SKUs, 36 line items
+
+🔄 Generation iteration 7
+   Current: 40 SKUs, 268 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 57 line items
+
+🔄 Generation iteration 8
+   Current: 40 SKUs, 325 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 60 line items
+
+🔄 Generation iteration 9
+   Current: 40 SKUs, 385 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 25 line items
+
+🔄 Generation iteration 10
+   Current: 40 SKUs, 410 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 28 line items
+
+🔄 Generation iteration 11
+   Current: 40 SKUs, 438 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 53 line items
+
+🔄 Generation iteration 12
+   Current: 40 SKUs, 491 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 9 line items
+
+🔄 Generation iteration 13
+   Current: 40 SKUs, 500 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 0 SKUs, 0 line items
+
+🔄 Generation iteration 14
+   Current: 40 SKUs, 500 line items
+   Target:  50 SKUs, 500 line items
+   ✅ Added 10 SKUs, 0 line items
+
+📝 Final validation and cleanup...
+⚠️  Warning: Found 1 line items referencing non-existent SKUs
+   🧹 Cleaned dataset: 499 valid line items
+✅ Saved 50 product SKUs to \orderly\data_generation\data\product_skus.jsonl
+✅ Saved 499 line items to \orderly\data_generation\data\line_items.jsonl
+
+📊 Final Dataset Statistics:
+   Clean SKUs: 50
+   Total Line Items: 499
+   Clean: 170 (34.1%)
+   Html: 48 (9.6%)
+   Fuzzy: 205 (41.1%)
+   Non_product: 76 (15.2%)
+
+🎉 Dataset generation completed successfully!
+📚 Ready for fuzzy matching and data cleaning model training!

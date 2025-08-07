@@ -1,0 +1,50 @@
+{"sku_id": "SKU101", "brand": "TechFlow", "product_name": "Wireless Keyboard", "variant": "black", "category": "Keyboards", "unit": "each", "size": "Standard"}
+{"sku_id": "SKU102", "brand": "ViewMaster", "product_name": "LED Monitor", "variant": "24 inch", "category": "Monitors", "unit": "each", "size": "24 inch"}
+{"sku_id": "SKU103", "brand": "ConnectPro", "product_name": "HDMI Cable", "variant": "6ft", "category": "Cables", "unit": "each", "size": "6ft"}
+{"sku_id": "SKU104", "brand": "DataVault", "product_name": "USB-C Adapter", "variant": "USB-C to HDMI", "category": "Adapters", "unit": "each", "size": null}
+{"sku_id": "SKU105", "brand": "OfficeLink", "product_name": "Webcam", "variant": "HD 1080p", "category": "Webcams", "unit": "each", "size": "Standard"}
+{"sku_id": "SKU106", "brand": "ProConnect", "product_name": "Wireless Headset", "variant": "gaming", "category": "Headsets", "unit": "each", "size": "Standard"}
+{"sku_id": "SKU107", "brand": "TechFlow", "product_name": "Mechanical Keyboard", "variant": null, "category": "Keyboards", "unit": "each", "size": "Full-size"}
+{"sku_id": "SKU108", "brand": "ViewMaster", "product_name": "LCD Monitor", "variant": "27 inch", "category": "Monitors", "unit": "each", "size": "27 inch"}
+{"sku_id": "SKU109", "brand": "ConnectPro", "product_name": "DisplayPort Cable", "variant": "10ft", "category": "Cables", "unit": "each", "size": "10ft"}
+{"sku_id": "SKU110", "brand": "DataVault", "product_name": "USB Drive", "variant": "32GB", "category": "Storage", "unit": "each", "size": null}
+{"sku_id": "SKU111", "brand": "OfficeLink", "product_name": "Wireless Earbuds", "variant": null, "category": "Headsets", "unit": "each", "size": "Standard"}
+{"sku_id": "SKU112", "brand": "ProConnect", "product_name": "Ethernet Cable", "variant": "Cat6 15ft", "category": "Cables", "unit": "each", "size": "15ft"}
+{"sku_id": "SKU113", "brand": "TechFlow", "product_name": "Compact Keyboard", "variant": null, "category": "Keyboards", "unit": "each", "size": "Compact"}
+{"sku_id": "SKU114", "brand": "ViewMaster", "product_name": "4K Monitor", "variant": "32 inch", "category": "Monitors", "unit": "each", "size": "32 inch"}
+{"sku_id": "SKU115", "brand": "ConnectPro", "product_name": "USB-C Cable", "variant": "3ft", "category": "Cables", "unit": "each", "size": "3ft"}
+{"sku_id": "SKU116", "brand": "DataVault", "product_name": "External Hard Drive", "variant": "1TB", "category": "Storage", "unit": "each", "size": "1TB"}
+{"sku_id": "SKU117", "brand": "OfficeLink", "product_name": "Webcam", "variant": "4K", "category": "Webcams", "unit": "each", "size": "High-resolution"}
+{"sku_id": "SKU118", "brand": "ProConnect", "product_name": "Wired Headset", "variant": "office", "category": "Headsets", "unit": "each", "size": "Standard"}
+{"sku_id": "SKU119", "brand": "TechFlow", "product_name": "Mechanical Keyboard", "variant": "RGB", "category": "Keyboards", "unit": "each", "size": "Full-size"}
+{"sku_id": "SKU120", "brand": "ViewMaster", "product_name": "LCD Monitor", "variant": "22 inch", "category": "Monitors", "unit": "each", "size": "22 inch"}
+{"sku_id": "SKU001", "brand": "TechFlow", "product_name": "Wireless Keyboard", "variant": "Black", "category": "Keyboards", "unit": "each", "size": null}
+{"sku_id": "SKU002", "brand": "TechFlow", "product_name": "Mechanical Keyboard", "variant": "RGB", "category": "Keyboards", "unit": "each", "size": null}
+{"sku_id": "SKU003", "brand": "ViewMaster", "product_name": "LED Monitor", "variant": "24 inch", "category": "Monitors", "unit": "each", "size": null}
+{"sku_id": "SKU004", "brand": "ViewMaster", "product_name": "LED Monitor", "variant": "27 inch", "category": "Monitors", "unit": "each", "size": null}
+{"sku_id": "SKU005", "brand": "ConnectPro", "product_name": "USB-C Cable", "variant": "6ft", "category": "Cables", "unit": "each", "size": null}
+{"sku_id": "SKU006", "brand": "ConnectPro", "product_name": "HDMI Cable", "variant": "10ft", "category": "Cables", "unit": "each", "size": null}
+{"sku_id": "SKU007", "brand": "ProConnect", "product_name": "Webcam", "variant": "4K", "category": "Webcams", "unit": "each", "size": null}
+{"sku_id": "SKU008", "brand": "ProConnect", "product_name": "Office Headset", "variant": "Wired", "category": "Headsets", "unit": "each", "size": null}
+{"sku_id": "SKU009", "brand": "DataVault", "product_name": "USB Drive", "variant": "256GB", "category": "Storage", "unit": "each", "size": null}
+{"sku_id": "SKU010", "brand": "DataVault", "product_name": "External Hard Drive", "variant": "1TB", "category": "Storage", "unit": "each", "size": null}
+{"sku_id": "SKU011", "brand": "OfficeLink", "product_name": "Compact Keyboard", "variant": "Wireless", "category": "Keyboards", "unit": "each", "size": null}
+{"sku_id": "SKU012", "brand": "TechFlow", "product_name": "LCD Monitor", "variant": "22 inch", "category": "Monitors", "unit": "each", "size": null}
+{"sku_id": "SKU013", "brand": "ConnectPro", "product_name": "Ethernet Cable", "variant": "15ft", "category": "Cables", "unit": "each", "size": null}
+{"sku_id": "SKU014", "brand": "ProConnect", "product_name": "Gaming Headset", "variant": "Wireless", "category": "Headsets", "unit": "each", "size": null}
+{"sku_id": "SKU015", "brand": "ViewMaster", "product_name": "LCD Monitor", "variant": "32 inch", "category": "Monitors", "unit": "each", "size": null}
+{"sku_id": "SKU016", "brand": "OfficeLink", "product_name": "USB-C to HDMI Adapter", "variant": "4K", "category": "Adapters", "unit": "each", "size": null}
+{"sku_id": "SKU017", "brand": "TechFlow", "product_name": "Mechanical Keyboard", "variant": "Blue Switch", "category": "Keyboards", "unit": "each", "size": null}
+{"sku_id": "SKU018", "brand": "OfficeLink", "product_name": "Wired Headset", "variant": null, "category": "Headsets", "unit": "each", "size": null}
+{"sku_id": "SKU019", "brand": "DataVault", "product_name": "External SSD", "variant": "512GB", "category": "Storage", "unit": "each", "size": null}
+{"sku_id": "SKU020", "brand": "ViewMaster", "product_name": "4K Monitor", "variant": "27 inch", "category": "Monitors", "unit": "each", "size": null}
+{"sku_id": "SKU091", "brand": "TechFlow", "product_name": "Wireless Keyboard", "variant": "black", "category": "Keyboards", "unit": "each", "size": null}
+{"sku_id": "SKU092", "brand": "ViewMaster", "product_name": "LED Monitor", "variant": "24 inch", "category": "Monitors", "unit": "each", "size": "24\""}
+{"sku_id": "SKU093", "brand": "ConnectPro", "product_name": "USB-C Cable", "variant": "6ft", "category": "Cables", "unit": "pack", "size": "6ft"}
+{"sku_id": "SKU094", "brand": "DataVault", "product_name": "External Hard Drive", "variant": "2TB", "category": "Storage", "unit": "each", "size": "2TB"}
+{"sku_id": "SKU095", "brand": "OfficeLink", "product_name": "HD Webcam", "variant": null, "category": "Webcams", "unit": "each", "size": "1080p"}
+{"sku_id": "SKU096", "brand": "ProConnect", "product_name": "HDMI Adapter", "variant": null, "category": "Adapters", "unit": "each", "size": null}
+{"sku_id": "SKU097", "brand": "TechFlow", "product_name": "Mechanical Keyboard", "variant": "wired", "category": "Keyboards", "unit": "each", "size": null}
+{"sku_id": "SKU098", "brand": "ViewMaster", "product_name": "LCD Monitor", "variant": "27 inch", "category": "Monitors", "unit": "each", "size": "27\""}
+{"sku_id": "SKU099", "brand": "ConnectPro", "product_name": "Ethernet Cable", "variant": "10ft", "category": "Cables", "unit": "each", "size": "10ft"}
+{"sku_id": "SKU100", "brand": "DataVault", "product_name": "USB Flash Drive", "variant": "64GB", "category": "Storage", "unit": "each", "size": "64GB"}
