@@ -1,0 +1,7 @@
+vendor_id,vendor_name,tax_id,country_code,city,payment_terms,vendor_type,is_active,preferred_currency,credit_limit,street_address,postal_code,contact_email,contact_phone,created_date,updated_date
+V001000,ConnectPro Corporation,TAX241655156,DE,Berlin,NET45,SUPPLIER,True,EUR,553603,415 Business Avenue,89252,orders@connectpro.com,+23-561-7830,2024-01-01,2025-06-09
+V001001,ProConnect Corporation,TAX454054165,UK,London,NET30,SUPPLIER,True,GBP,661673,791 Business Avenue,84424,orders@proconnect.com,+78-287-7622,2024-01-01,2025-08-10
+V001002,TechFlow Corporation,TAX223444539,US,San Francisco,NET30,SUPPLIER,True,USD,476002,538 Business Plaza,12875,orders@techflow.com,+96-933-3065,2024-01-01,2025-06-02
+V001003,ViewMaster Corporation,TAX747360603,AU,Sydney,IMMEDIATE,SUPPLIER,True,AUD,596652,526 Business Avenue,87015,orders@viewmaster.com,+7-410-7281,2024-01-01,2025-07-17
+V001004,DataVault Corporation,TAX970038631,SG,Singapore,IMMEDIATE,SUPPLIER,True,SGD,770690,467 Business Drive,34554,orders@datavault.com,+59-254-5306,2024-01-01,2025-08-07
+V001005,OfficeLink Corporation,TAX130726398,US,New York,NET60,SUPPLIER,True,USD,186126,436 Business Plaza,28261,orders@officelink.com,+35-234-6298,2024-01-01,2025-07-10
