@@ -1,6 +1,5 @@
 # 🧾 Orderly – PO Line Item ETL Pipeline
 
-**Orderly** is a modular ETL project focused on cleaning and structuring messy **purchase order (PO) line items**. It simulates real-world order data where item descriptions are inconsistent, vendors vary, and price anomalies go undetected. Built for showcasing **realistic, production-grade data wrangling** in a data science portfolio.
 
 _⚠️ Disclaimer: This project uses **synthetic data only**. No real or proprietary data is used._
 

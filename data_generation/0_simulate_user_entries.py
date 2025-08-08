@@ -9,8 +9,8 @@ load_dotenv()
 # File paths
 BASE_DIR = Path(__file__).parent
 PROMPT_PATH = BASE_DIR / "prompt" / "data_generation_prompt.txt"
-OUTPUT_PATH_SKUS = BASE_DIR.parent / "data" / "product_skus.jsonl"
-OUTPUT_PATH_LINEITEMS = BASE_DIR.parent / "data" / "line_items.jsonl"
+OUTPUT_PATH_SKUS = BASE_DIR / "output" / "product_skus.jsonl"
+OUTPUT_PATH_LINEITEMS = BASE_DIR / "output" / "line_items.jsonl"
 
 def load_prompt() -> str:
     """Load the system prompt from file."""

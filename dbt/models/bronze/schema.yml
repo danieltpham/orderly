@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: bronze_line_items
+    description: "Raw line items from JSONL - Bronze layer with no transformations"
+    
+  - name: bronze_product_skus  
+    description: "Raw product SKUs from JSONL - Bronze layer preserving original structure"
+    
+  - name: bronze_vendor_master
+    description: "Raw vendor master from CSV - Bronze layer with original values"

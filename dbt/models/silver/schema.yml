@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_line_items
+    description: "Staged line items with basic type casting - Silver layer entry point"
+    
+  - name: stg_product_skus
+    description: "Staged product SKUs with standardised fields - Silver layer"
+    
+  - name: stg_vendor_master  
+    description: "Staged vendor master with normalised names - Silver layer"
+    
+  - name: int_units_standardised
+    description: "Intermediate model with standardised units and sizes"
+    
+  - name: int_vendors_mapped
+    description: "Intermediate model with vendor alias resolution"
+    
+  - name: int_skus_matched
+    description: "Intermediate model with fuzzy SKU matching results"
+    
+  - name: int_prices_validated
+    description: "Intermediate model with price quality validation"

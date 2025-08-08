@@ -2,10 +2,9 @@ name: 'orderly'
 version: '1.0.0'
 config-version: 2
 
-# This setting configures which "profile" dbt uses for this project.
+# Medallion Architecture - Bronze/Silver/Gold data pipeline
 profile: 'orderly'
 
-# These configurations specify where dbt should look for different types of files.
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -13,32 +12,44 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:         # directories to be removed by `dbt clean`
+clean-targets:
   - "target"
   - "dbt_packages"
 
-# Configuring models
+# Medallion tier configurations
 models:
   orderly:
-    # Config indicated by + and applies to all files under models/example/
-    staging:
+    bronze:
+      # Raw data - materialized as views for zero-copy access
       +materialized: view
-      +schema: staging
-    intermediate:
-      +materialized: view  
-      +schema: intermediate
-    marts:
+      +schema: bronze
+      +docs:
+        node_color: "#8B4513"  # Bronze color
+    silver:
+      # Clean, conformed data - materialized as tables for performance
       +materialized: table
-      +schema: marts
+      +schema: silver
+      +docs:
+        node_color: "#C0C0C0"  # Silver color
+    gold:
+      # Curated marts - materialized as tables with indexes
+      +materialized: table
+      +schema: gold
+      +docs:
+        node_color: "#FFD700"  # Gold color
 
 seeds:
   orderly:
     +schema: seeds
 
-# DuckDB specific configurations
+# Medallion architecture variables
 vars:
-  # Path configurations for DuckDB
   database_path: "../data/orderly.duckdb"
-  raw_data_path: "../data/raw"
-  staged_data_path: "../data/staged"
-  final_data_path: "../data/final"
+  bronze_path: "../data/bronze"
+  silver_path: "../data/silver"
+  gold_path: "../data/gold"
+  
+  # Data quality thresholds
+  price_anomaly_threshold: 3.0  # Standard deviations
+  fuzzy_match_threshold: 0.7    # Similarity score
+  unit_standardisation: true    # Enable unit conversion

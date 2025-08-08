@@ -21,9 +21,9 @@ import pandas as pd
 from collections import defaultdict
 
 # Configuration
-DATA_DIR = Path(__file__).parent.parent / "data"
-RAW_DIR = DATA_DIR / "raw"
-SIMULATED_DIR = DATA_DIR / "simulated"
+DATA_DIR = Path(__file__).parent
+RAW_DIR = DATA_DIR.parent / "source"
+SIMULATED_DIR = DATA_DIR / "output"
 
 # Ensure directories exist
 RAW_DIR.mkdir(exist_ok=True)

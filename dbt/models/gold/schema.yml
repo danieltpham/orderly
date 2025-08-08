@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_sku
+    description: "Product SKU dimension with hierarchical attributes - Gold layer"
+    
+  - name: dim_vendor
+    description: "Vendor dimension with geographic and payment info - Gold layer"
+    
+  - name: dim_unit
+    description: "Unit of measure dimension with conversion factors - Gold layer"
+    
+  - name: fct_line_item
+    description: "Canonicalised line item fact table - Gold layer"
+    
+  - name: fct_price_anomaly
+    description: "Price anomaly fact table with outlier detection - Gold layer"
