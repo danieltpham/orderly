@@ -1,0 +1,44 @@
+name: 'orderly'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'orderly'
+
+# These configurations specify where dbt should look for different types of files.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+models:
+  orderly:
+    # Config indicated by + and applies to all files under models/example/
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view  
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
+
+seeds:
+  orderly:
+    +schema: seeds
+
+# DuckDB specific configurations
+vars:
+  # Path configurations for DuckDB
+  database_path: "../data/orderly.duckdb"
+  raw_data_path: "../data/raw"
+  staged_data_path: "../data/staged"
+  final_data_path: "../data/final"

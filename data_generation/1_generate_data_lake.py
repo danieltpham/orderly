@@ -21,8 +21,7 @@ import pandas as pd
 from collections import defaultdict
 
 # Configuration
-BASE_DIR = Path(__file__).parent
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = Path(__file__).parent.parent / "data"
 RAW_DIR = DATA_DIR / "raw"
 SIMULATED_DIR = DATA_DIR / "simulated"
 
