@@ -1,59 +1,44 @@
-# Post-Bronze Data Processing Pipeline
+# Transform Layer - Data Processing Pipeline
 
-This document outlines the steps taken after exporting bronze tables to create curated, clean data ready for gold layer transformation.
+This document outlines the transform layer processing for SKU name curation and standardization.
 
 ## Overview
 
-After bronze tables are exported, the pipeline focuses on data curation and standardization, particularly for SKU (Stock Keeping Unit) name normalization. The process involves aggregating raw order data into candidate records and applying intelligent text cleaning algorithms to standardize product names.
+The transform layer handles post-bronze data processing, focusing on SKU (Stock Keeping Unit) name normalization and curation. All processing is done programmatically without creating intermediate database tables.
 
-## Step 1: SKU Name Candidate Aggregation
+## SKU Name Curation Pipeline
 
-### Location: `dbt/models/ref/cur_sku_name_candidates.sql`
+### Location: `src/transform/sku_curation_cli.py`
 
-**Purpose**: Aggregate staged order data to create a reference table of SKU name candidates for manual curation.
+**Purpose**: Generate curated SKU names directly from staging data using intelligent text cleaning algorithms.
 
-**Process**:
-1. **Source Data**: Reads from `silver.stg_orders` (staged orders table)
-2. **Aggregation**: Groups by `sku_id` and `item_description_cleaned` 
-3. **Counting**: Counts occurrences of each description variant per SKU
-4. **Filtering**: Excludes records where `sku_id` or `item_description_cleaned` is null
-5. **Ordering**: Orders by SKU ID and frequency (most common descriptions first)
+**Process Flow**:
 
-**Output Schema**:
+#### 1. Direct Data Generation
+- **Source**: Queries `staging.stg_orders` directly (no intermediate tables)
+- **Aggregation**: Groups by `sku_id` and `item_description_cleaned` 
+- **Counting**: Counts occurrences of each description variant per SKU
+- **Filtering**: Excludes records where `sku_id` or `item_description_cleaned` is null
+- **Environment-Aware**: Automatically detects dev/prod schema prefixes
+
+**Generated Candidates Schema**:
 - `sku_id`: SKU identifier
 - `item_description`: Cleaned item description variant
 - `line_order_count`: Number of times this description appears for the SKU
 
-**Auto-Export**: In development environment, automatically exports results to CSV:
-```
-data/intermediate/cur_sku_name_candidates.csv
-```
+#### 2. Intelligent Alias Cleaning
 
-### Example Output:
-```csv
-sku_id,item_description,line_order_count
-SKU001,wireless keyboard black,2
-SKU001,techflow keybord wireles black,2
-SKU001,brand new wireless keyboard black,2
-SKU001,techflow wireless keyboard,1
-```
-
-## Step 2: Intelligent Alias Cleaning
-
-### Location: `tools/alias_cleaning.py`
-
-**Purpose**: Apply sophisticated text normalization and variant collapse algorithms to standardize product name aliases.
+**Integration**: Uses `alias_cleaning.py` module for sophisticated text normalization.
 
 **Pipeline Stages**:
 
-#### 2.1 Text Normalization
+##### 2.1 Text Normalization
 - Convert to lowercase
 - Remove punctuation using regex pattern `[^\w\s]+`
 - Filter out English stop words
 - Normalize whitespace
 
-#### 2.2 Typo Collapse (Edit Distance)
-- **Function**: `build_rep_map_typo_collapse()`
+##### 2.2 Typo Collapse (Edit Distance)
 - **Method**: Use Levenshtein edit distance to map similar tokens
 - **Parameters**:
   - `max_edit_distance=2`: Maximum character differences allowed
@@ -61,44 +46,21 @@ SKU001,techflow wireless keyboard,1
 - **Effect**: Maps typos to their most frequent neighbors
   - Example: `keybord`, `kayboard` → `keyboard`
 
-#### 2.3 Canonical Token Selection
-- **Function**: `most_frequent_canonical_tokens()`
+##### 2.3 Canonical Token Selection
 - **Method**: Count token presence across all aliases (set-based)
-- **Parameters**: `top_m=5` most frequent tokens
+- **Parameters**: `top_m=2` most frequent tokens
 - **Output**: List of standardized tokens representing the product
 
-#### 2.4 Similarity Ranking
-- **Function**: `rank_by_tokens()`
+##### 2.4 Similarity Ranking
 - **Method**: Use fuzzy string matching (`fuzz.token_sort_ratio`)
 - **Features**: Order-insensitive comparison with frequency tie-breaking
-- **Output**: Top-K most representative original aliases
+- **Output**: Top-3 most representative original aliases
 
-#### 2.5 Canonicalization
+##### 2.5 Canonicalization
 - Apply representative mappings to create final standardized versions
 - Return both original and canonicalized forms with confidence scores
 
-## Step 3: Automated SKU Curation
-
-### Location: `tools/sku_seed_cli.py`
-
-**Purpose**: Generate pre-approved curation table for SKU names using the alias cleaning pipeline.
-
-**Process Flow**:
-
-#### 3.1 Data Loading
-- **Source**: DuckDB ref schema (`cur_sku_name_candidates`)
-- **Environment-Aware**: Automatically detects dev/prod schema prefixes
-- **Query**: Loads all SKU candidates with their occurrence counts
-
-#### 3.2 SKU Group Processing
-- **Function**: `process_sku_group()`
-- **Input**: SKU ID + list of description variants
-- **Algorithm**: Apply `transform_aliases_with_canonical_tokens()` with tuned parameters:
-  - `max_edit_distance=2`
-  - `top_m_canonical_tokens=2`
-  - `top_k_original=3`
-
-#### 3.3 Decision Logic
+#### 3. Automated Decision Logic
 - **Auto-Approval Criteria**:
   - Top candidate score > runner-up score
   - Top candidate score > 80%
@@ -106,7 +68,7 @@ SKU001,techflow wireless keyboard,1
   - `AUTO`: High-confidence automatic approval
   - `NEED_APPROVAL`: Requires manual review
 
-#### 3.4 Output Generation
+#### 4. Output Generation
 - **Format**: CSV with date-tagged filename
 - **Location**: `data/intermediate/curation_exports/sku_name_curation_YYYYMMDD.csv`
 - **Schema**:
@@ -121,24 +83,45 @@ SKU001,"wireless keyboard black,techflow keybord...",wireless keyboard,100.0,wir
 SKU002,"24"" led monitor viewmaster,wired mechanical...",wired mechanical keyboard,66.67,,NEED_APPROVAL
 ```
 
-## Step 4: Quality Assurance
+## Benefits of Integrated Approach
 
-### Data Validation
-- **Schema Tests**: Defined in `dbt/models/ref/schema.yml`
-- **Not-Null Constraints**: All key fields (sku_id, item_description, line_order_count)
-- **Referential Integrity**: Links back to staged orders
+### No Intermediate Tables
+- **Cleaner Database**: No `ref` schema or temporary tables cluttering the database
+- **Direct Processing**: Queries staging data directly when needed
+- **Reduced Complexity**: Fewer moving parts in the data pipeline
 
-### Processing Statistics
-- **Coverage**: Processes all unique SKU-description combinations
-- **Decision Distribution**: Tracks auto-approved vs manual review cases
-- **Confidence Scoring**: Provides quantitative quality metrics (0-100 scale)
+### Transform Layer Ownership
+- **Single Responsibility**: Transform logic contained in Python modules
+- **Version Control**: All processing logic tracked in source code
+- **Testability**: Easier to unit test individual functions
+
+### Flexibility
+- **On-Demand Processing**: Generate candidates when needed
+- **Parameterizable**: Easy to adjust algorithms and thresholds
+- **Environment Agnostic**: Works across dev/prod without schema changes
 
 ## Usage
 
 ### CLI Command
 ```bash
-python tools/sku_seed_cli.py export [--db-path warehouse/orderly.duckdb] [--output-dir data/intermediate/curation_exports]
+python src/transform/sku_curation_cli.py export [--db-path warehouse/orderly.duckdb] [--output-dir data/intermediate/curation_exports]
 ```
+
+### Parameters
+- `--db-path`: Path to DuckDB database (default: ./warehouse/orderly.duckdb)
+- `--output-dir`: Output directory for CSV files (default: data/intermediate/curation_exports)
+
+## Quality Assurance
+
+### Processing Statistics
+- **Coverage**: Processes all unique SKU-description combinations from staging
+- **Decision Distribution**: Tracks auto-approved vs manual review cases
+- **Confidence Scoring**: Provides quantitative quality metrics (0-100 scale)
+
+### Data Validation
+- **Source Validation**: Ensures required columns exist in staging data
+- **Output Validation**: Validates generated CSV structure
+- **Error Handling**: Graceful handling of database connection issues
 
 ## Next Steps
 

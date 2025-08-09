@@ -29,12 +29,19 @@ select
     -- Quality flags
     flag_missing_in_seed,
     flag_name_mismatch,
+    flag_vendor_mismatch,
     has_quality_issues,
     
     -- Fuzzy comparison details (for debugging/analysis)
     fuzz_score,
     compared_order_desc,
     compared_seed_name,
+    
+    -- Vendor matching details
+    vendor_brand_original,
+    matched_vendor_id,
+    matched_vendor_name,
+    vendor_fuzz_score,
     
     -- Non-product categorization
     'NON_PRODUCT' as record_type

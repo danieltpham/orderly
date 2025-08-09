@@ -20,26 +20,30 @@ from alias_cleaning import transform_aliases_with_canonical_tokens
 
 
 def load_sku_candidates(db_path: Optional[str] = None) -> pd.DataFrame:
-    """Load SKU name candidates directly from DuckDB ref schema."""
+    """Generate SKU name candidates directly from staging orders data."""
     try:
         # Use default path if not provided
         if db_path is None:
             db_path = "./warehouse/orderly.duckdb"
         
-        # Connect to DuckDB and query the ref table
+        # Connect to DuckDB and query staging data directly
         conn = duckdb.connect(db_path)
         
         # Determine schema based on environment
         environment = os.getenv('ENVIRONMENT', 'dev').lower()
         schema_prefix = 'dev_' if environment == 'dev' else ''
-        schema_name = f"{schema_prefix}ref"
+        schema_name = f"{schema_prefix}staging"
         
+        # Generate candidates directly from staging orders (equivalent to cur_sku_name_candidates logic)
         query = f"""
-        SELECT 
+        SELECT
             sku_id,
-            item_description,
-            line_order_count
-        FROM {schema_name}.cur_sku_name_candidates
+            item_description_cleaned as item_description,
+            count(*) as line_order_count
+        FROM {schema_name}.stg_orders
+        WHERE sku_id IS NOT NULL 
+            AND item_description_cleaned IS NOT NULL
+        GROUP BY sku_id, item_description_cleaned
         ORDER BY sku_id, line_order_count DESC
         """
         
@@ -50,11 +54,11 @@ def load_sku_candidates(db_path: Optional[str] = None) -> pd.DataFrame:
         if not all(col in df.columns for col in required_cols):
             raise ValueError(f"Query result must contain columns: {required_cols}")
             
-        print(f"✅ Loaded {len(df)} records from DuckDB {schema_name} schema (env: {environment})")
+        print(f"✅ Generated {len(df)} SKU name candidates from staging data (env: {environment})")
         return df
         
     except Exception as e:
-        print(f"❌ Error loading from DuckDB: {e}")
+        print(f"❌ Error generating candidates from staging data: {e}")
         sys.exit(1)
 
 
@@ -101,7 +105,7 @@ def process_sku_group(sku_id: str, descriptions: List[str]) -> Dict:
 
 def export_sku_curation_table(db_path: Optional[str] = None, output_dir: str = "data/intermediate/curation_exports") -> str:
     """
-    Generate SKU curation table from DuckDB ref schema.
+    Generate SKU curation table directly from staging data.
     
     Args:
         db_path: Path to the DuckDB database file (default: ./warehouse/orderly.duckdb)
@@ -110,7 +114,7 @@ def export_sku_curation_table(db_path: Optional[str] = None, output_dir: str = "
     Returns:
         Path to the generated CSV file
     """
-    print(f"Loading SKU candidates from DuckDB...")
+    print(f"Generating SKU candidates from staging data...")
     df = load_sku_candidates(db_path)
     
     print(f"Processing {len(df)} candidate records...")
@@ -148,7 +152,7 @@ def export_sku_curation_table(db_path: Optional[str] = None, output_dir: str = "
 def main():
     """Main CLI function."""
     parser = argparse.ArgumentParser(
-        description="Generate SKU curation table from DuckDB",
+        description="Generate SKU curation table directly from staging data",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

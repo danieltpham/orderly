@@ -1,0 +1,169 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging orders with clean, validated data - entry point for silver layer processing"
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - not_null
+      - name: line_number
+        description: "Line number within order"
+        tests:
+          - not_null
+      - name: sku_id
+        description: "Product SKU identifier"
+      - name: item_description_original
+        description: "Original item description from source"
+      - name: item_description_cleaned
+        description: "Cleaned item description (HTML unescaped, tags stripped, lowercased)"
+      - name: quantity
+        description: "Quantity ordered"
+      - name: unit_price
+        description: "Unit price"
+      - name: currency
+        description: "Currency code"
+      - name: vendor_brand
+        description: "Vendor brand name from orders data"
+      - name: cost_centre_id
+        description: "Cost centre identifier"
+      - name: country_code
+        description: "Country code"
+      - name: requisitioner
+        description: "Person who made the requisition"
+      - name: approval_status
+        description: "Approval status of the order"
+      - name: delivery_date
+        description: "Expected delivery date"
+      - name: order_date
+        description: "Order date"
+        tests:
+          - not_null
+      - name: source_filename
+        description: "Source data filename"
+        tests:
+          - not_null
+      - name: created_timestamp
+        description: "Record creation timestamp"
+        tests:
+          - not_null
+      - name: non_product_hint
+        description: "Flag indicating likely non-product line items (tax, shipping, fees)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+      - name: line_uid
+        description: "Unique line identifier (deterministic hash)"
+        tests:
+          - not_null
+          - unique
+    tests:
+      - assert_rowcount
+
+  - name: stg_orders_fuzz_scores
+    description: "Staging fuzzy matching scores between order descriptions/seed SKU names and vendor brands/vendor master"
+    columns:
+      - name: line_uid
+        description: "Unique identifier for each order line"
+        tests:
+          - not_null
+      - name: sku_id
+        description: "Product SKU identifier"
+      - name: fuzz_score
+        description: "Fuzzy matching score (0-1) between order description and seed name"
+        tests:
+          - not_null
+      - name: order_description
+        description: "Cleaned order item description"
+      - name: seed_name
+        description: "Canonical SKU name from seed"
+      - name: vendor_brand_original
+        description: "Original vendor brand from order"
+      - name: matched_vendor_id
+        description: "Matched vendor ID (null if score ≤ 0.8)"
+      - name: matched_vendor_name
+        description: "Matched vendor name (null if score ≤ 0.8)"
+      - name: vendor_fuzz_score
+        description: "Vendor fuzzy matching score (0-1) using QRatio"
+
+  - name: stg_orders_with_flags
+    description: "Staging - Orders with quality flags for SKU lookup, name matching, and vendor matching issues"
+    columns:
+      - name: line_uid
+        description: "Unique identifier for each order line"
+        tests:
+          - not_null
+          - unique
+      - name: sku_id
+        description: "Product SKU identifier"
+      - name: flag_missing_in_seed
+        description: "True if SKU appears in orders but not in seed"
+        tests:
+          - not_null
+      - name: flag_name_mismatch
+        description: "True if fuzzy match score < 0.8"
+        tests:
+          - not_null
+      - name: flag_vendor_mismatch
+        description: "True if vendor brand exists but no good match found (score ≤ 0.8)"
+        tests:
+          - not_null
+      - name: has_quality_issues
+        description: "True if any quality flags are raised"
+        tests:
+          - not_null
+      - name: vendor_brand_original
+        description: "Original vendor brand from order"
+      - name: matched_vendor_id
+        description: "Matched vendor ID from vendor master (null if score ≤ 0.8)"
+      - name: matched_vendor_name
+        description: "Matched vendor name from vendor master (null if score ≤ 0.8)"
+      - name: vendor_fuzz_score
+        description: "Vendor fuzzy matching score (0-1)"
+
+  - name: stg_exchange_rates
+    description: |
+      Staging exchange rates - Daily USD to AUD rates with linear interpolation for missing dates.
+      
+      **Linear Interpolation Strategy:**
+      1. **Date Range Generation**: Uses DuckDB's generate_series() to create complete daily coverage
+      2. **Window Functions**: Uses last_value()/first_value() with 'ignore nulls' to find surrounding rates
+      3. **Linear Formula**: prev_rate + ((next_rate - prev_rate) * ((current_date - prev_date) / (next_date - prev_date)))
+      4. **Rate Sources**: SOURCE (direct data), CALCULATED (AUD->USD inverse), INTERPOLATED (linear), FORWARD_FILLED (gap filling)
+      
+      **Data Priority**: Direct USD->AUD rates preferred over calculated rates from AUD->USD inverse.
+      **Coverage**: Complete daily series from first to last available date with no gaps.
+    columns:
+      - name: date
+        description: "Exchange rate date"
+        tests:
+          - not_null
+      - name: from_currency
+        description: "Source currency code (always USD)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['USD']
+      - name: to_currency
+        description: "Target currency code (always AUD)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['AUD']
+      - name: exchange_rate
+        description: "USD to AUD exchange rate value"
+        tests:
+          - not_null
+      - name: rate_source
+        description: |
+          Source methodology for the exchange rate:
+          - **SOURCE**: Direct USD->AUD rate from raw data (highest confidence)
+          - **CALCULATED**: USD->AUD calculated by inverting AUD->USD rate (1/rate)
+          - **INTERPOLATED**: Linear interpolation between surrounding known rates
+          - **FORWARD_FILLED**: Forward fill used when only historical data available
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['SOURCE', 'CALCULATED', 'INTERPOLATED', 'FORWARD_FILLED']

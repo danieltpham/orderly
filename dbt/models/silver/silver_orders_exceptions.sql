@@ -30,6 +30,7 @@ select
     -- Quality flags
     flag_missing_in_seed,
     flag_name_mismatch,
+    flag_vendor_mismatch,
     has_quality_issues,
     
     -- Fuzzy comparison details (for debugging/analysis)
@@ -37,10 +38,17 @@ select
     compared_order_desc,
     compared_seed_name,
     
+    -- Vendor matching details
+    vendor_brand_original,
+    cast(matched_vendor_id as varchar) as matched_vendor_id,
+    matched_vendor_name,
+    vendor_fuzz_score,
+    
     -- Exception categorization (excluding non-product items)
     case 
         when coalesce(flag_missing_in_seed, false) then 'SKU_NOT_IN_SEED'
         when coalesce(flag_name_mismatch, false) then 'NAME_MISMATCH'
+        when coalesce(flag_vendor_mismatch, false) then 'VENDOR_MISMATCH'
         else 'OTHER'
     end as exception_type   
 from flagged_orders
@@ -50,4 +58,5 @@ where
     and (
         coalesce(flag_missing_in_seed, false) = true
         or coalesce(flag_name_mismatch, false) = true
+        or coalesce(flag_vendor_mismatch, false) = true
     )

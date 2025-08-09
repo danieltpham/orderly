@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
--- Silver orders with quality flags for SKU lookup issues
+-- Staging orders with quality flags for SKU lookup, name matching, and vendor matching issues
 with 
 staged_orders as (
     select * from {{ ref('stg_orders') }}
@@ -42,10 +42,25 @@ flagged_orders as (
             else false 
         end as flag_name_mismatch,
         
+        -- Vendor matching details
+        fs.vendor_brand_original,
+        fs.matched_vendor_id,
+        fs.matched_vendor_name,
+        fs.vendor_fuzz_score,
+        case 
+            when fs.vendor_brand_original is not null 
+                and trim(fs.vendor_brand_original) != '' 
+                and fs.matched_vendor_id is null then true 
+            else false 
+        end as flag_vendor_mismatch,
+        
         -- Overall quality flag
         case 
             when (mis.line_uid is not null) 
-                or (fs.fuzz_score is not null and fs.fuzz_score < 0.8) 
+                or (fs.fuzz_score is not null and fs.fuzz_score < 0.8)
+                or (fs.vendor_brand_original is not null 
+                    and trim(fs.vendor_brand_original) != '' 
+                    and fs.matched_vendor_id is null)
             then true 
             else false 
         end as has_quality_issues
@@ -79,11 +94,18 @@ select
     -- Quality flags
     flag_missing_in_seed,
     flag_name_mismatch,
+    flag_vendor_mismatch,
     has_quality_issues,
     
     -- Fuzzy comparison details (for debugging/analysis)
     fuzz_score,
     compared_order_desc,
-    compared_seed_name
+    compared_seed_name,
+    
+    -- Vendor matching details
+    vendor_brand_original,
+    matched_vendor_id,
+    matched_vendor_name,
+    vendor_fuzz_score
     
 from flagged_orders

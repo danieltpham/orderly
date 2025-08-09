@@ -21,7 +21,7 @@ on-run-start:
   - "CREATE SCHEMA IF NOT EXISTS bronze;"
   - "CREATE SCHEMA IF NOT EXISTS silver;"
   - "CREATE SCHEMA IF NOT EXISTS gold;"
-  - "CREATE SCHEMA IF NOT EXISTS ref;"
+  - "CREATE SCHEMA IF NOT EXISTS staging;"
 
 # Medallion tier configurations
 models:
@@ -29,12 +29,14 @@ models:
     bronze:
       # Raw data - materialized as tables for Bronze layer
       +materialized: table
+      +tags: ["layer:bronze"]
       +schema: bronze
       +docs:
         node_color: "#8B4513"  # Bronze color
     silver:
       # Clean, conformed data - materialized as tables for performance
       +materialized: table
+      +tags: ["layer:silver"]
       +schema: silver
       +docs:
         node_color: "#C0C0C0"  # Silver color
@@ -44,9 +46,10 @@ models:
       +schema: gold
       +docs:
         node_color: "#FFD700"  # Gold color
-    ref:
-      +materialized: table
-      +schema: ref
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ["layer:staging"]
 
 seeds:
   orderly:

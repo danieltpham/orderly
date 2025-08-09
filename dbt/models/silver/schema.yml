@@ -1,67 +1,6 @@
 version: 2
 
 models:
-  - name: stg_orders
-    description: "Staging orders with clean, validated data - Silver layer entry point"
-    columns:
-      - name: order_id
-        description: "Unique order identifier"
-        tests:
-          - not_null
-      - name: line_number
-        description: "Line number within order"
-        tests:
-          - not_null
-      - name: sku_id
-        description: "Product SKU identifier"
-      - name: item_description_original
-        description: "Original item description from source"
-      - name: item_description_cleaned
-        description: "Cleaned item description (HTML unescaped, tags stripped, lowercased)"
-      - name: quantity
-        description: "Quantity ordered"
-      - name: unit_price
-        description: "Unit price"
-      - name: currency
-        description: "Currency code"
-      - name: vendor_brand
-        description: "Vendor brand name from orders data"
-      - name: cost_centre_id
-        description: "Cost centre identifier"
-      - name: country_code
-        description: "Country code"
-      - name: requisitioner
-        description: "Person who made the requisition"
-      - name: approval_status
-        description: "Approval status of the order"
-      - name: delivery_date
-        description: "Expected delivery date"
-      - name: order_date
-        description: "Order date"
-        tests:
-          - not_null
-      - name: source_filename
-        description: "Source data filename"
-        tests:
-          - not_null
-      - name: created_timestamp
-        description: "Record creation timestamp"
-        tests:
-          - not_null
-      - name: non_product_hint
-        description: "Flag indicating likely non-product line items (tax, shipping, fees)"
-        tests:
-          - not_null
-          - accepted_values:
-              values: [true, false]
-      - name: line_uid
-        description: "Unique line identifier (deterministic hash)"
-        tests:
-          - not_null
-          - unique
-    tests:
-      - assert_rowcount
-
   - name: silver_cost_centres
     description: "Silver cost centres - clean reference data"
     columns:
@@ -80,7 +19,7 @@ models:
           - not_null
 
   - name: silver_exchange_rates
-    description: "Silver exchange rates - Daily USD to AUD rates with interpolation for missing dates"
+    description: "Silver exchange rates - direct passthrough from staging layer"
     columns:
       - name: date
         description: "Exchange rate date"
@@ -103,11 +42,16 @@ models:
         tests:
           - not_null
       - name: rate_source
-        description: "Source of the rate: SOURCE (direct), CALCULATED (from AUD->USD inverse), or INTERPOLATED"
+        description: |
+          Source methodology for the exchange rate:
+          - **SOURCE**: Direct USD->AUD rate from raw data (highest confidence)
+          - **CALCULATED**: USD->AUD calculated by inverting AUD->USD rate (1/rate)
+          - **INTERPOLATED**: Linear interpolation between surrounding known rates
+          - **FORWARD_FILLED**: Forward fill used when only historical data available
         tests:
           - not_null
           - accepted_values:
-              values: ['SOURCE', 'CALCULATED', 'INTERPOLATED']
+              values: ['SOURCE', 'CALCULATED', 'INTERPOLATED', 'FORWARD_FILLED']
 
   - name: silver_vendor_master
     description: "Silver vendor master - clean reference data"
@@ -122,45 +66,8 @@ models:
         tests:
           - not_null
 
-  - name: stg_orders_fuzz_scores
-    description: "Staging Fuzzy matching scores between order descriptions and seed SKU names"
-    columns:
-      - name: line_uid
-        description: "Unique identifier for each order line"
-        tests:
-          - not_null
-      - name: sku_id
-        description: "Product SKU identifier"
-      - name: fuzz_score
-        description: "Fuzzy matching score (0-1) between order description and seed name"
-        tests:
-          - not_null
-
-  - name: stg_orders_with_flags
-    description: "Staging - Orders with quality flags for SKU lookup and name matching issues"
-    columns:
-      - name: line_uid
-        description: "Unique identifier for each order line"
-        tests:
-          - not_null
-          - unique
-      - name: sku_id
-        description: "Product SKU identifier"
-      - name: flag_missing_in_seed
-        description: "True if SKU appears in orders but not in seed"
-        tests:
-          - not_null
-      - name: flag_name_mismatch
-        description: "True if fuzzy match score < 0.8"
-        tests:
-          - not_null
-      - name: has_quality_issues
-        description: "True if any quality flags are raised"
-        tests:
-          - not_null
-
   - name: silver_orders_valid
-    description: "Clean, valid orders (quality issues filtered out)"
+    description: "Clean, valid orders (SKU, name, and vendor quality issues filtered out)"
     columns:
       - name: line_uid
         description: "Unique identifier for each order line"
@@ -175,6 +82,25 @@ models:
         description: "Product SKU identifier"
         tests:
           - not_null
+      - name: cost_centre_id
+        description: "Cost centre identifier (FK to silver_cost_centres)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_cost_centres')
+              field: cost_centre_id
+      - name: matched_vendor_id
+        description: "Matched vendor ID from vendor master (high confidence matches only)"
+        tests:
+          - relationships:
+              to: ref('silver_vendor_master')
+              field: vendor_id
+      - name: matched_vendor_name
+        description: "Matched vendor name from vendor master (high confidence matches only)"
+      - name: vendor_fuzz_score
+        description: "Vendor fuzzy matching score (all records have score > 0.8 or null)"
+        tests:
+          - not_null
 
   - name: silver_orders_exceptions
     description: "Orders with data quality issues for monitoring and analysis (excludes non-product items)"
@@ -183,12 +109,47 @@ models:
         description: "Unique identifier for each order line"
         tests:
           - not_null
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: cost_centre_id
+        description: "Cost centre identifier (FK to silver_cost_centres)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_cost_centres')
+              field: cost_centre_id
+      - name: flag_missing_in_seed
+        description: "True if SKU missing from seed"
+        tests:
+          - not_null
+      - name: flag_name_mismatch
+        description: "True if SKU name fuzzy match score < 0.8"
+        tests:
+          - not_null
+      - name: flag_vendor_mismatch
+        description: "True if vendor brand has no good match in vendor master"
+        tests:
+          - not_null
+      - name: vendor_brand_original
+        description: "Original vendor brand from order"
+      - name: matched_vendor_id
+        description: "Matched vendor ID (may be null for exceptions)"
+        tests:
+          - relationships:
+              to: ref('silver_vendor_master')
+              field: vendor_id
+      - name: matched_vendor_name
+        description: "Matched vendor name (may be null for exceptions)"
+      - name: vendor_fuzz_score
+        description: "Vendor fuzzy matching score"
       - name: exception_type
-        description: "Type of quality exception (SKU_NOT_IN_SEED, NAME_MISMATCH, OTHER)"
+        description: "Type of quality exception (SKU_NOT_IN_SEED, NAME_MISMATCH, VENDOR_MISMATCH, OTHER)"
         tests:
           - not_null
           - accepted_values:
-              values: ['SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'OTHER']
+              values: ['SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'VENDOR_MISMATCH', 'OTHER']
 
   - name: silver_orders_nonproduct
     description: "Orders identified as non-product items (services, fees, taxes, etc.)"
@@ -205,6 +166,13 @@ models:
         description: "Line number within order"
         tests:
           - not_null
+      - name: cost_centre_id
+        description: "Cost centre identifier (FK to silver_cost_centres)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_cost_centres')
+              field: cost_centre_id
       - name: item_description_original
         description: "Original item description from source"
       - name: item_description_cleaned
@@ -221,3 +189,23 @@ models:
           - not_null
           - accepted_values:
               values: ['NON_PRODUCT']
+
+  - name: silver_export
+    description: "Export trigger for silver layer data - exports all silver models to CSV files in dev environment"
+    columns:
+      - name: status
+        description: "Export completion status"
+        tests:
+          - not_null
+      - name: exported_at
+        description: "Timestamp when export was completed"
+        tests:
+          - not_null
+      - name: environment
+        description: "dbt target environment"
+        tests:
+          - not_null
+      - name: export_status
+        description: "Details about the export operation"
+        tests:
+          - not_null

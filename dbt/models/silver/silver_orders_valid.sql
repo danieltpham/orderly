@@ -24,9 +24,15 @@ select
     source_filename,
     created_timestamp,
     non_product_hint,
-    line_uid
+    line_uid,
+    
+    -- Vendor matching details (for valid records)
+    matched_vendor_id,
+    matched_vendor_name,
+    vendor_fuzz_score
     
 from flagged_orders
 where 
     coalesce(flag_missing_in_seed, false) = false
     and coalesce(flag_name_mismatch, false) = false
+    and coalesce(flag_vendor_mismatch, false) = false
