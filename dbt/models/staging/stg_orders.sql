@@ -1,6 +1,6 @@
 {{ config(
     materialized='table',
-    post_hook="{{ export_stg_orders_to_parquet() }}"
+    post_hook="{{ export_stg_orders() }}"
 ) }}
 
 -- Staging layer transformation for orders data
