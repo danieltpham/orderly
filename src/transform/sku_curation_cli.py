@@ -152,8 +152,8 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python tools/sku_curation_cli.py export
-  python tools/sku_curation_cli.py export --db-path warehouse/custom.duckdb
+  python src/transform/sku_curation_cli.py export
+  python src/transform/sku_curation_cli.py export --db-path warehouse/custom.duckdb
         """
     )
     
