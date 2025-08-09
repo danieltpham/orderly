@@ -3,17 +3,15 @@ orderly:
     dev:
       type: duckdb
       path: "{{ env_var('DUCKDB_PATH', './warehouse/orderly.duckdb') }}"
-      schema: main
+      schema: dev
       threads: 4
       keepalives_idle: 0
-      search_path: "main"
+      search_path: "dev"
       
     prod:
       type: duckdb
       path: "{{ env_var('DUCKDB_PATH', './warehouse/orderly_prod.duckdb') }}"
-      schema: main
       threads: 8
       keepalives_idle: 0
-      search_path: "main"
       
   target: "{{ env_var('ENVIRONMENT', 'dev') }}"
