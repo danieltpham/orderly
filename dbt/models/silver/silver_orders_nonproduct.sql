@@ -1,7 +1,6 @@
 {{ config(materialized='table') }}
 
--- Silver orders exceptions - records with data quality issues for monitoring and analysis
--- Note: Non-product records are handled separately in silver_orders_nonproduct
+-- Silver orders non-product - records identified as non-product items (services, fees, etc.)
 with flagged_orders as (
     select * from {{ ref('stg_orders_with_flags') }}
 )
@@ -37,17 +36,9 @@ select
     compared_order_desc,
     compared_seed_name,
     
-    -- Exception categorization (excluding non-product items)
-    case 
-        when coalesce(flag_missing_in_seed, false) then 'SKU_NOT_IN_SEED'
-        when coalesce(flag_name_mismatch, false) then 'NAME_MISMATCH'
-        else 'OTHER'
-    end as exception_type   
+    -- Non-product categorization
+    'NON_PRODUCT' as record_type
 from flagged_orders
 where 
-    -- Exclude non-product records (handled in silver_orders_nonproduct)
-    not (non_product_hint = true and sku_id is null)
-    and (
-        coalesce(flag_missing_in_seed, false) = true
-        or coalesce(flag_name_mismatch, false) = true
-    )
+    non_product_hint = true
+    and sku_id is null

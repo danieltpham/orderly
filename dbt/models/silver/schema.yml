@@ -80,24 +80,34 @@ models:
           - not_null
 
   - name: silver_exchange_rates
-    description: "Silver exchange rates - clean reference data"
+    description: "Silver exchange rates - Daily USD to AUD rates with interpolation for missing dates"
     columns:
       - name: date
         description: "Exchange rate date"
         tests:
           - not_null
       - name: from_currency
-        description: "Source currency code"
+        description: "Source currency code (always USD)"
         tests:
           - not_null
+          - accepted_values:
+              values: ['USD']
       - name: to_currency
-        description: "Target currency code"
+        description: "Target currency code (always AUD)"
         tests:
           - not_null
+          - accepted_values:
+              values: ['AUD']
       - name: exchange_rate
-        description: "Exchange rate value"
+        description: "USD to AUD exchange rate value"
         tests:
           - not_null
+      - name: rate_source
+        description: "Source of the rate: SOURCE (direct), CALCULATED (from AUD->USD inverse), or INTERPOLATED"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['SOURCE', 'CALCULATED', 'INTERPOLATED']
 
   - name: silver_vendor_master
     description: "Silver vendor master - clean reference data"
@@ -167,7 +177,7 @@ models:
           - not_null
 
   - name: silver_orders_exceptions
-    description: "Orders with quality issues for monitoring and analysis"
+    description: "Orders with data quality issues for monitoring and analysis (excludes non-product items)"
     columns:
       - name: line_uid
         description: "Unique identifier for each order line"
@@ -178,4 +188,36 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['NON_PRODUCT', 'SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'OTHER']
+              values: ['SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'OTHER']
+
+  - name: silver_orders_nonproduct
+    description: "Orders identified as non-product items (services, fees, taxes, etc.)"
+    columns:
+      - name: line_uid
+        description: "Unique identifier for each order line"
+        tests:
+          - not_null
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: line_number
+        description: "Line number within order"
+        tests:
+          - not_null
+      - name: item_description_original
+        description: "Original item description from source"
+      - name: item_description_cleaned
+        description: "Cleaned item description"
+      - name: non_product_hint
+        description: "Flag indicating non-product line items"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true]
+      - name: record_type
+        description: "Record classification type"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['NON_PRODUCT']
