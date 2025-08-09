@@ -1,11 +1,74 @@
 version: 2
 
 models:
-  - name: bronze_line_items
-    description: "Raw line items from JSONL - Bronze layer with no transformations"
-    
-  - name: bronze_product_skus  
-    description: "Raw product SKUs from JSONL - Bronze layer preserving original structure"
-    
-  - name: bronze_vendor_master
-    description: "Raw vendor master from CSV - Bronze layer with original values"
+  - name: raw_orders
+    description: "Raw orders data loaded from JSON files in data/source/"
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - not_null
+      - name: sku_id
+        description: "Product SKU identifier"
+      - name: order_date
+        description: "Date when order was placed"
+        tests:
+          - not_null
+    tests:
+      - assert_rowcount
+
+  - name: raw_vendor_master
+    description: "Raw vendor master data loaded from CSV file"
+    columns:
+      - name: vendor_id
+        description: "Unique vendor identifier"
+        tests:
+          - not_null
+          - unique
+      - name: vendor_name
+        description: "Vendor company name"
+        tests:
+          - not_null
+    tests:
+      - assert_rowcount
+
+  - name: raw_cost_centres
+    description: "Raw cost centres data loaded from CSV file"
+    columns:
+      - name: cost_centre_id
+        description: "Unique cost centre identifier"
+        tests:
+          - not_null
+          - unique
+      - name: cost_centre_name
+        description: "Cost centre name"
+        tests:
+          - not_null
+      - name: country_code
+        description: "ISO country code"
+        tests:
+          - not_null
+    tests:
+      - assert_rowcount
+
+  - name: raw_exchange_rates
+    description: "Raw exchange rates data loaded from CSV file"
+    columns:
+      - name: date
+        description: "Exchange rate date"
+        tests:
+          - not_null
+      - name: from_currency
+        description: "Source currency code"
+        tests:
+          - not_null
+      - name: to_currency
+        description: "Target currency code"
+        tests:
+          - not_null
+      - name: exchange_rate
+        description: "Exchange rate value"
+        tests:
+          - not_null
+    tests:
+      - assert_rowcount

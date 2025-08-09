@@ -2,7 +2,7 @@ orderly:
   outputs:
     dev:
       type: duckdb
-      path: '../data/orderly.duckdb'
+      path: "{{ env_var('DUCKDB_PATH', './warehouse/orderly.duckdb') }}"
       schema: main
       threads: 4
       keepalives_idle: 0
@@ -10,10 +10,10 @@ orderly:
       
     prod:
       type: duckdb
-      path: '../data/orderly_prod.duckdb'
+      path: "{{ env_var('DUCKDB_PATH', './warehouse/orderly_prod.duckdb') }}"
       schema: main
       threads: 8
       keepalives_idle: 0
       search_path: "main"
       
-  target: dev
+  target: "{{ env_var('ENVIRONMENT', 'dev') }}"

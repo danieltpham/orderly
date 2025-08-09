@@ -208,3 +208,15 @@ __marimo__/
 .vscode/settings.json
 /src/validation
 /notebooks
+
+# DuckDB files
+warehouse/*.duckdb
+warehouse/*.duckdb.wal
+warehouse/*.duckdb.tmp
+
+# dbt artifacts
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+/.vscode
+load-env.ps1
