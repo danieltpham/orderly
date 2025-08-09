@@ -1,6 +1,7 @@
 # Core Data Processing
 pandas>=2.0.0
 numpy>=1.24.0
+scikit-learn>=1.7.0
 python-dotenv>=1.0.0
 
 # Pydantic AI for Data Generation
@@ -24,6 +25,7 @@ pytest>=7.4.0
 # Data Processing & Validation
 pyarrow>=12.0.0
 html5lib>=1.1
+rapid-fuzz>=3.13.0
 
 # # Jupyter Notebooks
 # jupyter>=1.0.0

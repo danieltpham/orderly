@@ -21,6 +21,7 @@ on-run-start:
   - "CREATE SCHEMA IF NOT EXISTS bronze;"
   - "CREATE SCHEMA IF NOT EXISTS silver;"
   - "CREATE SCHEMA IF NOT EXISTS gold;"
+  - "CREATE SCHEMA IF NOT EXISTS ref;"
 
 # Medallion tier configurations
 models:
@@ -43,6 +44,9 @@ models:
       +schema: gold
       +docs:
         node_color: "#FFD700"  # Gold color
+    ref:
+      +materialized: table
+      +schema: ref
 
 seeds:
   orderly:
