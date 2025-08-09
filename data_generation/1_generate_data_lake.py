@@ -22,7 +22,7 @@ from collections import defaultdict
 
 # Configuration
 DATA_DIR = Path(__file__).parent
-RAW_DIR = DATA_DIR.parent / "source"
+RAW_DIR = DATA_DIR.parent / "data" / "source"
 SIMULATED_DIR = DATA_DIR / "output"
 
 # Ensure directories exist
@@ -102,19 +102,145 @@ def generate_cost_centres_csv():
     
     print(f"✅ Created {output_file} with {len(cost_centres)} cost centres")
 
+def generate_canonical_brand_table():
+    """Generate canonical brand table from clean line items."""
+    print("🏷️  Generating canonical brand table...")
+    
+    # Read line items and extract clean brands
+    brands = set()
+    try:
+        with open(SIMULATED_DIR / "line_items.jsonl", 'r') as f:
+            for line in f:
+                item = json.loads(line.strip())
+                # Only use clean entries for canonical data
+                if item.get("data_quality_flag") == "clean" and item.get("brand"):
+                    brands.add(item["brand"])
+    except FileNotFoundError:
+        print("⚠️  line_items.jsonl not found, using default brands")
+        brands = {"TechFlow", "ViewMaster", "ConnectPro", "DataVault", "OfficeLink", "ProConnect"}
+    
+    # Create canonical brand records
+    canonical_brands = []
+    brand_id_counter = 1
+    
+    for brand in sorted(brands):
+        canonical_brands.append({
+            "brand_id": f"BRD{brand_id_counter:03d}",
+            "canonical_brand_name": brand,
+            "brand_aliases": [],  # Could be populated with known variations
+            "is_active": True,
+            "created_date": "2025-01-01",
+            "updated_date": "2025-07-01"
+        })
+        brand_id_counter += 1
+    
+    # Write to CSV
+    output_file = RAW_DIR / "canonical_brands.csv"
+    with open(output_file, 'w', newline='', encoding='utf-8') as f:
+        fieldnames = [
+            "brand_id", "canonical_brand_name", "brand_aliases", 
+            "is_active", "created_date", "updated_date"
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(canonical_brands)
+    
+    print(f"✅ Created {output_file} with {len(canonical_brands)} canonical brands")
+    return brands
+
+def generate_canonical_sku_catalog():
+    """Generate canonical SKU catalog from clean line items."""
+    print("📦 Generating canonical SKU catalog...")
+    
+    # Read line items and extract clean SKU information
+    sku_data = {}
+    try:
+        with open(SIMULATED_DIR / "line_items.jsonl", 'r') as f:
+            for line in f:
+                item = json.loads(line.strip())
+                # Only use clean entries for canonical data
+                if item.get("data_quality_flag") == "clean" and item.get("sku_id"):
+                    sku_id = item["sku_id"]
+                    if sku_id not in sku_data:
+                        sku_data[sku_id] = {
+                            "sku_id": sku_id,
+                            "canonical_description": item.get("item_description", ""),
+                            "canonical_brand": item.get("brand", ""),
+                            "canonical_unit": item.get("unit", "each"),
+                            "canonical_size": item.get("size", ""),
+                            "category": "",  # Will be inferred from description
+                            "is_active": True,
+                            "created_date": "2025-01-01",
+                            "updated_date": "2025-07-01"
+                        }
+    except FileNotFoundError:
+        print("❌ line_items.jsonl not found")
+        return
+    
+    # Infer categories from descriptions
+    category_keywords = {
+        "Keyboards": ["keyboard", "kb"],
+        "Monitors": ["monitor", "display", "screen"],
+        "Webcams": ["webcam", "camera", "cam"],
+        "Headsets": ["headset", "headphone", "earphone", "earbuds"],
+        "Cables": ["cable", "cord", "wire"],
+        "Adapters": ["adapter", "adaptor", "converter"],
+        "Storage": ["drive", "storage", "tb", "gb"]
+    }
+    
+    for sku_id, sku_info in sku_data.items():
+        description_lower = sku_info["canonical_description"].lower()
+        category_found = False
+        
+        for category, keywords in category_keywords.items():
+            if any(keyword in description_lower for keyword in keywords):
+                sku_info["category"] = category
+                category_found = True
+                break
+        
+        if not category_found:
+            sku_info["category"] = "Other"
+    
+    # Convert to list for CSV writing
+    canonical_skus = list(sku_data.values())
+    
+    # Write to CSV
+    output_file = RAW_DIR / "canonical_sku_catalog.csv"
+    with open(output_file, 'w', newline='', encoding='utf-8') as f:
+        fieldnames = [
+            "sku_id", "canonical_description", "canonical_brand", 
+            "canonical_unit", "canonical_size", "category",
+            "is_active", "created_date", "updated_date"
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(canonical_skus)
+    
+    print(f"✅ Created {output_file} with {len(canonical_skus)} canonical SKUs")
+    return sku_data
+
 def generate_vendor_master_csv():
     """Generate vendor master CSV - one entry per vendor (SAP standard)."""
     print("🏭 Generating vendor master CSV...")
     
-    # Read product SKUs to extract brands
+    # Read canonical brands instead of product SKUs
     brands = set()
     try:
-        with open(SIMULATED_DIR / "product_skus.jsonl", 'r') as f:
-            for line in f:
-                sku = json.loads(line.strip())
-                brands.add(sku["brand"])
+        canonical_brands_file = RAW_DIR / "canonical_brands.csv"
+        if canonical_brands_file.exists():
+            with open(canonical_brands_file, 'r') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    brands.add(row["canonical_brand_name"])
+        else:
+            # Fallback to reading from line items
+            with open(SIMULATED_DIR / "line_items.jsonl", 'r') as f:
+                for line in f:
+                    item = json.loads(line.strip())
+                    if item.get("data_quality_flag") == "clean" and item.get("brand"):
+                        brands.add(item["brand"])
     except FileNotFoundError:
-        print("⚠️  product_skus.jsonl not found, using default brands")
+        print("⚠️  canonical brands or line_items.jsonl not found, using default brands")
         brands = {"TechFlow", "ViewMaster", "ConnectPro", "DataVault", "OfficeLink", "ProConnect"}
     
     vendors = []
@@ -226,7 +352,7 @@ def generate_exchange_rates_csv():
     print(f"✅ Created {output_file} with {len(exchange_rates)} exchange rate records")
 
 def split_line_items_by_country_cost_centre():
-    """Split line items into country/cost centre files with dates."""
+    """Split line items into country/cost centre files with dates, removing data quality flags."""
     print("📂 Splitting line items by country and cost centre...")
     
     # Read line items
@@ -252,9 +378,20 @@ def split_line_items_by_country_cost_centre():
             days=random.randint(0, (END_DATE - START_DATE).days)
         )
         
+        # Remove data quality flag and clean up the item for production use
+        clean_item = {
+            "sku_id": item.get("sku_id"),
+            "item_description": item.get("item_description"),
+            "brand": item.get("brand"),
+            "quantity": item.get("quantity"),
+            "unit": item.get("unit"),
+            "size": item.get("size"),
+            # Note: data_quality_flag is intentionally removed here
+        }
+        
         # Enhance item with additional fields
         enhanced_item = {
-            **item,
+            **clean_item,
             "order_date": random_date.strftime("%Y-%m-%d"),
             "order_timestamp": random_date.strftime("%Y-%m-%d %H:%M:%S"),
             "country_code": country,
@@ -296,18 +433,23 @@ def split_line_items_by_country_cost_centre():
         file_count += 1
     
     print(f"✅ Split line items into {file_count} country/cost centre files")
+    print("   ℹ️  Data quality flags removed from production JSON files")
 
 def main():
     """Main function to generate all SAP ARIBA data lake components."""
     print("🚀 Starting SAP ARIBA Data Lake Generation")
     print("=" * 50)
     
+    # Generate canonical reference data first (from clean line items)
+    generate_canonical_brand_table()
+    generate_canonical_sku_catalog()
+    
     # Generate master data
     generate_cost_centres_csv()
     generate_vendor_master_csv()
     generate_exchange_rates_csv()
     
-    # Process line items
+    # Process line items (removing data quality flags for production)
     split_line_items_by_country_cost_centre()
     
     print("\n" + "=" * 50)
@@ -319,6 +461,8 @@ def main():
     print("🤖 Simulated data:")
     for file in SIMULATED_DIR.glob("*"):
         print(f"   - {file.name}")
+    print("\n💡 Note: Data quality flags have been removed from production JSON files.")
+    print("   Canonical reference tables created from clean data entries.")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,38 @@
+sku_id,canonical_description,canonical_brand,canonical_unit,canonical_size,category,is_active,created_date,updated_date
+SKU101,TechFlow Wireless Keyboard black,TechFlow,each,Standard,Keyboards,True,2025-01-01,2025-07-01
+SKU104,USB-C Adapter TechFlow to HDMI,DataVault,each,,Adapters,True,2025-01-01,2025-07-01
+SKU106,Wireless gaming Headset ProConnect,ProConnect,each,Standard,Headsets,True,2025-01-01,2025-07-01
+SKU107,Mechanical Keyboard TechFlow,TechFlow,each,Full-size,Keyboards,True,2025-01-01,2025-07-01
+SKU111,OfficeLink Wireless Earbuds,OfficeLink,each,Standard,Headsets,True,2025-01-01,2025-07-01
+SKU112,ProConnect Ethernet Cable Cat 6 15ft,ProConnect,each,15 ft,Cables,True,2025-01-01,2025-07-01
+SKU113,techflow compact keyboard,TechFlow,each,compact,Keyboards,True,2025-01-01,2025-07-01
+SKU118,ProConnect Wired Headset office,ProConnect,each,Standard,Headsets,True,2025-01-01,2025-07-01
+SKU109,DisplayPort ConnectPro cable 10ft,ConnectPro,each,10ft,Monitors,True,2025-01-01,2025-07-01
+SKU110,32gb USB DataVault Drive ,DataVault,each,,Storage,True,2025-01-01,2025-07-01
+SKU114,"ViewMaster 4K Monitor 32""",ViewMaster,each,32 inch,Monitors,True,2025-01-01,2025-07-01
+SKU115,USB-C Cable ConnectPro 3 ft,ConnectPro,each,3ft,Cables,True,2025-01-01,2025-07-01
+SKU116,External Drive 1TB DataVault,DataVault,each,1 TB,Storage,True,2025-01-01,2025-07-01
+SKU102,ViewMaster 24in LED Monitor,ViewMaster,each,24inch,Monitors,True,2025-01-01,2025-07-01
+SKU103,ConnectPro HDMI Cable 6ft,ConnectPro,each,6 ft,Cables,True,2025-01-01,2025-07-01
+SKU108,ViewMaster LCD Monitor 27inch,ViewMaster,each,27 inch,Monitors,True,2025-01-01,2025-07-01
+SKU120,ViewMaster Portable Storage Drive 500GB,ViewMaster,each,500GB,Storage,True,2025-01-01,2025-07-01
+SKU105,Gaming Headset Wireless,ProConnect,each,Adjustable,Headsets,True,2025-01-01,2025-07-01
+SKU117,Wide Angle Conference Webcam,OfficeLink,each,Standard,Webcams,True,2025-01-01,2025-07-01
+SKU119,Power Adapter 65 Watt,TechFlow,each,Standard,Adapters,True,2025-01-01,2025-07-01
+SKU001,TechFlow Wireless Keyboard Black,TechFlow,each,,Keyboards,True,2025-01-01,2025-07-01
+SKU002,Mechanical Keyboard - RGB Backlit,TechFlow,each,,Keyboards,True,2025-01-01,2025-07-01
+SKU004,27-inch LED Monitor,ViewMaster,each,,Monitors,True,2025-01-01,2025-07-01
+SKU005,USB-C Cable 6 Feet Long,ConnectPro,each,,Cables,True,2025-01-01,2025-07-01
+SKU006,10ft HDMI Cable - ConnectPro,ConnectPro,each,,Cables,True,2025-01-01,2025-07-01
+SKU007,4K Webcam - Brand New,ProConnect,each,,Webcams,True,2025-01-01,2025-07-01
+SKU008,Office Headset Wired,ProConnect,each,,Headsets,True,2025-01-01,2025-07-01
+SKU010,1TB External Hard Drive,DataVault,each,,Storage,True,2025-01-01,2025-07-01
+SKU011,"Compact Keyboard, Wireless",OfficeLink,each,,Keyboards,True,2025-01-01,2025-07-01
+SKU012,LCD Monitor 22 inch,TechFlow,each,,Monitors,True,2025-01-01,2025-07-01
+SKU013,15ft Ethernet Cable,ConnectPro,each,,Cables,True,2025-01-01,2025-07-01
+SKU014,"Gaming Headset, Wireless",ProConnect,each,,Headsets,True,2025-01-01,2025-07-01
+SKU016,USB-C to HDMI Adapter - 4K,OfficeLink,each,,Adapters,True,2025-01-01,2025-07-01
+SKU017,TechFlow Mechanical Keyboard Blue Switch,TechFlow,each,,Keyboards,True,2025-01-01,2025-07-01
+SKU018,OfficeLink Wired Headset,OfficeLink,each,,Headsets,True,2025-01-01,2025-07-01
+SKU009,HDMI Adapter - 4K,ConnectPro,each,,Adapters,True,2025-01-01,2025-07-01
+SKU003,24 inch LED Monitor,ConnectPro,each,24,Monitors,True,2025-01-01,2025-07-01
