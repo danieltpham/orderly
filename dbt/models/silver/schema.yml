@@ -64,23 +64,124 @@ models:
     tests:
       - assert_rowcount
 
-  - name: stg_line_items
-    description: "Staged line items with basic type casting - Silver layer entry point"
-    
-  - name: stg_product_skus
-    description: "Staged product SKUs with standardised fields - Silver layer"
-    
-  - name: stg_vendor_master  
-    description: "Staged vendor master with normalised names - Silver layer"
-    
-  - name: int_units_standardised
-    description: "Intermediate model with standardised units and sizes"
-    
-  - name: int_vendors_mapped
-    description: "Intermediate model with vendor alias resolution"
-    
-  - name: int_skus_matched
-    description: "Intermediate model with fuzzy SKU matching results"
-    
-  - name: int_prices_validated
-    description: "Intermediate model with price quality validation"
+  - name: silver_cost_centres
+    description: "Silver cost centres - clean reference data"
+    columns:
+      - name: cost_centre_id
+        description: "Unique cost centre identifier"
+        tests:
+          - not_null
+          - unique
+      - name: cost_centre_name
+        description: "Cost centre name"
+        tests:
+          - not_null
+      - name: country_code
+        description: "ISO country code"
+        tests:
+          - not_null
+
+  - name: silver_exchange_rates
+    description: "Silver exchange rates - clean reference data"
+    columns:
+      - name: date
+        description: "Exchange rate date"
+        tests:
+          - not_null
+      - name: from_currency
+        description: "Source currency code"
+        tests:
+          - not_null
+      - name: to_currency
+        description: "Target currency code"
+        tests:
+          - not_null
+      - name: exchange_rate
+        description: "Exchange rate value"
+        tests:
+          - not_null
+
+  - name: silver_vendor_master
+    description: "Silver vendor master - clean reference data"
+    columns:
+      - name: vendor_id
+        description: "Unique vendor identifier"
+        tests:
+          - not_null
+          - unique
+      - name: vendor_name
+        description: "Vendor company name"
+        tests:
+          - not_null
+
+  - name: silver_orders_fuzz_scores
+    description: "Fuzzy matching scores between order descriptions and seed SKU names"
+    columns:
+      - name: line_uid
+        description: "Unique identifier for each order line"
+        tests:
+          - not_null
+      - name: sku_id
+        description: "Product SKU identifier"
+        tests:
+          - not_null
+      - name: fuzz_score
+        description: "Fuzzy matching score (0-1) between order description and seed name"
+        tests:
+          - not_null
+
+  - name: silver_orders_with_flags
+    description: "Orders with quality flags for SKU lookup and name matching issues"
+    columns:
+      - name: line_uid
+        description: "Unique identifier for each order line"
+        tests:
+          - not_null
+          - unique
+      - name: sku_id
+        description: "Product SKU identifier"
+        tests:
+          - not_null
+      - name: flag_missing_in_seed
+        description: "True if SKU appears in orders but not in seed"
+        tests:
+          - not_null
+      - name: flag_name_mismatch
+        description: "True if fuzzy match score < 0.8"
+        tests:
+          - not_null
+      - name: has_quality_issues
+        description: "True if any quality flags are raised"
+        tests:
+          - not_null
+
+  - name: silver_orders_valid
+    description: "Clean, valid orders (quality issues filtered out)"
+    columns:
+      - name: line_uid
+        description: "Unique identifier for each order line"
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: sku_id
+        description: "Product SKU identifier"
+        tests:
+          - not_null
+
+  - name: silver_orders_exceptions
+    description: "Orders with quality issues for monitoring and analysis"
+    columns:
+      - name: line_uid
+        description: "Unique identifier for each order line"
+        tests:
+          - not_null
+      - name: exception_type
+        description: "Type of quality exception (SKU_NOT_IN_SEED, NAME_MISMATCH, OTHER)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'OTHER']

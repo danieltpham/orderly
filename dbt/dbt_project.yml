@@ -51,6 +51,9 @@ models:
 seeds:
   orderly:
     +schema: seeds
+    ref_sku_names:
+      +docs:
+        node_color: "#2E8B57"  # Sea green for master data
     canonical_brands:
       +docs:
         node_color: "#2E8B57"  # Sea green for master data
