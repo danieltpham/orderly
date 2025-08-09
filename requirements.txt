@@ -17,12 +17,13 @@ dbt-duckdb>=1.7.0
 # seaborn>=0.13.0
 # plotly>=5.17.0
 
-# # Testing & Data Quality
-# pytest>=7.4.0
+# Testing & Data Quality
+pytest>=7.4.0
 # great-expectations>=0.18.0
 
-# # Fuzzy Matching & Text Processing
-# difflib-extra>=1.0.0
+# Data Processing & Validation
+pyarrow>=12.0.0
+html5lib>=1.1
 
 # # Jupyter Notebooks
 # jupyter>=1.0.0
