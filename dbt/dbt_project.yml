@@ -47,6 +47,12 @@ models:
 seeds:
   orderly:
     +schema: seeds
+    canonical_brands:
+      +docs:
+        node_color: "#2E8B57"  # Sea green for master data
+    canonical_sku_catalog:
+      +docs:
+        node_color: "#2E8B57"  # Sea green for master data
 
 # Project variables
 vars:
