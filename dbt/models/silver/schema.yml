@@ -14,8 +14,6 @@ models:
           - not_null
       - name: sku_id
         description: "Product SKU identifier"
-        tests:
-          - not_null
       - name: item_description_original
         description: "Original item description from source"
       - name: item_description_cleaned
@@ -114,8 +112,8 @@ models:
         tests:
           - not_null
 
-  - name: silver_orders_fuzz_scores
-    description: "Fuzzy matching scores between order descriptions and seed SKU names"
+  - name: stg_orders_fuzz_scores
+    description: "Staging Fuzzy matching scores between order descriptions and seed SKU names"
     columns:
       - name: line_uid
         description: "Unique identifier for each order line"
@@ -123,15 +121,13 @@ models:
           - not_null
       - name: sku_id
         description: "Product SKU identifier"
-        tests:
-          - not_null
       - name: fuzz_score
         description: "Fuzzy matching score (0-1) between order description and seed name"
         tests:
           - not_null
 
-  - name: silver_orders_with_flags
-    description: "Orders with quality flags for SKU lookup and name matching issues"
+  - name: stg_orders_with_flags
+    description: "Staging - Orders with quality flags for SKU lookup and name matching issues"
     columns:
       - name: line_uid
         description: "Unique identifier for each order line"
@@ -140,8 +136,6 @@ models:
           - unique
       - name: sku_id
         description: "Product SKU identifier"
-        tests:
-          - not_null
       - name: flag_missing_in_seed
         description: "True if SKU appears in orders but not in seed"
         tests:
@@ -184,4 +178,4 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'OTHER']
+              values: ['NON_PRODUCT', 'SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'OTHER']

@@ -160,21 +160,6 @@ cleaned_orders AS (
         ) AS line_uid
         
     FROM final_text_cleaned
-),
-
-filtered_orders AS (
-    SELECT *
-    FROM cleaned_orders
-    WHERE 
-        -- Minimal filters: Keep rows with non-null sku_id and order_date
-        sku_id IS NOT NULL
-        AND order_date IS NOT NULL
-        -- Additional data quality filters
-        AND order_id IS NOT NULL
-        AND line_number IS NOT NULL
-        AND line_number >= 1
-        AND source_filename IS NOT NULL
-        AND created_timestamp IS NOT NULL
 )
 
 SELECT 
@@ -197,4 +182,4 @@ SELECT
     created_timestamp,
     non_product_hint,
     line_uid
-FROM filtered_orders
+FROM cleaned_orders

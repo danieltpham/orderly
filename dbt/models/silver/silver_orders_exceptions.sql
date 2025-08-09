@@ -2,7 +2,7 @@
 
 -- Silver orders exceptions - records with quality issues for monitoring and analysis
 with flagged_orders as (
-    select * from {{ ref('silver_orders_with_flags') }}
+    select * from {{ ref('stg_orders_with_flags') }}
 )
 
 select 
@@ -38,11 +38,11 @@ select
     
     -- Exception categorization
     case 
-        when flag_missing_in_seed then 'SKU_NOT_IN_SEED'
-        when flag_name_mismatch then 'NAME_MISMATCH'
+        when non_product_hint and sku_id is null then 'NON_PRODUCT'
+        when coalesce(flag_missing_in_seed, false) then 'SKU_NOT_IN_SEED'
+        when coalesce(flag_name_mismatch, false) then 'NAME_MISMATCH'
         else 'OTHER'
-    end as exception_type
-    
+    end as exception_type   
 from flagged_orders
 where 
     coalesce(flag_missing_in_seed, false) = true

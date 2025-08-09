@@ -84,12 +84,12 @@ silver_cost_centres - Clean cost centre reference data
 silver_exchange_rates - Clean exchange rate data
 silver_vendor_master - Clean vendor reference data
 Advanced Order Processing Models
-silver_orders_fuzz_scores (Python)
+stg_orders_fuzz_scores (Python)
 
 Computes RapidFuzz partial_token_ratio scores
 Compares order descriptions vs seed canonical names
 Only processes SKUs that exist in both tables
-silver_orders_with_flags (SQL)
+stg_orders_with_flags (SQL)
 
 Flags missing SKUs (not in seed)
 Flags name mismatches (fuzzy score < 0.8)

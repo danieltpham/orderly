@@ -2,7 +2,7 @@
 
 -- Silver orders - clean, valid records only (quality issues filtered out)
 with flagged_orders as (
-    select * from {{ ref('silver_orders_with_flags') }}
+    select * from {{ ref('stg_orders_with_flags') }}
 )
 
 select 

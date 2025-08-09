@@ -11,7 +11,7 @@ ref_sku_names as (
 ),
 
 fuzz_scores as (
-    select * from {{ ref('silver_orders_fuzz_scores') }}
+    select * from {{ ref('stg_orders_fuzz_scores') }}
 ),
 
 -- Flag 1: SKU appears in bronze/staged orders but not in seed
