@@ -215,6 +215,7 @@ warehouse/*.duckdb.wal
 warehouse/*.duckdb.tmp
 
 # dbt artifacts
+data/intermediate/
 dbt/target/
 dbt/dbt_packages/
 dbt/logs/
