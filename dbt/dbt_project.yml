@@ -33,19 +33,23 @@ models:
       +schema: bronze
       +docs:
         node_color: "#8B4513"  # Bronze color
+      +post-hook: "{% if target.name == 'dev' %}{{ export_to_csv_posthook('data/intermediate', 'bronze') }}{% endif %}"
     silver:
-      # Clean, conformed data - materialized as tables for performance
+      # Clean, conformed data - materialized as tables
       +materialized: table
       +tags: ["layer:silver"]
       +schema: silver
       +docs:
         node_color: "#C0C0C0"  # Silver color
+      +post-hook: "{% if target.name == 'dev' %}{{ export_to_csv_posthook('data/intermediate', 'silver') }}{% endif %}"
     gold:
       # Curated marts - materialized as tables with indexes
       +materialized: table
+      +tags: ["layer:gold"]
       +schema: gold
       +docs:
         node_color: "#FFD700"  # Gold color
+      +post-hook: "{{ export_to_csv_posthook('data/exports', 'gold') }}"
     staging:
       +materialized: view
       +schema: staging
@@ -55,12 +59,6 @@ seeds:
   orderly:
     +schema: seeds
     ref_sku_names:
-      +docs:
-        node_color: "#2E8B57"  # Sea green for master data
-    canonical_brands:
-      +docs:
-        node_color: "#2E8B57"  # Sea green for master data
-    canonical_sku_catalog:
       +docs:
         node_color: "#2E8B57"  # Sea green for master data
 

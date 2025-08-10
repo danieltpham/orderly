@@ -48,9 +48,8 @@ flagged_orders as (
         fs.matched_vendor_name,
         fs.vendor_fuzz_score,
         case 
-            when fs.vendor_brand_original is not null 
-                and trim(fs.vendor_brand_original) != '' 
-                and fs.matched_vendor_id is null then true 
+            when fs.matched_vendor_id is null or fs.matched_vendor_id = '' 
+            then true 
             else false 
         end as flag_vendor_mismatch,
         

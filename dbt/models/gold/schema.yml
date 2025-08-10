@@ -1,7 +1,6 @@
 version: 2
 
 models:
-  # Core Dimensions - Phase 1
   - name: dim_date
     description: "Date dimension with comprehensive temporal attributes and exchange rates"
     columns:
@@ -91,18 +90,189 @@ models:
       - name: is_approved
         description: "Whether the SKU comes from approved seed data"
         
-  # Legacy dimension references (to be migrated)
-  - name: dim_sku
-    description: "Product SKU dimension with hierarchical attributes - Gold layer (LEGACY - use dim_product)"
-    
-  - name: dim_vendor
-    description: "Vendor dimension with geographic and payment info - Gold layer (LEGACY - use new dim_vendor)"
-    
-  - name: dim_unit
-    description: "Unit of measure dimension with conversion factors - Gold layer"
-    
-  - name: fct_line_item
-    description: "Canonicalised line item fact table - Gold layer"
-    
-  - name: fct_price_anomaly
-    description: "Price anomaly fact table with outlier detection - Gold layer"
+  - name: fct_order_line
+    description: "Core transactional fact for order analysis - Gold layer"
+    columns:
+      - name: order_line_key
+        description: "Surrogate key for order line"
+        tests:
+          - unique
+          - not_null
+      - name: date_key
+        description: "Order date key (FK to dim_date)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: delivery_date_key
+        description: "Delivery date key (FK to dim_date)"
+        tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: cost_centre_key
+        description: "Cost centre key (FK to dim_cost_centre)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cost_centre')
+              field: cost_centre_key
+      - name: vendor_key
+        description: "Vendor key (FK to dim_vendor)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_vendor')
+              field: vendor_key
+      - name: product_key
+        description: "Product key (FK to dim_product)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_key
+      - name: currency_key
+        description: "Currency key (simplified)"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Order quantity"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "Unit price in original currency"
+        tests:
+          - not_null
+      - name: line_total_amount
+        description: "Line total in original currency"
+        tests:
+          - not_null
+      - name: line_total_aud
+        description: "Line total converted to AUD"
+      - name: line_total_usd
+        description: "Line total converted to USD"
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: line_number
+        description: "Line number within order"
+        tests:
+          - not_null
+
+  - name: fct_data_quality
+    description: "Data quality monitoring and exception tracking fact - Gold layer"
+    columns:
+      - name: data_quality_key
+        description: "Surrogate key for data quality record"
+        tests:
+          - unique
+          - not_null
+      - name: date_key
+        description: "Order date key (FK to dim_date)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: cost_centre_key
+        description: "Cost centre key (FK to dim_cost_centre)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cost_centre')
+              field: cost_centre_key
+      - name: vendor_key
+        description: "Vendor key (FK to dim_vendor) - may be null for vendor exceptions"
+        tests:
+          - relationships:
+              to: ref('dim_vendor')
+              field: vendor_key
+      - name: product_key
+        description: "Product key (FK to dim_product) - may be null for SKU exceptions"
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: product_key
+      - name: exception_count
+        description: "Count of exceptions (always 1)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1]
+      - name: fuzz_score
+        description: "Fuzzy matching score for SKU names"
+      - name: vendor_fuzz_score
+        description: "Fuzzy matching score for vendor names"
+      - name: exception_type
+        description: "Type of quality exception"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['SKU_NOT_IN_SEED', 'NAME_MISMATCH', 'VENDOR_MISMATCH', 'OTHER']
+
+  - name: fct_price_variance
+    description: "Price anomaly detection and variance analysis fact - Gold layer"
+    columns:
+      - name: price_variance_key
+        description: "Surrogate key for price variance record"
+        tests:
+          - unique
+          - not_null
+      - name: date_key
+        description: "Analysis date key (FK to dim_date)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: product_key
+        description: "Product key (FK to dim_product)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_key
+      - name: vendor_key
+        description: "Vendor key (FK to dim_vendor)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_vendor')
+              field: vendor_key
+      - name: cost_centre_key
+        description: "Cost centre key (FK to dim_cost_centre)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cost_centre')
+              field: cost_centre_key
+      - name: avg_unit_price
+        description: "Average unit price in USD"
+        tests:
+          - not_null
+      - name: min_unit_price
+        description: "Minimum unit price in USD"
+        tests:
+          - not_null
+      - name: max_unit_price
+        description: "Maximum unit price in USD"
+        tests:
+          - not_null
+      - name: price_variance
+        description: "Price variance measure"
+      - name: order_count
+        description: "Number of order lines in the variance calculation"
+        tests:
+          - not_null
+      - name: total_quantity
+        description: "Total quantity across all orders"
+        tests:
+          - not_null
+      - name: has_significant_variance
+        description: "Flag indicating significant price variance"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true]

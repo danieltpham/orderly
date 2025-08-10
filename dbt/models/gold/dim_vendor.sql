@@ -25,30 +25,24 @@ vendor_enriched as (
             else 'General'
         end as vendor_category,
         
-        -- Derive country preference (placeholder - can be enhanced with actual data)
-        case
-            when lower(vendor_name) like '%au%' or lower(vendor_name) like '%australia%' then 'AU'
-            when lower(vendor_name) like '%us%' or lower(vendor_name) like '%america%' then 'US'
-            else 'Unknown'
-        end as country_code,
-        
         -- Vendor tier based on country preference
         case
             when lower(vendor_name) like '%au%' or lower(vendor_name) like '%australia%' then 'Preferred'
             else 'Standard'
         end as vendor_tier,
         
-        -- Placeholder fields for future enrichment
-        null as payment_terms,
-        null as tax_id,
-        null as city,
-        null as vendor_type,
-        null as preferred_currency,
-        null as credit_limit,
-        null as street_address,
-        null as postal_code,
-        null as contact_email,
-        null as contact_phone,
+        -- Pass through fields
+        country_code as country_code,
+        payment_terms as payment_terms,
+        tax_id as tax_id,
+        city as city,
+        vendor_type as vendor_type,
+        preferred_currency as preferred_currency,
+        credit_limit as credit_limit,
+        street_address as street_address,
+        postal_code as postal_code,
+        contact_email as contact_email,
+        contact_phone as contact_phone,
         
         -- Metadata
         now() as created_at,

@@ -1,5 +1,6 @@
 import pandas as pd
 from rapidfuzz import fuzz
+from rapidfuzz import process
 
 
 def model(dbt, session):
@@ -33,28 +34,55 @@ def model(dbt, session):
             return ""
         return " ".join(text.lower().split())
     
+    # Direct abbreviation mapping (case-sensitive)
+    ABBREV_VENDOR_MAP = {
+        "VM": "ViewMaster Corporation",
+        "CP": "ConnectPro Corporation",
+        "DV": "DataVault Corporation",
+        "TF": "TechFlow Corporation",
+        "PC": "ProConnect Corporation",
+        "OL": "OfficeLink Corporation",
+    }
+    # Reverse map for fast lookup of vendor_id
+    VENDOR_NAME_TO_ID = {
+        normalize_text(row['vendor_name']): row['vendor_id']
+        for _, row in bronze_vendor_master_df.iterrows()
+    }
+
     def find_best_vendor_match(vendor_brand, vendor_master_df):
-        """Find the best vendor match using QRatio with threshold > 0.8"""
+        """Find the best vendor match using abbreviation or fuzzy match."""
         if not isinstance(vendor_brand, str) or not vendor_brand.strip():
             return None, None, 0.0
-            
+
+        # Check for abbreviation direct mapping (case-sensitive)
+        if vendor_brand in ABBREV_VENDOR_MAP:
+            mapped_name = ABBREV_VENDOR_MAP[vendor_brand]
+            normalized_mapped = normalize_text(mapped_name)
+            vendor_id = VENDOR_NAME_TO_ID.get(normalized_mapped)
+            return vendor_id, mapped_name, 1.0
+
         normalized_brand = normalize_text(vendor_brand)
         best_score = 0.0
         best_match_id = None
         best_match_name = None
-        
-        for _, vendor_row in vendor_master_df.iterrows():
-            normalized_vendor = normalize_text(vendor_row['vendor_name'])
-            # Use QRatio for more accurate matching
-            score = fuzz.QRatio(normalized_brand, normalized_vendor) / 100.0
-            
-            if score > best_score:
-                best_score = score
-                best_match_id = vendor_row['vendor_id']
-                best_match_name = vendor_row['vendor_name']
-        
-        # Only return match if score > 0.8
-        if best_score > 0.8:
+
+        # Prepare list of normalized vendor names
+        vendor_names = vendor_master_df['vendor_name'].fillna("").astype(str).apply(normalize_text).tolist()
+        # Use RapidFuzz's extractOne for efficient best match
+        match = process.extractOne(
+            normalized_brand,
+            vendor_names,
+            scorer=fuzz.partial_token_set_ratio,
+            score_cutoff=0  # We'll check threshold later
+        )
+        if match:
+            best_score = match[1] / 100.0
+            best_match_idx = match[2]
+            best_match_id = vendor_master_df.iloc[best_match_idx]['vendor_id']
+            best_match_name = vendor_master_df.iloc[best_match_idx]['vendor_name']
+
+        # Only return match if score >= 0.6
+        if best_score >= 0.6:
             return best_match_id, best_match_name, best_score
         else:
             return None, None, best_score
