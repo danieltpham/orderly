@@ -16,7 +16,7 @@ from typing import Dict, List, Optional
 
 # Add the tools directory to Python path for imports
 sys.path.append(str(Path(__file__).parent))
-from alias_cleaning import transform_aliases_with_canonical_tokens
+from utils.alias_cleaning import transform_aliases_with_canonical_tokens
 
 
 def load_sku_candidates(db_path: Optional[str] = None) -> pd.DataFrame:
