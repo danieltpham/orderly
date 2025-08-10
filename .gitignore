@@ -207,7 +207,6 @@ marimo/_lsp/
 __marimo__/
 .vscode/settings.json
 /src/validation
-/notebooks
 
 # DuckDB files
 warehouse/*.duckdb
