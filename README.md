@@ -1,81 +1,156 @@
-# 🧾 Orderly – PO Line Item ETL Pipeline
+# 🧾 Orderly - Enterprise PO Line Item ETL Pipeline
 
-_⚠️ Disclaimer: This project uses **synthetic data only**. No real or proprietary data is used._
+_⚠️ All data is synthetic. No real or proprietary data is used._
 
-## 🎯 Problem Context
-In large orgs or systems ingesting manual purchase entries:
-- Item names are unstructured and vary across orders
-- Similar products are priced differently or misclassified
-- Vendor names come in many alias forms
-- Orders are missing key fields or include malformed text
+## **Overview**
 
-**Orderly** solves this by:
-- Normalising item names, sizes, and units
-- Matching line items to canonical SKUs via fuzzy logic
-- Cleaning vendor aliases and cost centres
-- Flagging duplicates, outliers, and incomplete entries
+Orderly aims to solve an extremely challenging enterprise data engineering problem: convert chaotic, manually entered purchase order entries into gold-standard, analytics-ready procurement databases with complete auditability and business alignment, without relying on an existing master product catalog.
 
-## 🛠️ Key Skills Demonstrated
+It addresses:
+- Unstructured, erroneous item descriptions
+- Vendor alias resolution at scale
+- Missing product catalogs
+- Multi-currency processing with historical gaps
+- The operational need for **human-in-the-loop (HITL)** quality control
 
-- AI Prompt Engineering (structured generation of messy PO records)
-- ETL Design with Pydantic, pandas, DuckDB
-- SKU + Vendor Fuzzy Matching (fuzzywuzzy, token sort, regex)
-- Data Quality Validation (Great Expectations)
-- Analytics Layer with dbt
-- Modular pipeline with match logs, issue flags, config-based logic
+***
+
+## **Notable Engineering Patterns**
+
+- Confidence-based data validation and routing
+- Fully auditable medallion architecture
+- Exception-driven QA workflows
+- Configurable quality thresholds
+- Incremental reprocessing for scale
+- Integration of HITL into automated pipelines without blocking throughput
+
+***
+
+## **Architecture Highlights**
+
+**Design Principles**
+- **Medallion Architecture** (Bronze / Silver / Gold) with strict separation of concerns and full data lineage
+- **HITL integration** for SKU curation where automation alone is insufficient
+- **Confidence-scored Data Quality** with graded exception routing instead of binary pass/fail
+- **Incremental processing** for scale efficiency
+- **Temporal FX rate interpolation** with auditability
+
+**Key Technical Features**
+- Immutable Bronze layer for raw capture and audit
+- Explicit staging layer for quality scoring before promotion
+- Tri-modal classification: valid, exception, non-product
+- Gold layer designed as star schema for OLAP performance
+- Exception workflows as first-class citizens—quality issues don’t break pipelines
+
+***
+
+## **Solved Data Challenges**
+
+| Challenge | Solution |
+|-----------|----------|
+| No master SKU catalog | Canonical taxonomy built from AI-assisted clustering + human approval |
+| Vendor name variations | Multi-stage fuzzy matching with confidence thresholds & manual overrides |
+| Free-text descriptions | Token-based similarity scoring with domain-specific normalization rules |
+| FX rate gaps | Linear interpolation with source attribution and confidence flags |
+| Quality at scale | Exception-driven routing to human review without blocking good data |
+
+***
+
+## **Technology Stack**
+
+**Core Pipeline**
+- **Python** + **Pandas** - ETL logic, chunked processing for large datasets
+- **DuckDB** - High-performance embedded OLAP store
+- **dbt** - SQL transformation, testing, and documentation
+
+**Data Quality & Matching**
+- **RapidFuzz** - Token-based similarity scoring
+- **pytest** - Automated ETL pipeline and contract tests
+
+**HITL Workflow**
+- **PydanticAI + LLMs** - AI-simulated synthetic PO data
+- Interactive curation tools in **Jupyter** and CLI
+- Version-controlled CSV seed files for mappings
+
+***
+
+## **Pipeline Flow**
+
+```mermaid
+graph TD
+A[AI Data Generation] --> B[Bronze - Raw Capture]
+B --> C[SKU Candidate Generation]
+C --> D[HITL Review & Approval]
+D --> E[Seed File Creation]
+E --> F[Staging - Quality Assessment]
+F --> G{Quality Gates}
+G -->|High Confidence| H[Silver - Valid Data]
+G -->|Exceptions| I[Exception Routing]
+G -->|Non-Product| J[Silver - Non-Product]
+H --> K[Gold Dimensions & Facts]
+I --> F
+```
+
+***
+
+## **Layer Breakdown**
+
+**🥉 Bronze - Raw Ingestion**
+- Immutable storage of source PO lines, vendor lists, cost centres, FX rates
+- Preserves all errors and irregularities for reprocessing and compliance
+
+**🔄 Staging - Quality Assessment**
+- Applies data cleaning, fuzzy scoring, and multi-criteria quality flags
+- Allows graded promotion decisions based on confidence
+
+**🥈 Silver - Validated**
+- Split into:
+  - `silver_orders_valid` (≥80% confidence)
+  - `silver_orders_exceptions` (requires manual intervention)
+  - `silver_orders_nonproduct` (services, fees, etc.)
+
+**💎 Gold - Analytics Models**
+- Star schema with dimensions for product, vendor, cost centre, and date
+- Facts:
+  - `fct_order_line` with FX normalization
+  - `fct_data_quality` for monitoring exception patterns
+  - `fct_price_variance` for anomaly detection
+
+***
+
+## **HITL Strategy for SKU Resolution**
+
+Automated matching handles volume; HITL ensures correctness where ambiguity remains:
+
+1. **AI clustering** of free-text descriptions
+2. **Fuzzy candidate generation**
+3. **Human validation** via interactive tools
+4. Approved mappings promoted to canonical SKU seed files
+5. Pipeline reprocesses with updated mappings incrementally
+
+***
+
+## **Project Structure**
 
 ```
 orderly/
-├── README.md
-├── requirements.txt
-├── orderly.duckdb                # Embedded DB file (auto-generated)
-│
-├── data/
-│   ├── raw/                      # Raw AI-generated or scraped input files
-│   │   ├── line_items.jsonl
-│   │   ├── vendor_master.csv
-│   │   ├── sku_catalog.csv
-│   │   └── cost_centres.csv
-│   │
-│   └── prompts/
-│       └── product_prompt.txt    # AI prompt used to generate fake line items
-│
-├── src/
-│   ├── config.py                 # Paths, DuckDB schema names, constants
-│   ├── bronze_layer.py          # Reads raw files → bronze DuckDB tables
-│   ├── clean_and_match.py       # Cleans + fuzzy matches → silver tables
-│   └── utils/
-│       └── matching_utils.py     # Fuzzy logic, token helpers, etc.
-│
-├── dbt/
-│   ├── dbt_project.yml
-│   ├── profiles.yml             # DuckDB dbt profile
-│   ├── models/
-│   │   ├── silver/
-│   │   │   ├── line_items_clean.sql
-│   │   │   ├── vendor_dim.sql
-│   │   │   └── sku_dim.sql
-│   │   │
-│   │   └── gold/
-│   │       ├── fact_orders.sql
-│   │       ├── spend_cube.sql
-│   │       └── anomaly_log.sql
-│   │
-│   └── seeds/
-│       └── unit_standardisation.csv  # Optional helper maps for dbt
-│
-├── notebooks/
-│   └── explore_sample_data.ipynb     # For quick inspection / demo
-│
-└── tests/
-    └── great_expectations/          # Optional data quality checks
+├── demo_pipeline_local.py     # End-to-end orchestration
+├── data/                      # Bronze / Silver / Gold outputs
+├── data_generation/           # Synthetic data simulation
+├── hitl/                      # SKU curation tools
+├── dbt/                       # Models, seeds, macros, tests
+├── notebooks/                 # Interactive exploration
+└── tests/                     # Python unit tests
 ```
 
-## Layer Summary
+***
 
-| Layer      | Tools Used              | Location                                  |
-| ---------- | ----------------------- | ----------------------------------------- |
-| **Raw**    | Files (JSONL, CSV)      | `data/raw/`                               |
-| **Bronze** | Python → DuckDB         | `src/bronze_layer.py` → `bronze.*` tables |
-| **Silver** | Pandas + Fuzzy Matching | `src/clean_and_match.py` → `silver.*`     |
-| **Gold**   | dbt + DuckDB            | `dbt/models/gold/`                        |
+## **Run Locally**
+
+```bash
+# Setup
+pip install -r requirements.txt
+
+# Execute pipeline
+python demo_pipeline_local.py
+```
