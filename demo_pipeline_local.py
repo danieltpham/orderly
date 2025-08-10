@@ -164,14 +164,14 @@ def main():
         docs_dir.mkdir(exist_ok=True)
         
         run_command(
-            "dbt docs generate --project-dir ./dbt", 
+            "dbt docs generate --static", 
             desc="Generate dbt documentation"
         )
         
         # Copy generated docs to docs directory
         dbt_target_dir = Path("dbt/target")
         if dbt_target_dir.exists():
-            for doc_file in ["index.html", "catalog.json", "manifest.json"]:
+            for doc_file in ["static_index.html"]:
                 src = dbt_target_dir / doc_file
                 if src.exists():
                     shutil.copy2(src, docs_dir / doc_file)
