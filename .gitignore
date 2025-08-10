@@ -221,3 +221,4 @@ dbt/dbt_packages/
 dbt/logs/
 /.vscode
 load-env.ps1
+data/exports/*
