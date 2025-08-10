@@ -14,6 +14,7 @@ Date: August 2025
 import json
 import csv
 import random
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Any
@@ -48,6 +49,9 @@ COUNTRIES = {
         "cost_centres": ["CC_US_001", "CC_US_002", "CC_US_003", "CC_US_004", "CC_US_005"]
     }
 }
+
+# BRANDS
+BRANDS = ["TechFlow", "ViewMaster", "ConnectPro", "DataVault", "OfficeLink", "ProConnect"]
 
 def generate_cost_centres_csv():
     """Generate cost centre hierarchy CSV file."""
@@ -105,38 +109,86 @@ def generate_cost_centres_csv():
     print(f"✅ Created {output_file} with {len(cost_centres)} cost centres")
 
 def generate_canonical_brand_table():
-    """Generate canonical brand table from clean line items."""
+    """Generate canonical brand table using global BRANDS as canonical source."""
     print("🏷️  Generating canonical brand table...")
     
-    # Read line items and extract clean brands
-    brands = set()
+    try:
+        from rapidfuzz import fuzz, process
+    except ImportError:
+        print("❌ rapidfuzz not installed. Installing...")
+        import subprocess
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "rapidfuzz"])
+        from rapidfuzz import fuzz, process
+    
+    # Read line items and extract all brand variations
+    line_item_brands = set()
     try:
         with open(SIMULATED_DIR / "line_items.jsonl", 'r') as f:
             for line in f:
                 item = json.loads(line.strip())
-                # Only use clean entries for canonical data
-                if item.get("data_quality_flag") == "clean" and item.get("brand"):
-                    brands.add(item["brand"])
+                # Extract brands from all entries (not just clean ones)
+                if item.get("brand"):
+                    line_item_brands.add(item["brand"])
     except FileNotFoundError:
-        print("⚠️  line_items.jsonl not found, using default brands")
-        brands = {"TechFlow", "ViewMaster", "ConnectPro", "DataVault", "OfficeLink", "ProConnect"}
+        print("⚠️  line_items.jsonl not found, using simulated brand variations")
+        # Add some simulated variations for testing
+        line_item_brands = {
+            "TechFlow", "techflow", "TF", "Tech Flow",
+            "ViewMaster", "Viewmaster", "VM", "View Master", 
+            "ConnectPro", "Connect Pro", "CP", "connectpro",
+            "DataVault", "Data Vault", "DV", "DatVault", "DatVlt",
+            "OfficeLink", "Office Link", "OL", "officelink",
+            "ProConnect", "Pro Connect", "PC", "proconnect"
+        }
     
-    # Create canonical brand records
+    # Special abbreviation mappings (explicit edge cases)
+    abbreviation_map = {
+        "TF": "TechFlow",
+        "VM": "ViewMaster", 
+        "CP": "ConnectPro",
+        "DV": "DataVault",
+        "OL": "OfficeLink",
+        "PC": "ProConnect"
+    }
+    
+    # Create canonical brand records with aliases
     canonical_brands = []
     brand_id_counter = 1
     
-    for brand in sorted(brands):
+    for canonical_brand in sorted(BRANDS):
+        # Find all variations that match this canonical brand
+        brand_aliases = []
+        
+        for line_brand in line_item_brands:
+            # Check exact abbreviation matches first
+            if line_brand in abbreviation_map and abbreviation_map[line_brand] == canonical_brand:
+                brand_aliases.append(line_brand)
+                continue
+            
+            # Skip if it's the canonical brand itself
+            if line_brand == canonical_brand:
+                continue
+                
+            # Use rapidfuzz to find close matches (threshold 75%)
+            similarity = fuzz.ratio(line_brand.lower(), canonical_brand.lower())
+            if similarity >= 75:
+                brand_aliases.append(line_brand)
+                print(f"   📎 Matched '{line_brand}' to '{canonical_brand}' (similarity: {similarity}%)")
+        
+        # Remove duplicates and sort aliases
+        brand_aliases = sorted(list(set(brand_aliases)))
+        
         canonical_brands.append({
             "brand_id": f"BRD{brand_id_counter:03d}",
-            "canonical_brand_name": brand,
-            "brand_aliases": [],  # Could be populated with known variations
+            "canonical_brand_name": canonical_brand,
+            "brand_aliases": brand_aliases,  # Now populated with variations
             "is_active": True,
             "created_date": "2025-01-01",
             "updated_date": "2025-07-01"
         })
         brand_id_counter += 1
     
-    # Write to CSV in seeds directory
+    # Write to CSV in hidden directory
     output_file = HIDDEN_DIR / "canonical_brands.csv"
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
         fieldnames = [
@@ -148,14 +200,17 @@ def generate_canonical_brand_table():
         writer.writerows(canonical_brands)
     
     print(f"✅ Created {output_file} with {len(canonical_brands)} canonical brands")
-    return brands
+    print(f"   🔗 Total aliases found: {sum(len(brand['brand_aliases']) for brand in canonical_brands)}")
+    return BRANDS
 
 def generate_canonical_sku_catalog():
     """Generate canonical SKU catalog from clean line items."""
     print("📦 Generating canonical SKU catalog...")
     
-    # Read line items and extract clean SKU information
-    sku_data = {}
+    # Read line items and extract clean SKU information - now stores all instances
+    sku_data = {}  # sku_id -> list of instances
+    duplicate_warnings = []
+    
     try:
         with open(SIMULATED_DIR / "line_items.jsonl", 'r') as f:
             for line in f:
@@ -163,18 +218,41 @@ def generate_canonical_sku_catalog():
                 # Only use clean entries for canonical data
                 if item.get("data_quality_flag") == "clean" and item.get("sku_id"):
                     sku_id = item["sku_id"]
+                    
+                    current_instance = {
+                        "sku_id": sku_id,
+                        "canonical_description": item.get("item_description", ""),
+                        "canonical_brand": item.get("brand", ""),
+                        "canonical_unit": item.get("unit", "each"),
+                        "canonical_size": item.get("size", ""),
+                        "category": "",  # Will be inferred from description
+                        "is_active": True,
+                        "created_date": "2025-01-01",
+                        "updated_date": "2025-07-01"
+                    }
+                    
                     if sku_id not in sku_data:
-                        sku_data[sku_id] = {
-                            "sku_id": sku_id,
-                            "canonical_description": item.get("item_description", ""),
-                            "canonical_brand": item.get("brand", ""),
-                            "canonical_unit": item.get("unit", "each"),
-                            "canonical_size": item.get("size", ""),
-                            "category": "",  # Will be inferred from description
-                            "is_active": True,
-                            "created_date": "2025-01-01",
-                            "updated_date": "2025-07-01"
-                        }
+                        # First instance of this SKU
+                        sku_data[sku_id] = [current_instance]
+                    else:
+                        # Duplicate SKU - check for data consistency
+                        first_instance = sku_data[sku_id][0]
+                        differences = []
+                        
+                        # Compare key fields for inconsistencies
+                        fields_to_compare = ["canonical_description", "canonical_brand", "canonical_unit", "canonical_size"]
+                        for field in fields_to_compare:
+                            if first_instance[field] != current_instance[field]:
+                                differences.append(f"{field}: '{first_instance[field]}' vs '{current_instance[field]}'")
+                        
+                        if differences:
+                            warning_msg = f"⚠️  SKU {sku_id} has conflicting data: {'; '.join(differences)}"
+                            duplicate_warnings.append(warning_msg)
+                            print(f"   {warning_msg}")
+                        
+                        # Append regardless of differences (keep all instances)
+                        sku_data[sku_id].append(current_instance)
+                        
     except FileNotFoundError:
         print("❌ line_items.jsonl not found")
         return
@@ -190,23 +268,98 @@ def generate_canonical_sku_catalog():
         "Storage": ["drive", "storage", "tb", "gb"]
     }
     
-    for sku_id, sku_info in sku_data.items():
-        description_lower = sku_info["canonical_description"].lower()
-        category_found = False
-        
-        for category, keywords in category_keywords.items():
-            if any(keyword in description_lower for keyword in keywords):
-                sku_info["category"] = category
-                category_found = True
-                break
-        
-        if not category_found:
-            sku_info["category"] = "Other"
+    # Map brands to canonical BRANDS using fuzzy matching
+    from rapidfuzz import fuzz, process
     
-    # Convert to list for CSV writing
-    canonical_skus = list(sku_data.values())
+    # Special abbreviation mappings (same as in brand table)
+    abbreviation_map = {
+        "TF": "TechFlow",
+        "VM": "ViewMaster", 
+        "CP": "ConnectPro",
+        "DV": "DataVault",
+        "OL": "OfficeLink",
+        "PC": "ProConnect"
+    }
     
-    # Write to CSV in seeds directory
+    def map_to_canonical_brand(brand_name):
+        """Map a brand name to canonical BRANDS using fuzzy matching."""
+        if not brand_name:
+            return ""
+        if brand_name in abbreviation_map:
+            return abbreviation_map[brand_name]
+        if brand_name in BRANDS:
+            return brand_name
+        best_match, score, _ = process.extractOne(brand_name, BRANDS, scorer=fuzz.ratio)
+        if score >= 75:
+            return best_match
+        return brand_name
+    
+    # Flatten to all SKU instances - handle duplicates with versioning
+    all_sku_instances = []
+    total_instances = 0
+    duplicate_count = 0
+    
+    for sku_id, instances in sku_data.items():
+        total_instances += len(instances)
+        if len(instances) > 1:
+            duplicate_count += len(instances) - 1
+        
+        # Sort instances by some criteria (could use timestamp if available)
+        # For now, use order of appearance (first = oldest)
+        
+        for i, instance in enumerate(instances):
+            # Map brand to canonical BRANDS
+            instance["canonical_brand"] = map_to_canonical_brand(instance["canonical_brand"])
+            
+            # Handle duplicate versioning
+            if len(instances) > 1:
+                if i < len(instances) - 1:
+                    # Previous versions - mark as inactive
+                    instance["is_active"] = False
+                    # Set updated_date to when it was superseded (simulate timeline)
+                    days_offset = (i + 1) * 30  # 30 days between versions
+                    base_date = datetime(2025, 1, 1)
+                    superseded_date = base_date + timedelta(days=days_offset)
+                    instance["updated_date"] = superseded_date.strftime("%Y-%m-%d")
+                else:
+                    # Latest version - keep active
+                    instance["is_active"] = True
+                    # Set created_date based on version number
+                    days_offset = i * 30  # 30 days between versions
+                    base_date = datetime(2025, 1, 1)
+                    created_date = base_date + timedelta(days=days_offset)
+                    instance["created_date"] = created_date.strftime("%Y-%m-%d")
+                    instance["updated_date"] = "2025-07-01"  # Latest update
+            else:
+                # Single instance - keep as active with default dates
+                instance["is_active"] = True
+                instance["created_date"] = "2025-01-01"
+                instance["updated_date"] = "2025-07-01"
+            
+            # Infer category from description for each instance
+            description_lower = instance["canonical_description"].lower()
+            category_found = False
+            
+            for category, keywords in category_keywords.items():
+                if any(keyword in description_lower for keyword in keywords):
+                    instance["category"] = category
+                    category_found = True
+                    break
+            
+            if not category_found:
+                instance["category"] = "Other"
+            
+            all_sku_instances.append(instance)
+    
+    # Sort by sku_id before saving
+    all_sku_instances.sort(key=lambda x: x["sku_id"])
+    
+    # Print summary of duplicates
+    if duplicate_count > 0:
+        print(f"   📊 Found {len(duplicate_warnings)} SKUs with conflicting data")
+        print(f"   📈 Total instances: {total_instances}, Unique SKUs: {len(sku_data)}, Duplicate instances: {duplicate_count}")
+    
+    # Write ALL instances to CSV in hidden directory (including duplicates)
     output_file = HIDDEN_DIR / "canonical_sku_catalog.csv"
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
         fieldnames = [
@@ -216,9 +369,9 @@ def generate_canonical_sku_catalog():
         ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(canonical_skus)
+        writer.writerows(all_sku_instances)
     
-    print(f"✅ Created {output_file} with {len(canonical_skus)} canonical SKUs")
+    print(f"✅ Created {output_file} with {len(all_sku_instances)} SKU instances (including duplicates)")
     return sku_data
 
 def generate_vendor_master_csv():

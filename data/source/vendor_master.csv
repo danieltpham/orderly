@@ -1,14 +1,7 @@
 vendor_id,vendor_name,tax_id,country_code,city,payment_terms,vendor_type,is_active,preferred_currency,credit_limit,street_address,postal_code,contact_email,contact_phone,created_date,updated_date
-V001000,DV Corporation,TAX455274670,US,Unknown,NET30,SUPPLIER,True,USD,237590,723 Business Plaza,84396,orders@dv.com,+25-588-6820,2024-01-01,2025-06-08
-V001001,TF Corporation,TAX622810043,US,Unknown,NET30,SUPPLIER,True,USD,392449,943 Business Avenue,89416,orders@tf.com,+27-375-9102,2024-01-01,2025-07-07
-V001002,ViewMaster Corporation,TAX854825551,AU,Sydney,IMMEDIATE,SUPPLIER,True,AUD,164206,106 Business Plaza,52768,orders@viewmaster.com,+41-305-6612,2024-01-01,2025-07-13
-V001003,DatVlt Corporation,TAX842716558,US,Unknown,NET30,SUPPLIER,True,USD,233453,554 Business Avenue,62002,orders@datvlt.com,+30-726-8333,2024-01-01,2025-06-17
-V001004,DataVault Corporation,TAX822264226,SG,Singapore,IMMEDIATE,SUPPLIER,True,SGD,271948,550 Business Drive,17764,orders@datavault.com,+72-298-1922,2024-01-01,2025-07-28
-V001005,Officelink Corporation,TAX668954555,US,Unknown,NET30,SUPPLIER,True,USD,149913,379 Business Plaza,78159,orders@officelink.com,+44-590-4976,2024-01-01,2025-08-21
-V001006,officelink Corporation,TAX700096106,US,Unknown,NET30,SUPPLIER,True,USD,193580,541 Business Avenue,66292,orders@officelink.com,+50-286-5133,2024-01-01,2025-07-04
-V001007,DatVault Corporation,TAX695699320,US,Unknown,NET30,SUPPLIER,True,USD,201288,37 Business Avenue,46518,orders@datvault.com,+44-261-8085,2024-01-01,2025-07-11
-V001008,ProConnect Corporation,TAX116982682,UK,London,NET30,SUPPLIER,True,GBP,584887,497 Business Plaza,76944,orders@proconnect.com,+13-419-8234,2024-01-01,2025-07-20
-V001009,ConnectPro Corporation,TAX908389382,DE,Berlin,NET45,SUPPLIER,True,EUR,683008,447 Business Drive,20157,orders@connectpro.com,+37-822-2685,2024-01-01,2025-07-22
-V001010,OfficeLink Corporation,TAX416048455,US,New York,NET60,SUPPLIER,True,USD,704235,509 Business Avenue,35743,orders@officelink.com,+69-253-6111,2024-01-01,2025-07-24
-V001011,Data Vault Corporation,TAX905737055,US,Unknown,NET30,SUPPLIER,True,USD,365144,739 Business Drive,95601,orders@data vault.com,+90-292-8152,2024-01-01,2025-07-22
-V001012,TechFlow Corporation,TAX308048859,US,San Francisco,NET30,SUPPLIER,True,USD,504770,277 Business Avenue,96243,orders@techflow.com,+56-112-2583,2024-01-01,2025-06-07
+V001000,TechFlow Corporation,TAX506613701,US,San Francisco,NET30,SUPPLIER,True,USD,301210,661 Business Avenue,10367,orders@techflow.com,+39-192-9870,2024-01-01,2025-08-03
+V001001,ViewMaster Corporation,TAX111722769,AU,Sydney,IMMEDIATE,SUPPLIER,True,AUD,755380,164 Business Avenue,93212,orders@viewmaster.com,+81-720-2008,2024-01-01,2025-08-09
+V001002,ConnectPro Corporation,TAX764561801,DE,Berlin,NET45,SUPPLIER,True,EUR,229528,245 Business Street,77205,orders@connectpro.com,+30-245-6517,2024-01-01,2025-06-26
+V001003,DataVault Corporation,TAX169178100,SG,Singapore,IMMEDIATE,SUPPLIER,True,SGD,509207,501 Business Drive,86102,orders@datavault.com,+59-764-4586,2024-01-01,2025-07-10
+V001004,ProConnect Corporation,TAX289002977,UK,London,NET30,SUPPLIER,True,GBP,226823,842 Business Drive,21107,orders@proconnect.com,+38-177-8472,2024-01-01,2025-08-02
+V001005,OfficeLink Corporation,TAX650327670,US,New York,NET60,SUPPLIER,True,USD,218414,657 Business Drive,48390,orders@officelink.com,+91-646-1456,2024-01-01,2025-06-25
