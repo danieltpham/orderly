@@ -1,11 +1,102 @@
 version: 2
 
 models:
+  # Core Dimensions - Phase 1
+  - name: dim_date
+    description: "Date dimension with comprehensive temporal attributes and exchange rates"
+    columns:
+      - name: date_key
+        description: "Primary key in YYYYMMDD format"
+        tests:
+          - unique
+          - not_null
+      - name: date_actual
+        description: "Actual calendar date"
+        tests:
+          - not_null
+      - name: year
+        description: "Calendar year"
+      - name: quarter
+        description: "Calendar quarter (1-4)"
+      - name: month
+        description: "Calendar month (1-12)"
+      - name: fiscal_year
+        description: "Fiscal year (July-June)"
+      - name: usd_to_aud
+        description: "USD to AUD exchange rate for the date"
+        
+  - name: dim_cost_centre
+    description: "Cost centre dimension with organizational hierarchy and geographic attributes"
+    columns:
+      - name: cost_centre_key
+        description: "Surrogate key (MD5 hash of cost_centre_id)"
+        tests:
+          - unique
+          - not_null
+      - name: cost_centre_id
+        description: "Business key for cost centre"
+        tests:
+          - unique
+          - not_null
+      - name: cost_centre_name
+        description: "Display name of the cost centre"
+      - name: country_code
+        description: "ISO country code (AU/US)"
+      - name: region
+        description: "Geographic region grouping"
+        
+  - name: dim_vendor
+    description: "Vendor dimension with categorization and tier classification"
+    columns:
+      - name: vendor_key
+        description: "Surrogate key (MD5 hash of vendor_id)"
+        tests:
+          - unique
+          - not_null
+      - name: vendor_id
+        description: "Business key for vendor"
+        tests:
+          - unique
+          - not_null
+      - name: vendor_name
+        description: "Vendor display name"
+      - name: vendor_category
+        description: "Derived vendor category based on name patterns"
+      - name: vendor_tier
+        description: "Vendor tier (Preferred/Standard)"
+        
+  - name: dim_product
+    description: "Product dimension with SKU categorization and brand classification"
+    columns:
+      - name: product_key
+        description: "Surrogate key (MD5 hash of sku_id)"
+        tests:
+          - unique
+          - not_null
+      - name: sku_id
+        description: "Business key for product SKU"
+        tests:
+          - unique
+          - not_null
+      - name: canonical_name
+        description: "Standardized product name"
+      - name: product_category
+        description: "Primary product category (Keyboards, Monitors, etc.)"
+      - name: product_subcategory
+        description: "Secondary categorization (Wireless, 4K, etc.)"
+      - name: product_brand
+        description: "Extracted brand name"
+      - name: source_type
+        description: "Source of the SKU record (approved_seed, auto_ref, auto_discovered)"
+      - name: is_approved
+        description: "Whether the SKU comes from approved seed data"
+        
+  # Legacy dimension references (to be migrated)
   - name: dim_sku
-    description: "Product SKU dimension with hierarchical attributes - Gold layer"
+    description: "Product SKU dimension with hierarchical attributes - Gold layer (LEGACY - use dim_product)"
     
   - name: dim_vendor
-    description: "Vendor dimension with geographic and payment info - Gold layer"
+    description: "Vendor dimension with geographic and payment info - Gold layer (LEGACY - use new dim_vendor)"
     
   - name: dim_unit
     description: "Unit of measure dimension with conversion factors - Gold layer"
