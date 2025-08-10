@@ -119,7 +119,7 @@ def build_new_rows(approved_df: pd.DataFrame, eff_from: str, version: str) -> pd
         bad = df[df["canonical_name"] == ""]
         sys.exit(f"[ERROR] Empty canonical_name for {len(bad)} rows; fix sku_name in approved CSV.")
 
-    return df[SEED_COLS + ["source"]].copy()  # source already included
+    return df[SEED_COLS].copy()
 
 
 def merge_seed(existing: pd.DataFrame, new_rows: pd.DataFrame) -> pd.DataFrame:
@@ -132,7 +132,7 @@ def merge_seed(existing: pd.DataFrame, new_rows: pd.DataFrame) -> pd.DataFrame:
         return new_rows[SEED_COLS].sort_values("sku_id").reset_index(drop=True)
 
     # Add a priority flag
-    def src_priority(s: pd.Series) -> int:
+    def src_priority(s: pd.Series) -> pd.Series:
         return s.map({SRC_APPROVED: 2, SRC_AUTO: 1}).fillna(0).astype(int)
 
     existing = existing.copy()

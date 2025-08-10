@@ -26,8 +26,11 @@ if __name__ == "__main__":
 	# Generate local .csv to curate SKU seed file
 	run_command("python src/transform/sku_curation_cli.py export", desc="Export SKU curation candidates")
 
-	# Update seed file with proper curation, then run
+	# Update seed file with proper curation, then run this to update seed csv
 	run_command("python src/transform/generate_sku_seed.py data/intermediate/curation_exports/sku_name_curation_20250809_approved.csv", desc="Generate SKU seed from curated file")
+
+	# Generate seed
+	run_command("dbt seed", desc="Generating seed table")
 
 	# Run the rest of the staging
 	run_command("dbt build --select staging --exclude stg_orders", desc="Build remaining staging models")
