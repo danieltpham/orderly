@@ -114,25 +114,30 @@ def create_hitl_auto_layout():
                             
                             # Decision
                             dmc.Divider(variant="dashed", my="sm"),
-                            dmc.Group([
-                                dmc.Title("Auto-decision", order=3),
-                                dmc.HoverCard(
-                                    shadow="md",
-                                    width=300,
-                                    children=[
-                                        dmc.HoverCardTarget(dmc.Text("[?]", style={"cursor": "help"})),
-                                        dmc.HoverCardDropdown([
-                                            dmc.Text(
-                                                "'AUTO' if a high-confidence match was found (score > 80 and clear winner). "
-                                                "'NEED_APPROVAL' if manual review is required for this SKU.",
-                                                size="sm"
-                                            )
-                                        ])
-                                    ]
-                                ),
-                                dmc.Badge(
-                                    id='hitl-decision',
-                                    variant="filled",
+                            dmc.Stack([
+                                dmc.Group([
+                                    dmc.Title("Auto-decision", order=3),
+                                    dmc.HoverCard(
+                                        shadow="md",
+                                        width=300,
+                                        children=[
+                                            dmc.HoverCardTarget(dmc.Text("[?]", style={"cursor": "help"})),
+                                            dmc.HoverCardDropdown([
+                                                dmc.Text(
+                                                    "'AUTO' if a high-confidence match was found (score > 80 and clear winner). "
+                                                    "'NEED_APPROVAL' if manual review is required for this SKU.",
+                                                    size="sm"
+                                                )
+                                            ])
+                                        ]
+                                    ),
+                                    dmc.Badge(
+                                        id='hitl-decision',
+                                        variant="filled",
+                                    )
+                                ]),
+                                dmc.Text(
+                                    id='hitl-match-name',
                                 )
                             ])
                         ])

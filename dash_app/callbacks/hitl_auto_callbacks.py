@@ -10,6 +10,7 @@ def register_hitl_auto_callbacks(app):
             Output('hitl-raw-names', 'children'),
             Output('hitl-canonical-tokens', 'children'),
             Output('hitl-matches', 'children'),
+            Output('hitl-match-name', 'children'),
             Output('hitl-decision', 'children'),
             Output('hitl-decision', 'color'),
         ],
@@ -17,7 +18,7 @@ def register_hitl_auto_callbacks(app):
     )
     def update_hitl_view(sku_id):
         if not sku_id:
-            return [], "No SKU selected", [], "NO DATA", "gray"
+            return [], "No SKU selected", [], "", "NO DATA", "gray"
             
         # Load curation data
         exports_dir = Path(__file__).parents[2] / 'data' / 'intermediate' / 'curation_exports'
@@ -76,4 +77,4 @@ def register_hitl_auto_callbacks(app):
         decision = sku_data['decision']
         decision_color = "green" if decision == "AUTO" else "orange"
         
-        return raw_names, ' · '.join(canonical_tokens), matches, decision, decision_color
+        return raw_names, ' · '.join(canonical_tokens), matches, sku_data['match_name'], decision, decision_color
