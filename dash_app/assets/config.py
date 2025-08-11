@@ -10,7 +10,7 @@ STEPS = [
 # --- Step narrative content ---
 STEP_CONTENT = {
     "bronze": {
-        "Purpose": [
+        "Aim": [
             "Ingest raw files into Bronze layer.",
             "Enable schema inspection before transformations."
         ],
@@ -18,30 +18,30 @@ STEP_CONTENT = {
             "Schema drift across sources.",
             "Mixed units/currencies; vendor aliasing."
         ],
-        "What We Did": [
+        "Achievements": [
             "Unified ingestion to DuckDB.",
             "Basic normalization and type inference.",
             "Lineage tracking for audits."
         ]
     },
     "hitl-auto": {
-        "Purpose": ["Auto-approve clear matches to reduce manual load."],
+        "Aim": ["Auto-approve clear matches to reduce manual load."],
         "Key Challenges": ["Avoid false positives near threshold."],
-        "What We Did": ["Fuzzy matching with set thresholds.", "Token normalization before matching."]
+        "Achievements": ["Fuzzy matching with set thresholds.", "Token normalization before matching."]
     },
     "hitl-review": {
-        "Purpose": ["Human validation for ambiguous matches."],
+        "Aim": ["Human validation for ambiguous matches."],
         "Key Challenges": ["Provide clear review signals.", "Ensure version control on seed updates."],
-        "What We Did": ["Review queue with status changes.", "Audit trail for every decision."]
+        "Achievements": ["Review queue with status changes.", "Audit trail for every decision."]
     },
     "silver": {
-        "Purpose": ["Produce analytics-grade records."],
+        "Aim": ["Produce analytics-grade records."],
         "Key Challenges": ["Unit and currency normalization.", "Referential integrity checks."],
-        "What We Did": ["Deterministic conversion rules.", "QC exception reporting."]
+        "Achievements": ["Deterministic conversion rules.", "QC exception reporting."]
     },
     "gold": {
-        "Purpose": ["Expose a clean star schema for BI."],
+        "Aim": ["Expose a clean star schema for BI."],
         "Key Challenges": ["Choose correct grain and keys."],
-        "What We Did": ["Dimensional modelling.", "Surrogate keys for SCD-ready dims."]
+        "Achievements": ["Dimensional modelling.", "Surrogate keys for SCD-ready dims."]
     },
 }

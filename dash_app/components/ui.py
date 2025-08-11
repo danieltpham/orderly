@@ -21,7 +21,7 @@ def narrative_box(stage_key: str):
             )
             for title, items in data.items()
         ],
-        value = ["Purpose"]
+        value = ["Aim"]
     )
 
 def app_header():
@@ -60,22 +60,79 @@ def app_navbar():
     )
 
 def app_aside():
-    return dmc.AppShellAside(dmc.Text("Aside"), p="md")
+    return dmc.AppShellAside(
+        dmc.Stack(
+            [
+                dmc.Title("About this demo", order=3),
+                dmc.Text(
+                    "An interactive storytelling dashboard using snapshotted data "
+                    "to show the ORDERLY pipeline’s complexity and decisions.\n"
+                    "Have fun interacting with the UI ^_^"
+                ),
+                dmc.Accordion(
+                    children=[
+                        dmc.AccordionItem(
+                            [
+                                dmc.AccordionControl("UI Features"),
+                                dmc.AccordionPanel(
+                                    dmc.List(
+                                        [
+                                            dmc.ListItem("Data generation (mock)"),
+                                            dmc.ListItem("Bronze ingestion (raw → DuckDB)"),
+                                            dmc.ListItem("HITL curation (SKU & vendor)"),
+                                            dmc.ListItem("Silver QC, exceptions, categorisation"),
+                                            dmc.ListItem("Gold star schema for BI"),
+                                            dmc.ListItem("Final analytics (text summaries)"),
+                                        ],
+                                        size="sm",
+                                    )
+                                ),
+                            ],
+                            value="shows",
+                        ),
+                        dmc.AccordionItem(
+                            [
+                                dmc.AccordionControl("Displaying"),
+                                dmc.AccordionPanel(
+                                    dmc.List(
+                                        [
+                                            dmc.ListItem("Technical depth across layers"),
+                                            dmc.ListItem("Data governance: versioning & QA"),
+                                            dmc.ListItem("UX for data operations"),
+                                            dmc.ListItem("Attention to detail end-to-end"),
+                                        ],
+                                        size="sm",
+                                    )
+                                ),
+                            ],
+                            value="proves",
+                        ),
+                    ],
+                    multiple=True,
+                    variant="separated",
+                ),
+            ],
+            p="md",
+            gap="sm",
+        ),
+        style={"overflowY": "auto", "maxHeight": "100vh"},
+    )
+
 
 def app_footer():
     return dmc.AppShellFooter(
         dmc.Group(
             [
-                dmc.Text("A project by © 2025 Daniel Pham", size="sm", c="green"),
+                dmc.Text("A project by © 2025 Daniel Pham", size="sm", c="#00d28b"),
 
                 dmc.Anchor(
-                    dmc.Text("[GITHUB]", size="sm", c="green"),
+                    dmc.Text("[GITHUB]", size="sm", c="#00d28b"),
                     href="https://github.com/danieltpham/orderly",
                     target="_blank"
                 ),
 
                 dmc.Anchor(
-                    dmc.Text("[DBT DOCS]", size="sm", c="green"),
+                    dmc.Text("[DBT DOCS]", size="sm", c="#00d28b"),
                     href="#",
                     target="_blank"
                 ),

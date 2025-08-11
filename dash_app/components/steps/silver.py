@@ -11,8 +11,8 @@ def get_silver_data():
             con = duckdb.connect('warehouse/orderly.duckdb')
             
             # Get data from each silver table with row counts
-            valid_orders = con.execute("SELECT COUNT(*) as count FROM dev_silver.silver_orders_valid").fetchone()[0]
-            nonproduct_orders = con.execute("SELECT COUNT(*) as count FROM dev_silver.silver_orders_nonproduct").fetchone()[0]
+            valid_orders = con.execute("SELECT COUNT(*) as count FROM dev_silver.silver_orders_valid").fetchone()[0] # type: ignore
+            nonproduct_orders = con.execute("SELECT COUNT(*) as count FROM dev_silver.silver_orders_nonproduct").fetchone()[0] # type: ignore
             exceptions = con.execute("""
                 SELECT exception_type, COUNT(*) as count 
                 FROM dev_silver.silver_orders_exceptions 
