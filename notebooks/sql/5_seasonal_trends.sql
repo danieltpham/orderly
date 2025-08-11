@@ -1,11 +1,10 @@
 -- Seasonal procurement trend analysis
 with monthly_trends as (
     select 
-        dd.month_number,
-        dd.month_name,
-        dd.quarter_name,
+        dd.month,
+        dd.quarter,
         dp.product_category,
-        dp.brand,
+        dp.product_brand,
         
         -- Monthly aggregations
         sum(fol.line_total_aud) as monthly_spend_aud,
@@ -18,9 +17,9 @@ with monthly_trends as (
     join dev_gold.dim_date dd on fol.date_key = dd.date_key
     join dev_gold.dim_product dp on fol.product_key = dp.product_key
     
-    where dd.year_actual >= extract(year from current_date()) - 2  -- Last 2 years
+    where dd.year >= extract(year from current_date()) - 2  -- Last 2 years
     
-    group by 1,2,3,4,5
+    group by 1,2,3,4
 ),
 
 category_averages as (
@@ -33,10 +32,10 @@ category_averages as (
 )
 
 select 
-    mt.month_name,
-    mt.quarter_name,
+    mt.month,
+    mt.quarter,
     mt.product_category,
-    mt.brand,
+    mt.product_brand,
     mt.monthly_spend_aud,
     mt.monthly_quantity,
     mt.monthly_orders,
@@ -56,4 +55,4 @@ select
 from monthly_trends mt
 join category_averages ca on mt.product_category = ca.product_category
 
-order by mt.product_category, mt.month_number;
+order by mt.product_category, mt.month;

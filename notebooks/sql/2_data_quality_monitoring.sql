@@ -2,10 +2,9 @@
 with exception_summary as (
     select 
         dc.cost_centre_name,
-        dc.cost_centre_code,
         fdq.exception_type,
         dd.month_name,
-        dd.year_actual,
+        dd.year,
         
         -- Quality metrics
         count(*) as exception_count,
@@ -23,7 +22,7 @@ with exception_summary as (
     
     where dd.date_actual >= current_date() - interval 6 month
     
-    group by 1,2,3,4,5
+    group by 1,2,3,4
 ),
 
 total_orders as (

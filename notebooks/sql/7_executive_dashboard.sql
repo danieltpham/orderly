@@ -15,8 +15,8 @@ with current_period as (
     join dev_gold.dim_vendor dv on fol.vendor_key = dv.vendor_key
     join dev_gold.dim_product dp on fol.product_key = dp.product_key
     
-    where dd.year_actual = extract(year from current_date())
-      and dd.month_number = extract(month from current_date())
+    where dd.year = extract(year from current_date())
+      and dd.month = extract(month from current_date())
       
     union all
     
@@ -53,7 +53,7 @@ with current_period as (
     join dev_gold.dim_vendor dv on fol.vendor_key = dv.vendor_key
     join dev_gold.dim_product dp on fol.product_key = dp.product_key
     
-    where dd.year_actual = extract(year from current_date())
+    where dd.year = extract(year from current_date())
 ),
 
 quality_metrics as (
@@ -62,8 +62,8 @@ quality_metrics as (
         avg(fuzz_score) as avg_data_quality_score
     from dev_gold.fct_data_quality fdq
     join dev_gold.dim_date dd on fdq.date_key = dd.date_key
-    where dd.year_actual = extract(year from current_date())
-      and dd.month_number = extract(month from current_date())
+    where dd.year = extract(year from current_date())
+      and dd.month = extract(month from current_date())
 )
 
 select 

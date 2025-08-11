@@ -4,8 +4,8 @@ with regional_metrics as (
         dc.country_code,
         dc.region,
         dc.cost_centre_name,
-        dd.quarter_name,
-        dd.year_actual,
+        dd.quarter,
+        dd.year,
         dv.vendor_category,
         
         -- Procurement metrics

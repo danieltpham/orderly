@@ -7,7 +7,7 @@ with quarterly_spend as (
         dv.vendor_category,
         dp.product_category,
         dd.quarter,
-        dd.year_actual,
+        dd.year,
         
         -- Spend metrics
         sum(fol.line_total_aud) as total_spend_aud,
