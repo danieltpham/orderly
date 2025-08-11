@@ -63,7 +63,29 @@ def app_aside():
     return dmc.AppShellAside(dmc.Text("Aside"), p="md")
 
 def app_footer():
-    return dmc.AppShellFooter(dmc.Text("Footer"), p="md")
+    return dmc.AppShellFooter(
+        dmc.Group(
+            [
+                dmc.Text("A project by © 2025 Daniel Pham", size="sm", c="green"),
+
+                dmc.Anchor(
+                    dmc.Text("[GITHUB]", size="sm", c="green"),
+                    href="https://github.com/danieltpham/orderly",
+                    target="_blank"
+                ),
+
+                dmc.Anchor(
+                    dmc.Text("[DBT DOCS]", size="sm", c="green"),
+                    href="#",
+                    target="_blank"
+                ),
+            ],
+            justify="space-between",
+            w="100%",
+        ),
+        p="md",
+    )
+
 
 def app_main():
     return dmc.AppShellMain(dmc.Text(" "))
