@@ -27,7 +27,7 @@ def narrative_box(stage_key: str):
 def app_header():
     return dmc.AppShellHeader(
         dmc.Group(
-            [dmc.Title("ORDERLY dbt showcase"), dmc.Divider(orientation="vertical"), dmc.Title(">> v2.1.0 // (C) DANIEL PHAM // READY <<")],
+            [dmc.Title("ORDERLY dbt showcase"), dmc.Divider(orientation="vertical"), dmc.Title(">> v2.1.0 // (C) DANIEL PHAM // READY <<", order=3)],
             h="100%", px="md",
         )
     )
@@ -88,4 +88,8 @@ def app_footer():
 
 
 def app_main():
-    return dmc.AppShellMain(dmc.Text(" "))
+    from components.steps.bronze import create_bronze_layout
+    
+    return dmc.AppShellMain(
+        html.Div(id="main-content")
+    )

@@ -1,5 +1,6 @@
 dash>=3.2
 dash-mantine-components>=2.1
 dash-ag-grid>=32.3
+dash_bootstrap_components>=2.0
 pandas>=2.2
 duckdb>=1.0.0
