@@ -17,9 +17,11 @@ app.layout = dmc.MantineProvider(
 from callbacks.sidebar import register_sidebar_callbacks
 from callbacks.navigation import register_navigation_callbacks
 from callbacks.bronze_callbacks import register_bronze_callbacks
+from callbacks.hitl_auto_callbacks import register_hitl_auto_callbacks
 
 register_sidebar_callbacks(app)
 register_navigation_callbacks(app)
 register_bronze_callbacks(app)
+register_hitl_auto_callbacks(app)
 
 server = app.server
