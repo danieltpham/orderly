@@ -1,0 +1,41 @@
+sku_id,canonical_name,source,effective_from,version
+SKU001,wireless keyboard,auto_ref,2025-08-10,v0.2
+SKU002,led monitor 24in - viewmaster,approved_seed,2025-08-10,v0.2
+SKU003,usb-c cable connectpro 6ft,approved_seed,2025-08-10,v0.2
+SKU004,4k webcam,approved_seed,2025-08-10,v0.2
+SKU005,usb c cable,auto_ref,2025-08-10,v0.2
+SKU006,datavault 1tb external drive,approved_seed,2025-08-10,v0.2
+SKU007,hdmi adapter,approved_seed,2025-08-10,v0.2
+SKU008,connectpro mech keyboard compact,approved_seed,2025-08-10,v0.2
+SKU009,office headset wired,approved_seed,2025-08-10,v0.2
+SKU010,usb drive 32gb,approved_seed,2025-08-10,v0.2
+SKU011,"compact keyboard, wireless",approved_seed,2025-08-10,v0.2
+SKU012,lcd monitor 22 inch,approved_seed,2025-08-10,v0.2
+SKU013,ethernet cable,auto_ref,2025-08-10,v0.2
+SKU014,"gaming headset, wireless",approved_seed,2025-08-10,v0.2
+SKU015,32 inch lcd monitor view master,approved_seed,2025-08-09,v0.1
+SKU016,usb-c to hdmi adapter - 4k,approved_seed,2025-08-10,v0.2
+SKU017,techflow mechanical keyboard blue switch,approved_seed,2025-08-10,v0.2
+SKU018,officelink wired headset,auto_ref,2025-08-10,v0.2
+SKU019,512gb external ssd data vault,approved_seed,2025-08-09,v0.1
+SKU020,"4k monitor 27""",approved_seed,2025-08-09,v0.1
+SKU101,tf wireless keyboard,auto_ref,2025-08-10,v0.2
+SKU102,led monitor,auto_ref,2025-08-10,v0.2
+SKU103,usb c cable,auto_ref,2025-08-10,v0.2
+SKU104,hd webcam,auto_ref,2025-08-10,v0.2
+SKU105,wireless headset ear,auto_ref,2025-08-10,v0.2
+SKU106,usb-c to hdmi adapter proconnect,approved_seed,2025-08-10,v0.2
+SKU107,techflow mech keyboard,auto_ref,2025-08-10,v0.2
+SKU108,lcd monitor,auto_ref,2025-08-10,v0.2
+SKU109,connectpro eth cable,auto_ref,2025-08-10,v0.2
+SKU110,1tb external hard drive portable,approved_seed,2025-08-10,v0.2
+SKU111,officelink wired headset,approved_seed,2025-08-10,v0.2
+SKU112,office bluetooth headset,approved_seed,2025-08-10,v0.2
+SKU113,techflow rgb mechanical keyboard,approved_seed,2025-08-10,v0.2
+SKU114,viewmaster monitor,auto_ref,2025-08-10,v0.2
+SKU115,hdmi cable 9ft connectpro,approved_seed,2025-08-10,v0.2
+SKU116,datavault external hdd 2tb,approved_seed,2025-08-10,v0.2
+SKU117,webcam officelink,auto_ref,2025-08-10,v0.2
+SKU118,proconnect headset wired,auto_ref,2025-08-10,v0.2
+SKU119,techflow compact keyboard white,approved_seed,2025-08-10,v0.2
+SKU120,thunderbolt cable 3ft,approved_seed,2025-08-10,v0.2

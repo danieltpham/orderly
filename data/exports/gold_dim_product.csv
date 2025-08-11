@@ -1,0 +1,41 @@
+product_key,sku_id,canonical_name,source_type,product_category,product_subcategory,product_brand,from_seed,is_approved,created_at,updated_at,is_active
+0dca678de53c67021d3c72a335854e78,SKU001,wireless keyboard,auto_ref,Keyboards,Wireless,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+362f93603b14f190cfa5cceeff63b2e5,SKU002,led monitor 24in - viewmaster,approved_seed,Monitors,Standard,ViewMaster,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+08050882fdd8d3d1b5098035236859e6,SKU003,usb-c cable connectpro 6ft,approved_seed,Cables,USB-C,ConnectPro,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+0cbeeb2bf9183870f6859a7a8e69349e,SKU004,4k webcam,approved_seed,Webcams,4K/UHD,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+ac4e5210849b355386428f1e4401382a,SKU005,usb c cable,auto_ref,Cables,USB-C,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+7c7a81ccb126cde0cd898336089fc5a4,SKU006,datavault 1tb external drive,approved_seed,Storage,External,DataVault,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+f3f79b4a7f54b4fa78bc9df0fe660411,SKU007,hdmi adapter,approved_seed,Adapters,HDMI,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+22579cec72b18e2776930b000867a9ed,SKU008,connectpro mech keyboard compact,approved_seed,Keyboards,Compact,ConnectPro,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+80d5a28f2fcf06e9e1049a79cc965eb2,SKU009,office headset wired,approved_seed,Headsets,Wired,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+14d8e65533f4138bc6edcf9a5e4a97dc,SKU010,usb drive 32gb,approved_seed,Storage,Standard,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+7cfddf51e4cfc7425c9fca8f4049bcbb,SKU011,"compact keyboard, wireless",approved_seed,Keyboards,Wireless,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+5ec5d62aac1076ec11d267779784a082,SKU012,lcd monitor 22 inch,approved_seed,Monitors,Standard,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+d57dc3ff51932c13d0575d0ba9daa8f5,SKU013,ethernet cable,auto_ref,Cables,Standard,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+ef040431c412d76a8d54d6f256a49b09,SKU014,"gaming headset, wireless",approved_seed,Headsets,Wireless,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+7dc3e5695fb22c9292eaf00faf9b3a8a,SKU015,32 inch lcd monitor view master,approved_seed,Monitors,Standard,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+7df3f81f0069cc35c619759daa7ffb4d,SKU016,usb-c to hdmi adapter - 4k,approved_seed,Adapters,USB-C,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+fc0d38e46b4443f94954594b391adb75,SKU017,techflow mechanical keyboard blue switch,approved_seed,Keyboards,Mechanical,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+6968883b04f29bc9da36ef3853f71acc,SKU018,officelink wired headset,auto_ref,Headsets,Wired,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+fa0d58d9281d8a4263f2e1cfdee66da5,SKU019,512gb external ssd data vault,approved_seed,Storage,External,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+0bfcbb8d4ab95c0157ec3f085bf248bc,SKU020,"4k monitor 27""",approved_seed,Monitors,4K/UHD,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+3952f9e49d5a126a3e4a8b216a7c4ac1,SKU101,tf wireless keyboard,auto_ref,Keyboards,Wireless,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+b646c84ea74ebbd2ce27e17d75e2b819,SKU102,led monitor,auto_ref,Monitors,Standard,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+9a46757e81ccf82fe0b6c45bff5e1ea5,SKU103,usb c cable,auto_ref,Cables,USB-C,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+89b40904deb88f8684c25d3c11340838,SKU104,hd webcam,auto_ref,Webcams,Standard,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+83126802147492a03a46ffe25a26e53f,SKU105,wireless headset ear,auto_ref,Headsets,Wireless,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+872d517c29fd86390bd5247bfc49ab27,SKU106,usb-c to hdmi adapter proconnect,approved_seed,Adapters,USB-C,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+2d76498279fceb080c8276f555bf5877,SKU107,techflow mech keyboard,auto_ref,Keyboards,Mechanical,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+c33fccb601bd048e98ca0221d0513a45,SKU108,lcd monitor,auto_ref,Monitors,Standard,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+2a71cd7e3b9c19d2d3196dbb88037416,SKU109,connectpro eth cable,auto_ref,Cables,Standard,ConnectPro,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+545b003f6bac13bcde42827f40560b61,SKU110,1tb external hard drive portable,approved_seed,Storage,External,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+aaadecf37a9a65410c8c9cb0534dcf54,SKU111,officelink wired headset,approved_seed,Headsets,Wired,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+3140bbc04dae4e21958331f63deb7722,SKU112,office bluetooth headset,approved_seed,Headsets,Standard,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+0a140f8a70774cc6ca46ee58372c5a3c,SKU113,techflow rgb mechanical keyboard,approved_seed,Keyboards,Mechanical,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+7da598bcf0c556d64707a92b63efee08,SKU114,viewmaster monitor,auto_ref,Monitors,Standard,ViewMaster,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+e6e3354b3bb843fb345fafb6ce93e951,SKU115,hdmi cable 9ft connectpro,approved_seed,Cables,HDMI,ConnectPro,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+b002fdf2ed9b8f986a5adcdaca47d83b,SKU116,datavault external hdd 2tb,approved_seed,Storage,External,DataVault,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+b01bc4b6eab79ee7291fa015aad30beb,SKU117,webcam officelink,auto_ref,Webcams,Standard,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+c7ce8e91f8a0069a94842b91867b046f,SKU118,proconnect headset wired,auto_ref,Headsets,Wired,Generic,true,false,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+695341297938ee00a0b0e8ff9ba9b076,SKU119,techflow compact keyboard white,approved_seed,Keyboards,Compact,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true
+3ded3ecb03c8b86699f13fc1a03aea2a,SKU120,thunderbolt cable 3ft,approved_seed,Cables,Standard,Generic,true,true,2025-08-10 15:01:15.405+10,2025-08-10 15:01:15.405+10,true

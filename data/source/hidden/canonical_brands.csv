@@ -1,0 +1,7 @@
+brand_id,canonical_brand_name,brand_aliases,is_active,created_date,updated_date
+BRD001,ConnectPro,"['CONNECTPRO', 'CnctPro', 'ConPro', 'ConnPro', 'Connect Pro', 'ConnectPRO', 'ConnectPrO', 'connPRO', 'connect pro', 'connectpro', 'connpr']",True,2025-01-01,2025-07-01
+BRD002,DataVault,"['DATA VAULT', 'DATA Vault', 'DATAVAULT', 'DV', 'DatVault', 'DatVlt', 'Data Vault', 'Datavult', 'data vault', 'datavault', 'dvault']",True,2025-01-01,2025-07-01
+BRD003,OfficeLink,"['OFFICELINK', 'OL', 'OffLink', 'OffLnk', 'OffcLink', 'OffcLnk', 'Office Link', 'OfficeLInk', 'Officelink', 'Officelnk', 'offceLink', 'office lnk', 'officeLink', 'officelink']",True,2025-01-01,2025-07-01
+BRD004,ProConnect,"['PC', 'PFConnect', 'PROconnect', 'Pro Connect', 'Pro-Connect', 'ProCnect', 'ProConect', 'Proconnect', 'proconnct', 'proconnect']",True,2025-01-01,2025-07-01
+BRD005,TechFlow,"['TECH Flow', 'TF', 'TFlow', 'Tech Flow', 'Tech flow', 'Techflow', 'techflow']",True,2025-01-01,2025-07-01
+BRD006,ViewMaster,"['V-Master', 'VIEWMASTER', 'VM', 'View Master', 'ViewMstr', 'VlMaster', 'view mst', 'viewMaster', 'viewmast', 'viewmaster', 'viewmst']",True,2025-01-01,2025-07-01

@@ -1,0 +1,67 @@
+name: 'orderly'
+version: '1.0.0'
+config-version: 2
+
+# Medallion Architecture - Bronze/Silver/Gold data pipeline
+profile: 'orderly'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Create schemas on startup
+on-run-start:
+  - "CREATE SCHEMA IF NOT EXISTS bronze;"
+  - "CREATE SCHEMA IF NOT EXISTS silver;"
+  - "CREATE SCHEMA IF NOT EXISTS gold;"
+  - "CREATE SCHEMA IF NOT EXISTS staging;"
+
+# Medallion tier configurations
+models:
+  orderly:
+    bronze:
+      # Raw data - materialized as tables for Bronze layer
+      +materialized: table
+      +tags: ["layer:bronze"]
+      +schema: bronze
+      +docs:
+        node_color: "#8B4513"  # Bronze color
+      +post-hook: "{% if target.name == 'dev' %}{{ export_to_csv_posthook('data/intermediate', 'bronze') }}{% endif %}"
+    silver:
+      # Clean, conformed data - materialized as tables
+      +materialized: table
+      +tags: ["layer:silver"]
+      +schema: silver
+      +docs:
+        node_color: "#C0C0C0"  # Silver color
+      +post-hook: "{% if target.name == 'dev' %}{{ export_to_csv_posthook('data/intermediate', 'silver') }}{% endif %}"
+    gold:
+      # Curated marts - materialized as tables with indexes
+      +materialized: table
+      +tags: ["layer:gold"]
+      +schema: gold
+      +docs:
+        node_color: "#FFD700"  # Gold color
+      +post-hook: "{{ export_to_csv_posthook('data/exports', 'gold') }}"
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ["layer:staging"]
+
+seeds:
+  orderly:
+    +schema: seeds
+    ref_sku_names:
+      +docs:
+        node_color: "#2E8B57"  # Sea green for master data
+
+# Project variables
+vars:
+  source_data_path: "data/source"

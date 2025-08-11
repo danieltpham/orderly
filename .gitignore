@@ -206,3 +206,18 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 .vscode/settings.json
+/src/validation
+
+# DuckDB files
+warehouse/*.duckdb
+warehouse/*.duckdb.wal
+warehouse/*.duckdb.tmp
+
+# dbt artifacts
+data/intermediate/*.csv
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+/.vscode
+load-env.ps1
+data/exports/*

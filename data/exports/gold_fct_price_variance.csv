@@ -1,0 +1,2 @@
+price_variance_key,date_key,product_key,vendor_key,cost_centre_key,avg_unit_price,min_unit_price,max_unit_price,price_variance,price_stddev,order_count,total_quantity,price_range_ratio,coefficient_of_variation,has_significant_variance,analysis_date,created_at
+50bc7d53d196d98ce3f0dee51c69a729,20250723,3952f9e49d5a126a3e4a8b216a7c4ac1,2daf87bc3b78cf832431558d684aa808,d4680a0984ad2d62127cc2b5ec019624,170.36375890508916,95.21162452183773,245.51589328834058,11295.68660471656,106.28116768607956,2,6.0,1.5786335914479546,0.6238484544432337,true,2025-07-23,2025-08-10 15:01:15.622+10
