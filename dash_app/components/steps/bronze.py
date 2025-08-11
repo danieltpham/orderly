@@ -49,7 +49,7 @@ def create_bronze_layout():
                             children=dmc.Code(
                                 id='bronze-raw-content',
                                 block=True,
-                                style={"backgroundColor": "#0b0f0a"}
+                                style={"backgroundColor": "#0b0f0a", "color": "rgb(0, 166, 125)"}
                             ),
                             style={"height": 120},
                         )
@@ -63,11 +63,10 @@ def create_bronze_layout():
             dmc.GridCol([
                 dmc.Paper(
                     children=[
-                        dmc.Title("DuckDB Table Preview", order=2),
+                        dmc.Title(id="bronze-table-title", order=2),
                         dmc.ScrollArea(
                             children=html.Div(
                                 id='bronze-table-preview',
-                                style={"color": "#5ADA8C"}
                             ),
                             style={"height": 200},
                         )
