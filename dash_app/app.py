@@ -1,4 +1,6 @@
 # app.py
+import os
+from flask import send_from_directory
 from dash import Dash
 import dash_mantine_components as dmc
 from layout.appshell import build_appshell
@@ -31,3 +33,7 @@ register_silver_callbacks(app)
 register_gold_callbacks(app)
 
 server = app.server
+
+@server.route("/dbt_docs")
+def serve_dbt_docs():
+    return send_from_directory(os.path.join(os.getcwd(), "docs"), "static_index.html")

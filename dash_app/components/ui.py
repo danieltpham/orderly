@@ -133,7 +133,7 @@ def app_footer():
 
                 dmc.Anchor(
                     dmc.Text("[DBT DOCS]", size="sm", c="#00d28b"),
-                    href="#",
+                    href="https://orderly.danielpham.com.au/dbt_docs",
                     target="_blank"
                 ),
             ],
