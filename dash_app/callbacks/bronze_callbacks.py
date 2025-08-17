@@ -23,6 +23,8 @@ def register_bronze_callbacks(app):
         # Read raw file content
         with open(file_path, 'r') as f:
             raw_content = f.read()
+        
+        table_info = None
 
         try:
             # Try DuckDB first if warehouse exists
@@ -31,7 +33,6 @@ def register_bronze_callbacks(app):
                 
                 # Query from bronze tables based on file type and set table name
                 filename = Path(file_path).name
-                table_info = None
                 
                 if filename.startswith('orders'):
                     query = "SELECT * FROM dev_bronze.raw_orders LIMIT 10"
