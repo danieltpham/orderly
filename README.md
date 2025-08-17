@@ -1,5 +1,9 @@
 # 🧾 Orderly - Enterprise PO Line Item ETL Pipeline
 
+![Orderly Pipeline Hero](docs/hero.png)
+
+[👉 Live Demo](https://orderly.danielpham.com.au)
+
 _⚠️ All data is synthetic. No real or proprietary data is used._
 
 ## **Overview**
