@@ -3,6 +3,7 @@ pandas>=2.0.0
 numpy>=1.24.0
 scikit-learn>=1.7.0
 python-dotenv>=1.0.0
+gunicorn
 
 # Pydantic AI for Data Generation
 pydantic-ai>=0.0.14
